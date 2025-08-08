@@ -19,6 +19,18 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css"> <!-- Caminho correto para o CSS -->
 
+    <!-- Estilo para corrigir o enquadramento do vídeo. Idealmente, mover para styles.css -->
+    <style>
+        .feature-card video {
+            width: 100%;
+            aspect-ratio: 9 / 16; /* Proporção vertical (retrato) */
+            object-fit: cover; /* Garante que o vídeo cubra a área sem distorcer */
+            display: block;
+            /* Se o seu .feature-card tiver bordas arredondadas, isso ajuda a combinar */
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+        }
+    </style>
     <!-- JSON-LD Schema for Local SEO -->
     <script type="application/ld+json">
     {
@@ -142,32 +154,50 @@
                 <h2 data-aos="fade-up">Recursos que fazem a diferença</h2>
                 <div class="features-grid">
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="img/feature-static-1.png" data-gif-src="img/feature-animated-1.gif" alt="Demonstração da fusão de imagens de TC e RM" loading="lazy">
+                        <video poster="img/feature-static-1.png" muted loop playsinline preload="none">
+                            <source src="videos/feature-animated-1.mp4" type="video/mp4">
+                            Demonstração da fusão de imagens de TC e RM.
+                        </video>
                         <h3>Fusão de Imagens</h3>
                         <p>Combine imagens de diferentes modalidades (TC, RM) em um único exame, proporcionando uma visão mais completa e precisa da anatomia do paciente.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="img/feature-static-2.png" data-gif-src="img/feature-animated-2.gif" alt="Demonstração de um instrumento cirúrgico sendo rastreado em um modelo 3D" loading="lazy">
+                        <video poster="img/feature-static-2.png" muted loop playsinline preload="none">
+                            <source src="videos/feature-animated-2.mp4" type="video/mp4">
+                            Demonstração de um instrumento cirúrgico sendo rastreado em um modelo 3D.
+                        </video>
                         <h3>Rastreamento em Tempo Real</h3>
                         <p>Acompanhe a posição exata dos seus instrumentos cirúrgicos no modelo 3D e em vistas bidimensionais, garantindo abordagens precisas e seguras.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="img/feature-static-3.png" data-gif-src="img/feature-animated-3.gif" alt="Demonstração do planejamento de uma trajetória cirúrgica" loading="lazy">
+                        <video poster="img/feature-static-3.png" muted loop playsinline preload="none">
+                            <source src="videos/feature-animated-3.mp4" type="video/mp4">
+                            Demonstração do planejamento de uma trajetória cirúrgrica.
+                        </video>
                         <h3>Planejamento Avançado</h3>
                         <p>Planeje abordagens cirúrgicas complexas com precisão milimétrica, utilizando segmentações inteligentes que otimizam o resultado cirúrgico.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                        <img src="img/feature-static-4.png" data-gif-src="img/feature-animated-4.gif" alt="Demonstração da interface intuitiva e compatível do sistema" loading="lazy">
+                        <video poster="img/feature-static-4.png" muted loop playsinline preload="none">
+                            <source src="videos/feature-animated-4.mp4" type="video/mp4">
+                            Demonstração da interface intuitiva e compatível do sistema.
+                        </video>
                         <h3>Interface Intuitiva e Compatível</h3>
-                        <p>Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos do mercado, facilitando a integração na sua rotina.</p>
+                        <p>Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos e ressonâncias do mercado, facilitando a integração na sua rotina.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                        <img src="img/feature-static-5.png" data-gif-src="img/feature-animated-5.gif" alt="Demonstração do cadastro de instrumentos cirúrgicos personalizados" loading="lazy">
+                        <video poster="img/feature-static-5.png" muted loop playsinline preload="none">
+                            <source src="videos/feature-animated-5.mp4" type="video/mp4">
+                            Demonstração do cadastro de instrumentos cirúrgicos personalizados.
+                        </video>
                         <h3>Instrumentos Personalizáveis</h3>
                         <p>Cadastre e calibre facilmente seus próprios instrumentos cirúrgicos, oferecendo total flexibilidade para se adaptar às suas técnicas e preferências.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="600">
-                        <img src="img/feature-static-6.png" data-gif-src="img/feature-animated-6.gif" alt="Demonstração da equipe de suporte e treinamento" loading="lazy">
+                        <video poster="img/feature-static-6.png" muted loop playsinline preload="none">
+                            <source src="videos/feature-animated-6.mp4" type="video/mp4">
+                            Demonstração da equipe de suporte e treinamento.
+                        </video>
                         <h3>Suporte e Treinamento Dedicado</h3>
                         <p>Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One.</p>
                     </article>
@@ -294,9 +324,6 @@
             </video>
         </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/script.js"></script> <!-- Caminho correto para o JavaScript -->
-
     <!-- AOS Library JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 

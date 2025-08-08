@@ -217,7 +217,7 @@ h2 {
     object-fit: cover; /* Garante que a imagem preencha todo o espaço, cortando se necessário */
     background-color: var(--bg-secondary); /* Adiciona um fundo para preencher o espaço */
     border-radius: 5px;
-    margin: 0 auto 25px; /* Centraliza a imagem e adiciona margem inferior */
+    margin: 0 auto 15px; /* Centraliza a imagem e adiciona margem inferior */
 }
 
 .feature-card h3 {

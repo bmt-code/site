@@ -32,25 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Lógica para trocar imagem por GIF ao passar o mouse (hover)
+    // 3. Lógica para tocar vídeo no hover nos cards de funcionalidades
     const featureCards = document.querySelectorAll('.feature-card');
 
     featureCards.forEach(card => {
-        const img = card.querySelector('img');
-        if (img && img.dataset.gifSrc) {
-            const staticSrc = img.src;
-            const gifSrc = img.dataset.gifSrc;
-
-            // Pré-carrega o GIF para uma transição suave
-            const gifImage = new Image();
-            gifImage.src = gifSrc;
-
+        const video = card.querySelector('video');
+        if (video) {
             card.addEventListener('mouseenter', () => {
-                img.src = gifSrc;
+                // O play() retorna uma Promise, que pode ser usada para tratar erros.
+                video.play().catch(error => {
+                    console.log("A reprodução do vídeo foi impedida:", error);
+                });
             });
 
             card.addEventListener('mouseleave', () => {
-                img.src = staticSrc;
+                video.pause();
+                video.currentTime = 0; // Reinicia o vídeo para o início
             });
         }
     });
