@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Orion One | Neuronavegação Veterinária de Alta Precisão em São Carlos</title>
-    <meta name="description" content="Eleve a segurança da sua clínica com o Orion One, o navegador cirúrgico para neuro e ortopedia veterinária. Tecnologia de ponta, desenvolvida em São Carlos. Peça sua demonstração!">
-    <meta name="keywords" content="neuronavegação veterinária, navegador cirúrgico veterinário, cirurgia ortopédica veterinária de precisão, Orion One BMT, tecnologia cirúrgica veterinária">
+    <title data-i18n-key="page.title">Orion One | Neuronavegação Veterinária de Alta Precisão em São Carlos</title>
+    <meta name="description" data-i18n-key="[content]meta.description" content="Eleve a segurança da sua clínica com o Orion One, o navegador cirúrgico para neuro e ortopedia veterinária. Tecnologia de ponta, desenvolvida em São Carlos. Peça sua demonstração!">
+    <meta name="keywords" data-i18n-key="[content]meta.keywords" content="neuronavegação veterinária, navegador cirúrgico veterinário, cirurgia ortopédica veterinária de precisão, Orion One BMT, tecnologia cirúrgica veterinária">
     <meta name="author" content="BMT - Brazilian Medical Technologies">
 
     <!-- Favicon (adicione seu ícone aqui) -->
@@ -17,20 +17,8 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css"> <!-- Caminho correto para o CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Estilo para corrigir o enquadramento do vídeo. Idealmente, mover para styles.css -->
-    <style>
-        .feature-card video {
-            width: 100%;
-            aspect-ratio: 9 / 16; /* Proporção vertical (retrato) */
-            object-fit: cover; /* Garante que o vídeo cubra a área sem distorcer */
-            display: block;
-            /* Se o seu .feature-card tiver bordas arredondadas, isso ajuda a combinar */
-            border-top-left-radius: inherit;
-            border-top-right-radius: inherit;
-        }
-    </style>
     <!-- JSON-LD Schema for Local SEO -->
     <script type="application/ld+json">
     {
@@ -40,7 +28,7 @@
       "image": "https://www.bmt-brazil.com/img/logo-bmt.png",
       "@id": "https://www.bmt-brazil.com/",
       "url": "https://www.bmt-brazil.com",
-      "telephone": "+55-16-99999-9999",
+      "telephone": "+55-16-99994-1212",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Alfredo Lopes, 1717",
@@ -62,15 +50,21 @@
                 <!-- O logo deve estar na pasta 'img/' -->
                 <img src="img/logo-placeholder.png" alt="BMT Orion One Logo" class="logo">
             </a>
+            <div class="lang-switcher">
+                <button data-lang="pt-BR">🇧🇷 PT</button>
+                <button data-lang="en">🇺🇸 EN</button>
+                <button data-lang="es-LA">🇪🇸 ES</button>
+            </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#sobre-orion">Orion One</a></li>
-                    <li><a href="#funcionalidades">Recursos</a></li>
-                    <li><a href="#como-usar">Como Usar</a></li>
+                    <!-- As chaves abaixo serão usadas pelo script de tradução -->
+                    <li><a href="#sobre-orion" data-i18n-key="nav.about">Sobre</a></li>
+                    <li><a href="#funcionalidades" data-i18n-key="nav.features">Recursos</a></li>
+                    <li><a href="#como-usar" data-i18n-key="nav.howToUse">Como Usar</a></li>
                     <!-- <li><a href="#clientes">Clientes</a></li> -->
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#sobre-nos">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#depoimentos" data-i18n-key="nav.testimonials">Depoimentos</a></li>
+                    <li><a href="#sobre-nos" data-i18n-key="nav.aboutUs">Sobre Nós</a></li>
+                    <li><a href="#contato" data-i18n-key="nav.contact">Contato</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
@@ -91,28 +85,28 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Orion One: Revolucione a Cirurgia com Neuronavegação Veterinária de Precisão</h1>
-            <h2>Menos incerteza, mais segurança. A tecnologia que faltava para os procedimentos de neuro e ortopedia na sua clínica.</h2>
-            <a href="#contato" class="cta-button">Solicitar Demonstração Agora</a>
+            <h1 data-i18n-key="hero.title">Orion One: Revolucione a Cirurgia com Neuronavegação Veterinária de Precisão</h1>
+            <h2 data-i18n-key="hero.subtitle">Menos incerteza, mais segurança. A tecnologia que faltava para os procedimentos de neuro e ortopedia na sua clínica.</h2>
+            <a href="#contato" class="cta-button" data-i18n-key="buttons.cta">Solicitar Demonstração Agora</a>
         </div>
     </section>
 
     <main>
         <!-- Seção 2: Clientes -->
         <section id="clientes" class="clients-section">
-            <h2 data-aos="fade-up">Clínicas e hospitais que elevaram seu padrão cirúrgico com a BMT</h2>
+            <h2 data-aos="fade-up" data-i18n-key="clients.title">Clínicas e hospitais que elevaram seu padrão cirúrgico com a BMT</h2>
             <div class="logos-slider" data-aos="fade-in">
                 <div class="logos-track">
                     <!-- Os logos devem estar na pasta 'img/' -->
-                    <img src="img/cliente1.jpg" alt="Logo do Cliente 1"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente2.jpg" alt="Logo do Cliente 2"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente3.jpg" alt="Logo do Cliente 3"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente4.jpg" alt="Logo do Cliente 4"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente5.jpg" alt="Logo do Cliente 5"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente6.jpg" alt="Logo do Cliente 6"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente7.jpg" alt="Logo do Cliente 7"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente8.jpg" alt="Logo do Cliente 8"> <!-- Substitua pelo nome real do cliente -->
-                    <img src="img/cliente9.jpg" alt="Logo do Cliente 9"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente1.jpg" alt="Logo do Cliente 1" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente2.jpg" alt="Logo do Cliente 2" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente3.jpg" alt="Logo do Cliente 3" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente4.jpg" alt="Logo do Cliente 4" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente5.jpg" alt="Logo do Cliente 5" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente6.jpg" alt="Logo do Cliente 6" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente7.jpg" alt="Logo do Cliente 7" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente8.jpg" alt="Logo do Cliente 8" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
+                    <img src="img/cliente9.jpg" alt="Logo do Cliente 9" loading="lazy"> <!-- Substitua pelo nome real do cliente -->
                     <!-- Logos duplicados para efeito de scroll infinito -->
                     <img src="img/cliente1.jpg" alt="" aria-hidden="true">
                     <img src="img/cliente2.jpg" alt="" aria-hidden="true">
@@ -136,11 +130,11 @@
                         <img src="img/orion-one-produto.png" alt="Neuronavegador Veterinário Orion One em uma mesa cirúrgica" loading="lazy">
                     </div>
                     <div class="about-orion-text">
-                        <h2>O que é o Orion One?</h2>
-                        <p>
+                        <h2 data-i18n-key="aboutOrion.title">O que é o Orion One?</h2>
+                        <p data-i18n-key="aboutOrion.p1">
                             O Orion One é um sistema de neuronavegação cirúrgica de última geração, projetado especificamente para a medicina veterinária. Ele funciona como um "GPS para o cirurgião", permitindo visualizar a posição exata dos instrumentos em tempo real sobre imagens de tomografia (TC) ou ressonância magnética (RM) do paciente.
                         </p>
-                        <p>
+                        <p data-i18n-key="aboutOrion.p2">
                             Essa tecnologia transforma procedimentos complexos em cirurgias mais seguras, rápidas e minimamente invasivas, elevando drasticamente o padrão de cuidado e os resultados para neurocirurgias e ortopedia de precisão.
                         </p>
                     </div>
@@ -151,55 +145,85 @@
         <!-- Seção 4: Funcionalidades -->
         <section id="funcionalidades" class="features-section">
             <div class="container">
-                <h2 data-aos="fade-up">Recursos que fazem a diferença</h2>
+                <h2 data-aos="fade-up" data-i18n-key="features.title">Recursos que fazem a diferença</h2>
                 <div class="features-grid">
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                        <video poster="img/feature-static-1.png" muted loop playsinline preload="none">
-                            <source src="videos/feature-animated-1.mp4" type="video/mp4">
-                            Demonstração da fusão de imagens de TC e RM.
-                        </video>
-                        <h3>Fusão de Imagens</h3>
-                        <p>Combine imagens de diferentes modalidades (TC, RM) em um único exame, proporcionando uma visão mais completa e precisa da anatomia do paciente.</p>
+                        <div class="video-container">
+                            <video poster="img/feature-static-1.png" muted loop playsinline preload="none">
+                                <source src="videos/feature-animated-1.mp4" type="video/mp4">
+                                Demonstração da fusão de imagens de TC e RM.
+                            </video>
+                            <div class="play-overlay">
+                                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n-key="features.card1.title">Fusão de Imagens</h3>
+                        <p data-i18n-key="features.card1.p">Combine imagens de diferentes modalidades (TC, RM) em um único exame, proporcionando uma visão mais completa e precisa da anatomia do paciente.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                        <video poster="img/feature-static-2.png" muted loop playsinline preload="none">
-                            <source src="videos/feature-animated-2.mp4" type="video/mp4">
-                            Demonstração de um instrumento cirúrgico sendo rastreado em um modelo 3D.
-                        </video>
-                        <h3>Rastreamento em Tempo Real</h3>
-                        <p>Acompanhe a posição exata dos seus instrumentos cirúrgicos no modelo 3D e em vistas bidimensionais, garantindo abordagens precisas e seguras.</p>
+                        <div class="video-container">
+                            <video poster="img/feature-static-2.png" muted loop playsinline preload="none">
+                                <source src="videos/feature-animated-2.mp4" type="video/mp4">
+                                Demonstração de um instrumento cirúrgico sendo rastreado em um modelo 3D.
+                            </video>
+                            <div class="play-overlay">
+                                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n-key="features.card2.title">Rastreamento em Tempo Real</h3>
+                        <p data-i18n-key="features.card2.p">Acompanhe a posição exata dos seus instrumentos cirúrgicos no modelo 3D e em vistas bidimensionais, garantindo abordagens precisas e seguras.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                        <video poster="img/feature-static-3.png" muted loop playsinline preload="none">
-                            <source src="videos/feature-animated-3.mp4" type="video/mp4">
-                            Demonstração do planejamento de uma trajetória cirúrgrica.
-                        </video>
-                        <h3>Planejamento Avançado</h3>
-                        <p>Planeje abordagens cirúrgicas complexas com precisão milimétrica, utilizando segmentações inteligentes que otimizam o resultado cirúrgico.</p>
+                        <div class="video-container">
+                            <video poster="img/feature-static-3.png" muted loop playsinline preload="none">
+                                <source src="videos/feature-animated-3.mp4" type="video/mp4">
+                                Demonstração do planejamento de uma trajetória cirúrgrica.
+                            </video>
+                            <div class="play-overlay">
+                                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n-key="features.card3.title">Planejamento Avançado</h3>
+                        <p data-i18n-key="features.card3.p">Planeje abordagens cirúrgicas complexas com precisão milimétrica, utilizando segmentações inteligentes que otimizam o resultado cirúrgico.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                        <video poster="img/feature-static-4.png" muted loop playsinline preload="none">
-                            <source src="videos/feature-animated-4.mp4" type="video/mp4">
-                            Demonstração da interface intuitiva e compatível do sistema.
-                        </video>
-                        <h3>Interface Intuitiva e Compatível</h3>
-                        <p>Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos e ressonâncias do mercado, facilitando a integração na sua rotina.</p>
+                        <div class="video-container">
+                            <video poster="img/feature-static-4.png" muted loop playsinline preload="none">
+                                <source src="videos/feature-animated-4.mp4" type="video/mp4">
+                                Demonstração da interface intuitiva e compatível do sistema.
+                            </video>
+                            <div class="play-overlay">
+                                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n-key="features.card4.title">Interface Intuitiva e Compatível</h3>
+                        <p data-i18n-key="features.card4.p">Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos e ressonâncias do mercado, facilitando a integração na sua rotina.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                        <video poster="img/feature-static-5.png" muted loop playsinline preload="none">
-                            <source src="videos/feature-animated-5.mp4" type="video/mp4">
-                            Demonstração do cadastro de instrumentos cirúrgicos personalizados.
-                        </video>
-                        <h3>Instrumentos Personalizáveis</h3>
-                        <p>Cadastre e calibre facilmente seus próprios instrumentos cirúrgicos, oferecendo total flexibilidade para se adaptar às suas técnicas e preferências.</p>
+                        <div class="video-container">
+                            <video poster="img/feature-static-5.png" muted loop playsinline preload="none">
+                                <source src="videos/feature-animated-5.mp4" type="video/mp4">
+                                Demonstração do cadastro de instrumentos cirúrgicos personalizados.
+                            </video>
+                            <div class="play-overlay">
+                                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n-key="features.card5.title">Instrumentos Personalizáveis</h3>
+                        <p data-i18n-key="features.card5.p">Cadastre e calibre facilmente seus próprios instrumentos cirúrgicos, oferecendo total flexibilidade para se adaptar às suas técnicas e preferências.</p>
                     </article>
                     <article class="feature-card" data-aos="fade-up" data-aos-delay="600">
-                        <video poster="img/feature-static-6.png" muted loop playsinline preload="none">
-                            <source src="videos/feature-animated-6.mp4" type="video/mp4">
-                            Demonstração da equipe de suporte e treinamento.
-                        </video>
-                        <h3>Suporte e Treinamento Dedicado</h3>
-                        <p>Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One.</p>
+                        <div class="video-container">
+                            <video poster="img/feature-static-6.png" muted loop playsinline preload="none">
+                                <source src="videos/feature-animated-6.mp4" type="video/mp4">
+                                Demonstração da equipe de suporte e treinamento.
+                            </video>
+                            <div class="play-overlay">
+                                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n-key="features.card6.title">Suporte e Treinamento Dedicado</h3>
+                        <p data-i18n-key="features.card6.p">Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One.</p>
                     </article>
                 </div>
             </div>
@@ -207,27 +231,27 @@
         <!-- Seção 5: Como Usar (Workflow) -->
         <section id="como-usar" class="workflow-section">
             <div class="container">
-                <h2 data-aos="fade-up">Como funciona o Orion One?</h2>
+                <h2 data-aos="fade-up" data-i18n-key="workflow.title">Como funciona o Orion One?</h2>
                 <div class="workflow-steps">
                     <article class="workflow-step" data-aos="fade-up" data-aos-delay="100">
                         <button class="step-number" data-video-src="videos/step1.mp4" aria-label="Ver vídeo do passo 1">1</button>
-                        <h3>Importe a Imagem</h3>
-                        <p>Carregue os exames de Tomografia (TC) ou Ressonância (RM) do paciente no sistema com poucos cliques.</p>
+                        <h3 data-i18n-key="workflow.step1.title">Importe a Imagem</h3>
+                        <p data-i18n-key="workflow.step1.p">Carregue os exames de Tomografia (TC) ou Ressonância (RM) do paciente no sistema com poucos cliques.</p>
                     </article>
                     <article class="workflow-step" data-aos="fade-up" data-aos-delay="200">
                         <button class="step-number" data-video-src="videos/step2.mp4" aria-label="Ver vídeo do passo 2">2</button>
-                        <h3>Planeje a Cirurgia</h3>
-                        <p>Utilize o modelo 3D para definir trajetórias, marcar alvos e simular o procedimento antes da primeira incisão.</p>
+                        <h3 data-i18n-key="workflow.step2.title">Planeje a Cirurgia</h3>
+                        <p data-i18n-key="workflow.step2.p">Utilize o modelo 3D para definir trajetórias, marcar alvos e simular o procedimento antes da primeira incisão.</p>
                     </article>
                     <article class="workflow-step" data-aos="fade-up" data-aos-delay="300">
                         <button class="step-number" data-video-src="videos/step3.mp4" aria-label="Ver vídeo do passo 3">3</button>
-                        <h3>Faça o Registro</h3>
-                        <p>Correlacione a anatomia do paciente na mesa cirúrgica com o modelo 3D, garantindo a precisão do sistema.</p>
+                        <h3 data-i18n-key="workflow.step3.title">Faça o Registro</h3>
+                        <p data-i18n-key="workflow.step3.p">Correlacione a anatomia do paciente na mesa cirúrgica com o modelo 3D, garantindo a precisão do sistema.</p>
                     </article>
                     <article class="workflow-step" data-aos="fade-up" data-aos-delay="400">
                         <button class="step-number" data-video-src="videos/step4.mp4" aria-label="Ver vídeo do passo 4">4</button>
-                        <h3>Comece a Navegar</h3>
-                        <p>Execute a cirurgia com a confiança de ver a posição exata dos seus instrumentos em tempo real.</p>
+                        <h3 data-i18n-key="workflow.step4.title">Comece a Navegar</h3>
+                        <p data-i18n-key="workflow.step4.p">Execute a cirurgia com a confiança de ver a posição exata dos seus instrumentos em tempo real.</p>
                     </article>
                 </div>
             </div>
@@ -235,19 +259,19 @@
         <!-- Seção 6: Depoimentos -->
         <section id="depoimentos" class="testimonials-section">
             <div class="container">
-                <h2 data-aos="fade-up">A opinião de quem já confia no Orion One</h2>
+                <h2 data-aos="fade-up" data-i18n-key="testimonials.title">A opinião de quem já confia no Orion One</h2>
                 <div class="testimonials-grid">
                     <article class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                        <p>"Além de procedimentos mais eficazes, seguros e precisos, ele permite que a gente faça coisas que antes eram impensáveis. Além disso, muitos dos nossos pacientes agora tem uma recuperação muito melhor e muito mais rápida."</p>
-                        <footer>- Dr. Ricardo Shimizu, Hospital Veterinário VEROS, SP.</footer>
+                        <p data-i18n-key="testimonials.card1.p">"Além de procedimentos mais eficazes, seguros e precisos, ele permite que a gente faça coisas que antes eram impensáveis. Além disso, muitos dos nossos pacientes agora tem uma recuperação muito melhor e muito mais rápida."</p>
+                        <footer data-i18n-key="testimonials.card1.author">- Dr. Ricardo Shimizu, Hospital Veterinário VEROS, SP.</footer>
                     </article>
                     <article class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                        <p>"O Orion facilitou que conseguíssemos ter ressecções cirúrgicas mais proveitosas, bem como direcionadas, assim evitando lesões graves aos pacientes."</p>
-                        <footer>- Dra. Ayanne Fireman, Maceió, AL.</footer>
+                        <p data-i18n-key="testimonials.card2.p">"O Orion facilitou que conseguíssemos ter ressecções cirúrgicas mais proveitosas, bem como direcionadas, assim evitando lesões graves aos pacientes."</p>
+                        <footer data-i18n-key="testimonials.card2.author">- Dra. Ayanne Fireman, Maceió, AL.</footer>
                     </article>
                     <article class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                        <p>"???????????????????"</p>
-                        <footer>- Dr. ??????????, ?????????????</footer>
+                        <p data-i18n-key="testimonials.card3.p">"O Orion One nos deu a confiança para realizar procedimentos que antes considerávamos de alto risco. A precisão é impressionante e o suporte da BMT é excepcional."</p>
+                        <footer data-i18n-key="testimonials.card3.author">- Dr. Nome Sobrenome, Clínica Exemplo, Cidade</footer>
                     </article>
                 </div>
             </div>
@@ -256,8 +280,8 @@
         <!-- Seção Sobre Nós -->
         <section id="sobre-nos" class="about-us-section">
             <div class="container">
-                <h2 data-aos="fade-up">Nossa Origem: Inovação e Excelência</h2>
-                <p class="about-us-intro" data-aos="fade-up" data-aos-delay="100">
+                <h2 data-aos="fade-up" data-i18n-key="aboutUs.title">Nossa Origem: Inovação e Excelência</h2>
+                <p class="about-us-intro" data-aos="fade-up" data-aos-delay="100" data-i18n-key="aboutUs.intro">
                     A BMT nasceu da união de mentes brilhantes da USP de São Carlos, em colaboração com o Laboratório de Inovação Aerotech da Aeronautica da EESC e o Hospital das Clínicas de Ribeirão Preto. Estamos orgulhosamente sediados no Parque Tecnológico de São Carlos e carregamos o selo DNA USP, um sinônimo de pesquisa e tecnologia de ponta a serviço da saúde.
                 </p>
                 <div class="partner-logos" data-aos="fade-up" data-aos-delay="200">
@@ -274,27 +298,27 @@
         <!-- Seção 7: Contato -->
         <section id="contato" class="contact-section" >
             <div class="container">
-                <h2 data-aos="fade-up">Pronto para transformar sua prática cirúrgica? Fale conosco.</h2>
-                <p class="contact-intro" data-aos="fade-up">Preencha o formulário abaixo e um de nossos especialistas entrará em contato para agendar uma demonstração exclusiva do sistema de neuronavegação veterinária Orion One.</p>
+                <h2 data-aos="fade-up" data-i18n-key="contact.title">Pronto para transformar sua prática cirúrgica? Fale conosco.</h2>
+                <p class="contact-intro" data-aos="fade-up" data-i18n-key="contact.intro">Preencha o formulário abaixo e um de nossos especialistas entrará em contato para agendar uma demonstração exclusiva do sistema de neuronavegação veterinária Orion One.</p>
                 <!-- Endpoint do Formspree configurado -->
                 <form class="contact-form" action="https://formspree.io/f/xldlnqoo" method="POST" data-aos="fade-up" data-aos-delay="100">
                     <div class="form-group">
-                        <label for="nome">Nome</label>
+                        <label for="nome" data-i18n-key="form.name">Nome</label>
                         <input type="text" id="nome" name="nome" required autocomplete="name">
                     </div>
                     <div class="form-group">
-                        <label for="clinica">Clínica/Hospital</label>
+                        <label for="clinica" data-i18n-key="form.clinic">Clínica/Hospital</label>
                         <input type="text" id="clinica" name="clinica" required autocomplete="organization">
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail</label>
+                        <label for="email" data-i18n-key="form.email">E-mail</label>
                         <input type="email" id="email" name="email" required autocomplete="email">
                     </div>
                     <div class="form-group">
-                        <label for="telefone">Telefone/WhatsApp</label>
+                        <label for="telefone" data-i18n-key="form.phone">Telefone/WhatsApp</label>
                         <input type="tel" id="telefone" name="telefone" required autocomplete="tel">
                     </div>
-                    <button type="submit" class="submit-button">Sim, Quero Mais Segurança e Precisão</button>
+                    <button type="submit" class="submit-button" data-i18n-key="buttons.submit">Sim, Quero Mais Segurança e Precisão</button>
                 </form>
             </div>
         </section>
@@ -303,9 +327,9 @@
     <!-- Footer (Rodapé) -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79</p>
-            <p>Desenvolvido em São Carlos - SP, o polo da inovação.</p>
-            <p>Todos os direitos reservados.</p>
+            <p data-i18n-key="footer.copyright">&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79</p>
+            <p data-i18n-key="footer.developedIn">Desenvolvido em São Carlos - SP, o polo da inovação.</p>
+            <p data-i18n-key="footer.rights">Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -327,8 +351,9 @@
     <!-- AOS Library JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- Custom Scripts (deve vir depois das bibliotecas) -->
+    <!-- Custom Scripts -->
     <script src="js/script.js"></script>
+    <script src="js/i18n.js"></script> <!-- Nosso novo script de tradução -->
 
 </body>
 </html>

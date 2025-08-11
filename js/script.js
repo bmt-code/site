@@ -1,100 +1,111 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Inicialização da biblioteca de animação (AOS)
+    // 1. Initialize AOS (Animate on Scroll)
     AOS.init({
-        duration: 800, // Duração da animação em ms
-        once: true,     // Animação acontece apenas uma vez
-        offset: 50      // Deslocamento para iniciar a animação antes do elemento aparecer
+        duration: 800, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
     });
 
-    // 2. Lógica do Menu Hambúrguer (Mobile)
+    // 2. Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-    const navLinks = document.querySelectorAll('.main-nav a');
-    const body = document.body;
-
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('is-open');
-            mainNav.classList.toggle('is-open');
-            body.classList.toggle('no-scroll'); // Impede o scroll do corpo quando o menu está aberto
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('is-active');
+            document.body.classList.toggle('no-scroll'); // Optional: prevent scrolling when menu is open
+        });
+
+        // Close menu when a link is clicked
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('is-active')) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    mainNav.classList.remove('is-active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
         });
     }
 
-    // Fecha o menu ao clicar em um link (útil no mobile)
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mainNav.classList.contains('is-open')) {
-                menuToggle.classList.remove('is-open');
-                mainNav.classList.remove('is-open');
-                body.classList.remove('no-scroll');
-            }
-        });
-    });
+    // 3. Feature Videos Interaction (Autoplay on Mobile, Hover on Desktop)
+    const handleFeatureVideos = () => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const featureCards = document.querySelectorAll('#funcionalidades .feature-card');
 
-    // 3. Lógica para tocar vídeo no hover nos cards de funcionalidades
-    const featureCards = document.querySelectorAll('.feature-card');
+        if (isMobile) {
+            // On mobile, autoplay videos when they scroll into view.
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target.querySelector('video');
+                    const overlay = entry.target.querySelector('.play-overlay');
+                    if (entry.isIntersecting) {
+                        video.play().catch(error => console.error("Video autoplay failed:", error));
+                        if (overlay) overlay.style.opacity = '0'; // Esconde o overlay no mobile
+                    } else {
+                        video.pause();
+                        if (overlay) overlay.style.opacity = '1'; // Mostra o overlay novamente
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.5 // Trigger when 50% of the card is visible
+            });
 
-    featureCards.forEach(card => {
-        const video = card.querySelector('video');
-        if (video) {
-            card.addEventListener('mouseenter', () => {
-                // O play() retorna uma Promise, que pode ser usada para tratar erros.
-                video.play().catch(error => {
-                    console.log("A reprodução do vídeo foi impedida:", error);
+            featureCards.forEach(card => observer.observe(card));
+        } else {
+            // On desktop, play videos on hover for a better user experience.
+            featureCards.forEach(card => {
+                const video = card.querySelector('video');
+                card.addEventListener('mouseenter', () => {
+                    video.play().catch(error => console.error("Video hover-play failed:", error));
+                });
+                card.addEventListener('mouseleave', () => {
+                    video.pause();
                 });
             });
-
-            card.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0; // Reinicia o vídeo para o início
-            });
         }
-    });
+    };
+    handleFeatureVideos(); // Run the function on page load
 
-    // 4. Lógica do Modal de Vídeo
+    // 4. Workflow Video Modal
     const videoModal = document.getElementById('videoModal');
     const modalVideoPlayer = document.getElementById('modalVideoPlayer');
-    const openModalButtons = document.querySelectorAll('.step-number');
-    const closeModalButton = document.querySelector('.close-modal');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const workflowSteps = document.querySelectorAll('.workflow-step .step-number');
 
-    // Garante que todos os elementos do modal existem antes de adicionar os eventos
-    if (videoModal && modalVideoPlayer && openModalButtons.length > 0 && closeModalButton) {
-
-        // Abre o modal e toca o vídeo correspondente ao botão clicado
-        openModalButtons.forEach(button => {
+    if (videoModal && modalVideoPlayer && closeModalBtn && workflowSteps.length > 0) {
+        workflowSteps.forEach(button => {
             button.addEventListener('click', () => {
-                const videoSrc = button.dataset.videoSrc;
+                const videoSrc = button.getAttribute('data-video-src');
                 if (videoSrc) {
                     modalVideoPlayer.src = videoSrc;
-                    videoModal.style.display = 'flex'; // Usa flex para centralizar
+                    videoModal.style.display = 'flex';
                     modalVideoPlayer.play();
-                    body.classList.add('no-scroll'); // Impede o scroll da página
+                    document.body.classList.add('no-scroll'); // Prevent background scroll
                 }
             });
         });
 
-        // Função para fechar o modal
         const closeModal = () => {
             videoModal.style.display = 'none';
             modalVideoPlayer.pause();
-            modalVideoPlayer.src = ''; // Limpa o src para parar o download do vídeo
-            body.classList.remove('no-scroll');
+            modalVideoPlayer.src = ''; // Unload the video
+            document.body.classList.remove('no-scroll');
         };
 
-        // Eventos para fechar o modal
-        closeModalButton.addEventListener('click', closeModal);
-
-        // Fecha ao clicar fora do vídeo (na área do overlay)
-        videoModal.addEventListener('click', (event) => {
-            if (event.target === videoModal) {
+        closeModalBtn.addEventListener('click', closeModal);
+        
+        // Close modal if user clicks outside the video content
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
                 closeModal();
             }
         });
 
-        // Fecha ao pressionar a tecla 'Escape'
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && videoModal.style.display === 'flex') {
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.style.display === 'flex') {
                 closeModal();
             }
         });

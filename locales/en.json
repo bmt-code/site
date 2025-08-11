@@ -1,0 +1,74 @@
+{
+  "page": {
+    "title": "Orion One | High-Precision Veterinary Neuronavigation"
+  },
+  "meta": {
+    "description": "Enhance your clinic's safety with Orion One, the surgical navigator for veterinary neurosurgery and orthopedics. Cutting-edge technology, proudly developed in Brazil. Request your demo!",
+    "keywords": "veterinary neuronavigation, veterinary surgical navigator, precision veterinary orthopedic surgery, Orion One BMT, veterinary surgical technology"
+  },
+  "nav": {
+    "about": "About Orion",
+    "features": "Features",
+    "howToUse": "How It Works",
+    "testimonials": "Testimonials",
+    "aboutUs": "About Us",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Orion One: Revolutionize Surgery with High-Precision Veterinary Neuronavigation",
+    "subtitle": "Less uncertainty, more safety. The technology your clinic's neuro and orthopedic procedures have been missing."
+  },
+  "buttons": {
+    "cta": "Request a Demo Now",
+    "submit": "Yes, I Want More Safety and Precision"
+  },
+  "clients": {
+    "title": "Clinics and hospitals that have elevated their surgical standard with BMT"
+  },
+  "aboutOrion": {
+    "title": "What is Orion One?",
+    "p1": "Orion One is a state-of-the-art surgical neuronavigation system designed specifically for veterinary medicine. It acts as a \"GPS for the surgeon,\" allowing them to visualize the exact position of instruments in real-time on the patient's CT or MRI scans.",
+    "p2": "This technology transforms complex procedures into safer, faster, and minimally invasive surgeries, dramatically raising the standard of care and improving outcomes for neurosurgeries and precision orthopedics."
+  },
+  "features": {
+    "title": "Features That Make a Difference",
+    "card1": { "title": "Image Fusion", "p": "Combine images from different modalities (CT, MRI) into a single view, providing a more complete and accurate picture of the patient's anatomy." },
+    "card2": { "title": "Real-Time Tracking", "p": "Track the exact position of your surgical instruments on the 3D model and in 2D views, ensuring precise and safe approaches." },
+    "card3": { "title": "Advanced Planning", "p": "Plan complex surgical approaches with millimeter precision, using intelligent segmentations that optimize the surgical outcome." },
+    "card4": { "title": "Intuitive & Compatible Interface", "p": "Developed with the surgeon in mind, Orion One features a clean interface and is compatible with major CT and MRI scanners on the market, facilitating seamless integration into your workflow." },
+    "card5": { "title": "Customizable Instruments", "p": "Easily register and calibrate your own surgical instruments, offering full flexibility to adapt to your techniques and preferences." },
+    "card6": { "title": "Dedicated Support and Training", "p": "Rely on our team of specialists for comprehensive training and ongoing support, ensuring you get the most out of Orion One." }
+  },
+  "workflow": {
+    "title": "How Does Orion One Work?",
+    "step1": { "title": "Import the Images", "p": "Upload the patient's CT or MRI scans into the system with just a few clicks." },
+    "step2": { "title": "Plan the Surgery", "p": "Use the 3D model to define trajectories, mark targets, and simulate the procedure before the first incision." },
+    "step3": { "title": "Perform Registration", "p": "Correlate the patient's anatomy on the surgical table with the 3D model, ensuring the system's accuracy." },
+    "step4": { "title": "Start Navigating", "p": "Perform the surgery with the confidence of seeing the exact position of your instruments in real-time." }
+  },
+  "testimonials": {
+    "title": "What Those Who Trust Orion One Have to Say",
+    "card1": { "p": "\"Beyond more effective, safer, and precise procedures, it allows us to do things that were previously unthinkable. Additionally, many of our patients now have a much better and faster recovery.\"", "author": "- Dr. Ricardo Shimizu, VEROS Veterinary Hospital, SP." },
+    "card2": { "p": "\"Orion made it easier for us to achieve more successful and targeted surgical resections, thus avoiding serious injuries to patients.\"", "author": "- Dr. Ayanne Fireman, Maceió, AL." },
+    "card3": { "p": "\"Orion One gave us the confidence to perform procedures we once considered high-risk. The precision is impressive, and the support from BMT is exceptional.\"", "author": "- Dr. Firstname Lastname, Example Clinic, City" }
+  },
+  "aboutUs": {
+    "title": "Our Origin: Innovation and Excellence",
+    "intro": "BMT was born from the union of brilliant minds from the University of São Paulo (USP) in São Carlos, in collaboration with the EESC's Aerotech Innovation Laboratory and the Ribeirão Preto Clinical Hospital. We are proudly based in the São Carlos Technology Park and hold the DNA USP seal, a symbol of cutting-edge research and technology at the service of health."
+  },
+  "contact": {
+    "title": "Ready to transform your surgical practice? Let's talk.",
+    "intro": "Fill out the form below, and one of our specialists will contact you to schedule an exclusive demonstration of the Orion One veterinary neuronavigation system."
+  },
+  "form": {
+    "name": "Name",
+    "clinic": "Clinic/Hospital",
+    "email": "Email",
+    "phone": "Phone/WhatsApp"
+  },
+  "footer": {
+    "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA.",
+    "developedIn": "Proudly developed in São Carlos - SP, Brazil's innovation hub.",
+    "rights": "All rights reserved."
+  }
+}

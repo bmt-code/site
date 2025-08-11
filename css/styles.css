@@ -210,20 +210,109 @@ h2 {
     box-shadow: 0 8px 25px rgba(0, 136, 241, 0.1);
 }
 
-.feature-card img {
-    display: block; /* Garante o comportamento de bloco para o margin: auto funcionar */
-    width: 300px; /* Define uma largura para a proporção 9:16 (altura será 120px) */
-    aspect-ratio: 9 / 16;
-    object-fit: cover; /* Garante que a imagem preencha todo o espaço, cortando se necessário */
-    background-color: var(--bg-secondary); /* Adiciona um fundo para preencher o espaço */
+/* Container para o vídeo/poster para posicionar o overlay */
+.video-container {
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden; /* Garante que o overlay não vaze */
     border-radius: 5px;
-    margin: 0 auto 15px; /* Centraliza a imagem e adiciona margem inferior */
+}
+
+.feature-card video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16; /* Proporção vertical padrão */
+    object-fit: cover;
+    background-color: var(--bg-secondary);
+    border-radius: 5px; /* Mantém o border-radius */
+}
+
+/* Overlay com ícone de play */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Permite que o hover funcione no card */
+}
+
+.feature-card:hover .play-overlay {
+    opacity: 0;
+}
+
+.play-icon {
+    width: 60px;
+    height: 60px;
+    fill: #fff;
 }
 
 .feature-card h3 {
     color: var(--text-light);
     font-size: 1.4rem;
     margin-bottom: 15px;
+}
+
+/* Animação para o ícone de mouse que indica interatividade */
+@keyframes mouse-indicator-animation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+/* Ícone de mouse para indicar interatividade no desktop */
+@media (min-width: 769px) {
+    /* Corpo do mouse (usando ::after) */
+    .feature-card .video-container::after {
+        content: '';
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 22px;
+        height: 32px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        opacity: 0.7;
+        z-index: 5; /* Garante que fique sobre o overlay do play */
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        animation: mouse-indicator-animation 1.5s ease-in-out infinite;
+    }
+
+    /* Roda do mouse (usando ::before) */
+    .feature-card .video-container::before {
+        content: '';
+        position: absolute;
+        top: 18px;
+        right: 21px; /* Centralizado dentro do corpo do mouse */
+        width: 4px;
+        height: 6px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 2px;
+        opacity: 0.7;
+        z-index: 6; /* Acima do corpo do mouse */
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        animation: mouse-indicator-animation 1.5s ease-in-out infinite;
+    }
+
+    /* Esconde o ícone quando o usuário passa o mouse sobre o card */
+    .feature-card:hover .video-container::before,
+    .feature-card:hover .video-container::after {
+        opacity: 0;
+        animation: none; /* Pausa a animação para economizar recursos */
+    }
 }
 
 /* 4. Seção Como Usar (Workflow) */
@@ -324,6 +413,7 @@ h2 {
 /* 6. Seção de Clientes (Carrossel) */
 @keyframes scroll {
     0% { transform: translateX(0); }
+    /* Anima a faixa para a esquerda em 50% de sua largura total, que corresponde exatamente ao bloco de logos originais. */
     100% { transform: translateX(-50%); }
 }
 
@@ -347,19 +437,24 @@ h2 {
 
 .logos-track {
     display: flex;
-    width: calc(240px * 18); /* (Largura média logo + margens) * número total de logos (9 originais + 9 duplicados) */
-    animation: scroll 50s linear infinite; /* Aumenta a duração para compensar a largura maior */
+    align-items: center; /* Alinha os logos verticalmente */
+    /* (Largura estimada por logo + margens) * número total de logos (9 originais + 9 duplicados) */
+    /* A largura total é o dobro do conteúdo visível para permitir o loop. */
+    width: calc(220px * 18);
+    animation: scroll 40s linear infinite;
 }
 
 .logos-track img {
-    height: 80px; /* Aumenta o tamanho dos logos */
-    width: auto;
-    margin: 0 40px;
+    height: 90px; /* Define uma altura consistente */
+    width: auto; /* Permite que a largura se ajuste à proporção */
+    max-width: 150px; /* Limita a largura de logos muito largos */
+    margin: 0 35px; /* Espaçamento entre os logos */
+    object-fit: contain; /* ESSENCIAL: impede a distorção da imagem */
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
 
-.logos-track:hover {
+.logos-track:hover, .logos-slider:hover .logos-track {
     animation-play-state: paused;
 }
 
@@ -612,6 +707,38 @@ h2 {
     align-items: center;
 }
 
+/* Estilos para o Seletor de Idiomas */
+.lang-switcher {
+    margin-left: auto; /* Empurra o seletor para a direita, agrupando-o com a navegação */
+    margin-right: 30px; /* Espaço entre o seletor e o menu de navegação */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-switcher button {
+    background-color: transparent;
+    border: 1px solid rgba(231, 248, 255, 0.3);
+    color: var(--text-light);
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.lang-switcher button:hover {
+    background-color: rgba(231, 248, 255, 0.1);
+    border-color: var(--primary-blue);
+}
+
+.lang-switcher button.active {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--bg-secondary);
+    font-weight: 700;
+}
 /* Animação de brilho para o logo */
 @keyframes shine-effect {
     /* A animação move o brilho da posição inicial para a final */
@@ -732,6 +859,10 @@ h2 {
 @media (max-width: 992px) {
     .menu-toggle {
         display: flex;
+    }
+
+    .lang-switcher {
+        margin-right: 20px; /* Menos espaço no mobile */
     }
 
     .main-nav {
