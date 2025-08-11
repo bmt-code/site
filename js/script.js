@@ -11,17 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.classList.toggle('is-open');
             menuToggle.setAttribute('aria-expanded', !isExpanded);
-            mainNav.classList.toggle('is-active');
+            mainNav.classList.toggle('is-open');
             document.body.classList.toggle('no-scroll'); // Optional: prevent scrolling when menu is open
         });
 
         // Close menu when a link is clicked
         mainNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                if (mainNav.classList.contains('is-active')) {
+                if (mainNav.classList.contains('is-open')) {
+                    menuToggle.classList.remove('is-open');
                     menuToggle.setAttribute('aria-expanded', 'false');
-                    mainNav.classList.remove('is-active');
+                    mainNav.classList.remove('is-open');
                     document.body.classList.remove('no-scroll');
                 }
             });

@@ -707,10 +707,15 @@ h2 {
     align-items: center;
 }
 
+/* Novo container para os controles da direita */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Espaço entre a navegação, idiomas e menu hambúrguer */
+}
+
 /* Estilos para o Seletor de Idiomas */
 .lang-switcher {
-    margin-left: auto; /* Empurra o seletor para a direita, agrupando-o com a navegação */
-    margin-right: 30px; /* Espaço entre o seletor e o menu de navegação */
     display: flex;
     align-items: center;
     gap: 8px;
@@ -718,27 +723,39 @@ h2 {
 
 .lang-switcher button {
     background-color: transparent;
-    border: 1px solid rgba(231, 248, 255, 0.3);
-    color: var(--text-light);
-    padding: 6px 12px;
-    border-radius: 5px;
+    border: 2px solid transparent; /* Borda invisível para evitar "pulo" no hover/active */
+    border-radius: 50%;
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 0.9rem;
+    color: var(--text-light); /* Define a cor do texto para branco */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Tamanho da fonte para o texto (BR, US, ES) */
+    font-weight: bold; /* Deixa o texto em negrito */
+    line-height: 1; /* Garante alinhamento vertical do emoji */
+    padding: 0; /* Remove padding para centralizar melhor */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lang-switcher button:hover {
-    background-color: rgba(231, 248, 255, 0.1);
-    border-color: var(--primary-blue);
+    transform: scale(1.1);
 }
 
 .lang-switcher button.active {
-    background-color: var(--primary-blue);
     border-color: var(--primary-blue);
-    color: var(--bg-secondary);
-    font-weight: 700;
+    transform: scale(1.1);
+    /* A propriedade font-size não é mais necessária para a bandeira */
 }
+
+.lang-switcher button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o círculo, cortando o excesso */
+    border-radius: 50%; /* Garante que a própria imagem seja circular */
+}
+
 /* Animação de brilho para o logo */
 @keyframes shine-effect {
     /* A animação move o brilho da posição inicial para a final */
@@ -859,10 +876,6 @@ h2 {
 @media (max-width: 992px) {
     .menu-toggle {
         display: flex;
-    }
-
-    .lang-switcher {
-        margin-right: 20px; /* Menos espaço no mobile */
     }
 
     .main-nav {

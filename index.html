@@ -50,28 +50,29 @@
                 <!-- O logo deve estar na pasta 'img/' -->
                 <img src="img/logo-placeholder.png" alt="BMT Orion One Logo" class="logo">
             </a>
-            <div class="lang-switcher">
-                <button data-lang="pt-BR">🇧🇷 PT</button>
-                <button data-lang="en">🇺🇸 EN</button>
-                <button data-lang="es-LA">🇪🇸 ES</button>
+            <div class="header-controls">
+                <nav class="main-nav">
+                    <ul>
+                        <!-- As chaves abaixo serão usadas pelo script de tradução -->
+                        <li><a href="#sobre-orion" data-i18n-key="nav.about">Sobre</a></li>
+                        <li><a href="#funcionalidades" data-i18n-key="nav.features">Recursos</a></li>
+                        <li><a href="#como-usar" data-i18n-key="nav.howToUse">Como Usar</a></li>
+                        <li><a href="#depoimentos" data-i18n-key="nav.testimonials">Depoimentos</a></li>
+                        <li><a href="#sobre-nos" data-i18n-key="nav.aboutUs">Sobre Nós</a></li>
+                        <li><a href="#contato" data-i18n-key="nav.contact">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="lang-switcher">
+                    <button data-lang="pt-BR" data-text="BR" data-flag="img/flags/br.svg aria-label="Mudar para Português do Brasil">BR</button>
+                    <button data-lang="en" data-text="US" data-flag="img/flags/us.svg" aria-label="Switch to English">US</button>
+                    <button data-lang="es-LA" data-text="ES" data-flag="img/flags/es.svg" aria-label="Cambiar a Español">ES</button>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <!-- As chaves abaixo serão usadas pelo script de tradução -->
-                    <li><a href="#sobre-orion" data-i18n-key="nav.about">Sobre</a></li>
-                    <li><a href="#funcionalidades" data-i18n-key="nav.features">Recursos</a></li>
-                    <li><a href="#como-usar" data-i18n-key="nav.howToUse">Como Usar</a></li>
-                    <!-- <li><a href="#clientes">Clientes</a></li> -->
-                    <li><a href="#depoimentos" data-i18n-key="nav.testimonials">Depoimentos</a></li>
-                    <li><a href="#sobre-nos" data-i18n-key="nav.aboutUs">Sobre Nós</a></li>
-                    <li><a href="#contato" data-i18n-key="nav.contact">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
         </div>
     </header>
 

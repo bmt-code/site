@@ -77,11 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Define o atributo 'lang' na tag <html> para fins de SEO e acessibilidade
         document.documentElement.lang = lang;
 
-        // Atualiza a classe 'active' nos botões para dar feedback visual
+        // Atualiza a aparência dos botões (classe e conteúdo)
         document.querySelectorAll('[data-lang]').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
+            const btnLang = btn.getAttribute('data-lang');
+            const text = btn.getAttribute('data-text');
+            const flagSrc = btn.getAttribute('data-flag'); // Agora contém o caminho da imagem
+
+            if (btnLang === lang) {
+                // Botão ativo: mostra a imagem da bandeira e adiciona a classe 'active'
                 btn.classList.add('active');
+                btn.innerHTML = `<img src="${flagSrc}" alt="Bandeira ${text}">`;
+            } else {
+                // Botões inativos: mostram o texto e removem a classe 'active'
+                btn.classList.remove('active');
+                btn.innerHTML = text;
             }
         });
 
