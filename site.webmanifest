@@ -1,0 +1,21 @@
+{
+  "name": "BMT Orion One",
+  "short_name": "Orion One",
+  "description": "Neuronavegação Veterinária de Alta Precisão. A tecnologia que faltava para os procedimentos de neuro e ortopedia na sua clínica.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080d14",
+  "theme_color": "#234272",
+  "icons": [
+    {
+      "src": "img/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
