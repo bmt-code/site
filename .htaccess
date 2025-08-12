@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^bmt-brazil\.com [NC]
+RewriteRule ^(.*)$ https://www.bmt-brazil.com/ [L,R=301,NC]
