@@ -79,7 +79,7 @@ h2 {
     justify-content: flex-start; /* Alinha o bloco de conteúdo à esquerda */
     text-align: left; /* Alinha o texto dentro do bloco à esquerda */
     overflow: hidden;
-    margin-top: -80px; /* Compensa o padding do body para o vídeo ocupar a tela toda */
+    margin-top: -90px; /* Compensa o padding do body para o vídeo ocupar a tela toda */
     padding-left: 10%; /* Cria um espaçamento da borda esquerda */
 }
 
@@ -668,6 +668,11 @@ h2 {
     .testimonials-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    /* Aumenta o espaçamento lateral do cabeçalho em telas maiores */
+    .main-header .container {
+        padding: 0 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -695,7 +700,7 @@ h2 {
     background-color: rgba(8, 13, 20, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    height: 80px;
+    height: 90px;
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease;
@@ -705,6 +710,10 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Faz o container do cabeçalho ocupar toda a largura */
+    width: 100%;
+    max-width: none; /* Remove a limitação de largura do .container genérico */
+    padding: 0 20px; /* Adiciona espaçamento nas laterais (padrão mobile) */
 }
 
 /* Novo container para os controles da direita */
@@ -718,7 +727,8 @@ h2 {
 .lang-switcher {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0px;
+    margin-left: 30px; /* Adiciona espaço extra à esquerda das bandeiras */
 }
 
 .lang-switcher button {
@@ -787,7 +797,7 @@ h2 {
 }
 
 .logo {
-    height: 80px;
+    height: 90px;
     width: auto;
     display: block; /* Remove espaços extras abaixo da imagem */
 }
