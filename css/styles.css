@@ -315,25 +315,53 @@ h2 {
     }
 }
 
-/* 4. Seção Como Usar (Workflow) */
 .workflow-section {
     background-color: transparent;
 }
 
-.workflow-section h2 {
-    margin-bottom: 60px;
+.workflow-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Alinha as colunas no topo, permitindo alturas diferentes */
+    min-height: 450px; /* Altura mínima para evitar colapso */
+    margin-top: 40px;
 }
 
+/* --- ESTADO INICIAL (GRID) --- */
 .workflow-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px 30px; /* Aumenta o gap vertical para melhor espaçamento */
-    position: relative;
+    /* Garante 4 colunas na mesma linha em telas maiores */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+    transition: width 0.5s ease-in-out, gap 0.5s ease-in-out;
 }
 
 .workflow-step {
+    display: block;
+    background-color: rgba(26, 28, 32, 0.5);
+    padding: 25px;
+    border-radius: 8px;
     text-align: center;
-    position: relative;
+    border-left: 4px solid transparent;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.workflow-step .step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--bg-main);
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto 20px;
+    /* Animação para indicar que é clicável */
+    animation: pulse-effect 2s infinite;
 }
 
 /* Animação de pulso para indicar que os botões são clicáveis */
@@ -349,39 +377,123 @@ h2 {
     }
 }
 
-.step-number {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid var(--primary-blue);
-    background-color: var(--bg-main);
-    color: var(--primary-blue);
-    font-family: inherit; /* Garante que a fonte seja a mesma do site */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 2rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    animation: pulse-effect 2s infinite;
-}
-
+/* Efeito de hover para feedback imediato */
 .workflow-step:hover .step-number {
     background-color: var(--primary-blue);
     color: var(--bg-main);
-    transform: scale(1.1); /* Adiciona um leve zoom no hover */
+    transform: scale(1.1);
+    animation: none; /* Pausa a animação de pulso */
+}
+
+.workflow-step .step-content {
+    max-width: 100%;
+    opacity: 1;
+    transition: max-width 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .workflow-step h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     color: var(--text-light);
 }
 
 .workflow-step p {
+    margin: 0;
     color: #cdd5e0;
+}
+
+ /* Controle de visibilidade das descrições */
+.short-description {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+.detailed-description {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.workflow-video {
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out 0.2s;
+    overflow: hidden;
+}
+
+#workflowVideoPlayer {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #000; /* Fundo preto para o player */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+}
+
+/* --- ESTADO ATIVO (APÓS CLIQUE) --- */
+.workflow-container.video-is-active .workflow-steps {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    gap: 15px;
+}
+
+.workflow-container.video-is-active .workflow-video {
+    width: 55%;
+    opacity: 1;
+}
+
+/* Muda o layout de cada passo para o modo lista */
+.workflow-container.video-is-active .workflow-step {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    padding: 15px;
+}
+
+.workflow-container.video-is-active .workflow-step .step-number {
+    margin: 0;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+}
+
+/* Estilos do passo SELECIONADO */
+.workflow-container.video-is-active .workflow-step.active {
+    border-left-color: var(--cta-green);
+}
+.workflow-container.video-is-active .workflow-step.active .step-number {
+    background-color: var(--primary-blue);
+    color: var(--bg-main);
+}
+
+/* Mostra a descrição detalhada e esconde a curta no passo ativo */
+.workflow-container.video-is-active .workflow-step.active .short-description {
+    display: none;
+}
+.workflow-container.video-is-active .workflow-step.active .detailed-description {
+    display: block;
+}
+
+/* --- COMPORTAMENTO DO CONTEÚDO NO MODO VÍDEO --- */
+
+/* Para o passo ATIVO, o conteúdo é visível e pode crescer para preencher o espaço. */
+.workflow-container.video-is-active .workflow-step.active .step-content {
+    flex-grow: 1;
+    opacity: 1;
+}
+
+/* Para os passos NÃO ATIVOS, o conteúdo não cresce e as descrições são escondidas. */
+.workflow-container.video-is-active .workflow-step:not(.active) .step-content {
+    flex-grow: 0; /* Impede que o container do conteúdo se expanda */
+}
+.workflow-container.video-is-active .workflow-step:not(.active) p {
+    display: none; /* Esconde apenas os parágrafos de descrição */
+}
+.workflow-container.video-is-active .workflow-step:not(.active) h3 {
+    margin-bottom: 0; /* Remove a margem do título quando não há descrição abaixo */
+}
+/* Media Query para melhorar a responsividade da grade */
+@media (max-width: 992px) {
+    .workflow-container:not(.video-is-active) .workflow-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* 5. Seção de Depoimentos */

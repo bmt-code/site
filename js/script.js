@@ -70,46 +70,71 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     handleFeatureVideos(); // Run the function on page load
 
-    // 4. Workflow Video Modal
-    const videoModal = document.getElementById('videoModal');
-    const modalVideoPlayer = document.getElementById('modalVideoPlayer');
-    const closeModalBtn = document.querySelector('.close-modal');
-    const workflowSteps = document.querySelectorAll('.workflow-step .step-number');
+    // 4. Workflow Video and Steps Interaction
+    const workflowContainer = document.querySelector('.workflow-container');
+    const workflowSteps = document.querySelectorAll('#como-usar .step-number');
+    const workflowVideoPlayer = document.getElementById('workflowVideoPlayer');
 
-    if (videoModal && modalVideoPlayer && closeModalBtn && workflowSteps.length > 0) {
+    if (workflowContainer && workflowSteps.length > 0 && workflowVideoPlayer) {
+        let currentActiveStep = null; // Variável para rastrear o passo ativo
+
+        // Função reutilizável para redefinir a seção para o estado de grade
+        const resetToGridView = () => {
+            workflowContainer.classList.remove('video-is-active');
+            workflowVideoPlayer.pause();
+            workflowVideoPlayer.src = ''; // Descarrega o vídeo para economizar recursos
+            if (currentActiveStep) {
+                currentActiveStep.classList.remove('active');
+                currentActiveStep = null;
+            }
+        };
+
         workflowSteps.forEach(button => {
             button.addEventListener('click', () => {
-                const videoSrc = button.getAttribute('data-video-src');
-                if (videoSrc) {
-                    modalVideoPlayer.src = videoSrc;
-                    videoModal.style.display = 'flex';
-                    modalVideoPlayer.play();
-                    document.body.classList.add('no-scroll'); // Prevent background scroll
+                const parentStep = button.parentNode;
+                const isAlreadyActive = parentStep.classList.contains('active');
+
+                if (isAlreadyActive) {
+                    // Se o passo clicado já está ativo, redefine para a grade
+                    resetToGridView();
+                } else {
+                    // Caso contrário, mostra o vídeo selecionado
+                    const videoSrc = button.getAttribute('data-video-src');
+                    if (videoSrc) {
+                        workflowVideoPlayer.src = videoSrc;
+                        // Garante que o vídeo só toque quando estiver pronto, evitando erros
+                        const playPromise = workflowVideoPlayer.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.error("Erro ao tentar reproduzir o vídeo:", error);
+                            });
+                        }
+
+                        workflowContainer.classList.add('video-is-active');
+
+                        // Remove a classe do passo ativo anterior (se houver)
+                        if (currentActiveStep) {
+                            currentActiveStep.classList.remove('active');
+                        }
+                        parentStep.classList.add('active');
+                        currentActiveStep = parentStep; // Atualiza a referência do passo ativo
+                    }
                 }
             });
         });
 
-        const closeModal = () => {
-            videoModal.style.display = 'none';
-            modalVideoPlayer.pause();
-            modalVideoPlayer.src = ''; // Unload the video
-            document.body.classList.remove('no-scroll');
-        };
+        // Observador para redefinir a seção quando ela sai da tela
+        const workflowObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Se o container não estiver visível e o modo de vídeo estiver ativo
+                if (!entry.isIntersecting && workflowContainer.classList.contains('video-is-active')) {
+                    resetToGridView();
+                }
+            });
+        }, { threshold: 0.1 }); // Aciona quando menos de 10% da seção está visível
 
-        closeModalBtn.addEventListener('click', closeModal);
-        
-        // Close modal if user clicks outside the video content
-        videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) {
-                closeModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && videoModal.style.display === 'flex') {
-                closeModal();
-            }
-        });
+        workflowObserver.observe(workflowContainer);
+    } else {
+        console.warn('Workflow section elements not found. Interaction will be disabled.');
     }
 });
