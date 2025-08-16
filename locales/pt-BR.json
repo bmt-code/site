@@ -14,14 +14,27 @@
     "card6": { "title": "Suporte e Treinamento Dedicado", "p": "Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One." }
   },
   "workflow": {
-    "step1_title": "1. Importação",
-    "step1_desc": "Importe o exame de forma simples: arraste o arquivo para a tela e todas as vistas, incluindo o modelo 3D do paciente, serão carregadas instantaneamente.",
-    "step2_title": "2. Planejamento",
-    "step2_desc": "A plataforma GuideOs oferece ferramentas de planejamento exclusivas. Realize medições, defina ângulos, desenhe contornos e segmente estruturas com alta precisão para otimizar e agilizar o procedimento cirúrgico.",
-    "step3_title": "3. Registro",
-    "step3_desc": "O registro para neurocirurgia é feito em duas etapas: primeiro, a captura de 3 pontos fiduciais no paciente e no exame. Em seguida, um registro de superfície com 10 pontos aleatórios na área de interesse refina a precisão do sistema.",
-    "step4_title": "4. Navegação",
-    "step4_desc": "Navegue em tempo real com 6 vistas simultâneas (3D, Paralela, Ortogonal, Axial, Coronal e Sagital) para uma localização espacial superior. Utilize a segmentação em tempo real para identificar facilmente as estruturas anatômicas de interesse."
+    "title": "Como funciona o Orion One?",
+    "step1": {
+      "title": "Importe a Imagem",
+      "p": "Carregue os exames de Tomografia (TC) ou Ressonância (RM) do paciente no sistema com poucos cliques.",
+      "detailed_p": "Importe o exame de forma simples: arraste o arquivo para a tela e todas as vistas, incluindo o modelo 3D do paciente, serão carregadas instantaneamente."
+    },
+    "step2": {
+      "title": "Planeje a Cirurgia",
+      "p": "Utilize o modelo 3D para definir trajetórias, marcar alvos e simular o procedimento antes da primeira incisão.",
+      "detailed_p": "A plataforma GuideOs oferece ferramentas de planejamento exclusivas. Realize medições, defina ângulos, desenhe contornos e segmente estruturas com alta precisão para otimizar e agilizar o procedimento cirúrgico."
+    },
+    "step3": {
+      "title": "Faça o Registro",
+      "p": "Correlacione a anatomia do paciente na mesa cirúrgica com o modelo 3D, garantindo a precisão do sistema.",
+      "detailed_p": "O registro para neurocirurgia é feito em duas etapas: primeiro, a captura de 3 pontos fiduciais no paciente e no exame. Em seguida, um registro de superfície com 10 pontos aleatórios na área de interesse refina a precisão do sistema."
+    },
+    "step4": {
+      "title": "Comece a Navegar",
+      "p": "Execute a cirurgia com a confiança de ver a posição exata dos seus instrumentos em tempo real.",
+      "detailed_p": "Navegue em tempo real com 6 vistas simultâneas (3D, Paralela, Ortogonal, Axial, Coronal e Sagital) para uma localização espacial superior. Utilize a segmentação em tempo real para identificar facilmente as estruturas anatômicas de interesse."
+    }
   },
   "testimonials": {
     "title": "A opinião de quem já confia no Orion One",
