@@ -1,3 +1,30 @@
+{
+  "page": {
+    "title": "Orion One | Neuronavegação Veterinária de Alta Precisão"
+  },
+  "meta": {
+    "description": "Eleve a segurança da sua clínica com o Orion One, o navegador cirúrgico para neuro e ortopedia veterinária. Tecnologia de ponta, desenvolvida em São Carlos. Peça sua demonstração!",
+    "keywords": "neuronavegação veterinária, navegador cirúrgico veterinário, cirurgia ortopédica veterinária de precisão, Orion One BMT, tecnologia cirúrgica veterinária"
+  },
+  "nav": {
+    "about": "Sobre",
+    "features": "Recursos",
+    "howToUse": "Como Usar",
+    "testimonials": "Depoimentos",
+    "aboutUs": "Sobre Nós",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Orion One: Revolucione a Cirurgia com Neuronavegação Veterinária de Precisão",
+    "subtitle": "Menos incerteza, mais segurança. A tecnologia que faltava para os procedimentos de neuro e ortopedia na sua clínica."
+  },
+  "buttons": {
+    "cta": "Solicitar Demonstração Agora",
+    "submit": "Sim, Quero Mais Segurança e Precisão",
+    "whatsapp": "Fale Conosco"
+  },
+  "clients": {
+    "title": "Clínicas e hospitais que elevaram seu padrão cirúrgico com a BMT"
   },
   "aboutOrion": {
     "title": "O que é o Orion One?",
@@ -50,11 +77,6 @@
     "title": "Pronto para transformar sua prática cirúrgica? Fale conosco.",
     "intro": "Preencha o formulário abaixo e um de nossos especialistas entrará em contato para agendar uma demonstração exclusiva do sistema de neuronavegação veterinária Orion One."
   },
-  "buttons": {
-    "cta": "Solicitar Demonstração Agora",
-    "submit": "Sim, Quero Mais Segurança e Precisão",
-    "whatsapp": "Fale Conosco"
-  },
   "form": {
     "name": "Nome",
     "clinic": "Clínica/Hospital",
@@ -66,4 +88,4 @@
     "developedIn": "Desenvolvido em São Carlos - SP, o polo da inovação.",
     "rights": "Todos os direitos reservados."
   }
-} 
+}
