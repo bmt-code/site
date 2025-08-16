@@ -20,7 +20,8 @@
   },
   "buttons": {
     "cta": "Request a Demo Now",
-    "submit": "Yes, I Want More Safety and Precision"
+    "submit": "Yes, I Want More Safety and Precision",
+    "whatsapp": "Contact Us"
   },
   "clients": {
     "title": "Clinics and hospitals that have elevated their surgical standard with BMT"
@@ -40,11 +41,14 @@
     "card6": { "title": "Dedicated Support and Training", "p": "Rely on our team of specialists for comprehensive training and ongoing support, ensuring you get the most out of Orion One." }
   },
   "workflow": {
-    "title": "How Does Orion One Work?",
-    "step1": { "title": "Import the Images", "p": "Upload the patient's CT or MRI scans into the system with just a few clicks." },
-    "step2": { "title": "Plan the Surgery", "p": "Use the 3D model to define trajectories, mark targets, and simulate the procedure before the first incision." },
-    "step3": { "title": "Perform Registration", "p": "Correlate the patient's anatomy on the surgical table with the 3D model, ensuring the system's accuracy." },
-    "step4": { "title": "Start Navigating", "p": "Perform the surgery with the confidence of seeing the exact position of your instruments in real-time." }
+    "step1_title": "1. Import",
+    "step1_desc": "Import the exam easily: just drag the file onto the screen, and all views, including the patient's 3D model, will be loaded instantly.",
+    "step2_title": "2. Planning",
+    "step2_desc": "The GuideOs platform offers exclusive planning tools. Perform measurements, set angles, draw contours, and segment structures with high precision to optimize and streamline the surgical procedure.",
+    "step3_title": "3. Registration",
+    "step3_desc": "Registration for neurosurgery is a two-step process: first, capture 3 fiducial points on both the patient and the scan. Then, a surface registration with 10 random points in the area of interest refines the system's accuracy.",
+    "step4_title": "4. Navigation",
+    "step4_desc": "Navigate in real-time with 6 simultaneous views (3D, Parallel, Orthogonal, Axial, Coronal, and Sagittal) for superior spatial awareness. Use real-time segmentation to easily identify anatomical structures of interest."
   },
   "testimonials": {
     "title": "What Those Who Trust Orion One Have to Say",

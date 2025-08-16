@@ -323,7 +323,6 @@ h2 {
     display: flex;
     gap: 40px;
     align-items: flex-start; /* Alinha as colunas no topo, permitindo alturas diferentes */
-    min-height: 450px; /* Altura mínima para evitar colapso */
     margin-top: 40px;
 }
 
@@ -344,6 +343,7 @@ h2 {
     border-radius: 8px;
     text-align: center;
     border-left: 4px solid transparent;
+    cursor: pointer;
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -357,7 +357,6 @@ h2 {
     font-size: 1.5rem;
     font-weight: bold;
     display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
     transition: all 0.3s ease;
     margin: 0 auto 20px;
     /* Animação para indicar que é clicável */
@@ -494,6 +493,20 @@ h2 {
     .workflow-container:not(.video-is-active) .workflow-steps {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Ajusta o layout do vídeo ativo para mobile/tablet */
+    .workflow-container.video-is-active {
+        flex-direction: column;
+    }
+
+    .workflow-container.video-is-active .workflow-steps,
+    .workflow-container.video-is-active .workflow-video {
+        width: 100%;
+    }
+
+    .workflow-container.video-is-active .workflow-video {
+        margin-top: 30px; /* Espaço entre os passos e o vídeo */
+    }
 }
 
 /* 5. Seção de Depoimentos */
@@ -523,12 +536,6 @@ h2 {
 }
 
 /* 6. Seção de Clientes (Carrossel) */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    /* Anima a faixa para a esquerda em 50% de sua largura total, que corresponde exatamente ao bloco de logos originais. */
-    100% { transform: translateX(-50%); }
-}
-
 .clients-section {
     padding: 30px 0;
     background-color: transparent;
@@ -540,20 +547,31 @@ h2 {
 }
 
 .logos-slider {
-    overflow: hidden;
+    overflow-x: auto; /* Permite a rolagem horizontal */
     position: relative;
     width: 100%;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
     mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    cursor: grab;
+    user-select: none; /* Impede a seleção de texto durante o arrasto */
+}
+
+/* Esconde a barra de rolagem para um visual mais limpo */
+.logos-slider::-webkit-scrollbar { display: none; }
+.logos-slider { -ms-overflow-style: none; scrollbar-width: none; }
+
+.logos-slider.active {
+    cursor: grabbing;
 }
 
 .logos-track {
     display: flex;
     align-items: center; /* Alinha os logos verticalmente */
-    /* (Largura estimada por logo + margens) * número total de logos (9 originais + 9 duplicados) */
-    /* A largura total é o dobro do conteúdo visível para permitir o loop. */
-    width: calc(220px * 18);
-    animation: scroll 40s linear infinite;
+    /* A animação CSS foi removida para dar lugar à interatividade JS.
+       A largura agora é determinada pelo conteúdo flexível. */
+    /* A duplicação dos logos no HTML ainda é útil para criar um
+       espaço de rolagem contínuo e amplo. */
+    width: max-content; /* Garante que a faixa não quebre linha */
 }
 
 .logos-track img {
@@ -563,17 +581,19 @@ h2 {
     margin: 0 35px; /* Espaçamento entre os logos */
     object-fit: contain; /* ESSENCIAL: impede a distorção da imagem */
     opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.logos-track:hover, .logos-slider:hover .logos-track {
-    animation-play-state: paused;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Removemos pointer-events para que o hover funcione nos logos individuais */
 }
 
 .logos-track img:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
+/* Desativa a interação com os logos individuais enquanto o carrossel está sendo arrastado */
+.logos-slider.active .logos-track img {
+    pointer-events: none;
+}
 /* 6.5. Seção Sobre Nós */
 .about-us-section {
     background-color: transparent;

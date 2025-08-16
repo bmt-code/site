@@ -20,7 +20,8 @@
   },
   "buttons": {
     "cta": "Solicitar Demostración Ahora",
-    "submit": "Sí, Quiero Más Seguridad y Precisión"
+    "submit": "Sí, Quiero Más Seguridad y Precisión",
+    "whatsapp": "Contáctenos"
   },
   "clients": {
     "title": "Clínicas y hospitales que han elevado su estándar quirúrgico con BMT"
@@ -40,11 +41,14 @@
     "card6": { "title": "Soporte y Capacitación Dedicada", "p": "Cuente con nuestro equipo de especialistas para una capacitación completa y soporte continuo, garantizando que extraiga el máximo potencial de Orion One." }
   },
   "workflow": {
-    "title": "¿Cómo funciona Orion One?",
-    "step1": { "title": "Importe las Imágenes", "p": "Cargue los estudios de Tomografía (TC) o Resonancia (RM) del paciente en el sistema con pocos clics." },
-    "step2": { "title": "Planifique la Cirugía", "p": "Utilice el modelo 3D para definir trayectorias, marcar objetivos y simular el procedimiento antes de la primera incisión." },
-    "step3": { "title": "Realice el Registro", "p": "Correlacione la anatomía del paciente en la mesa quirúrgica con el modelo 3D, garantizando la precisión del sistema." },
-    "step4": { "title": "Comience a Navegar", "p": "Ejecute la cirugía con la confianza de ver la posición exacta de sus instrumentos en tiempo real." }
+    "step1_title": "1. Importación",
+    "step1_desc": "Importe el examen de forma sencilla: simplemente arrastre el archivo a la pantalla y todas las vistas, incluido el modelo 3D del paciente, se cargarán instantáneamente.",
+    "step2_title": "2. Planificación",
+    "step2_desc": "La plataforma GuideOs ofrece herramientas de planificación exclusivas. Realice mediciones, defina ángulos, dibuje contornos y segmente estructuras con alta precisión para optimizar y agilizar el procedimiento quirúrgico.",
+    "step3_title": "3. Registro",
+    "step3_desc": "El registro para neurocirugía se realiza en dos pasos: primero, la captura de 3 puntos fiduciales tanto en el paciente como en el examen. Luego, un registro de superficie con 10 puntos aleatorios en el área de interés refina la precisión del sistema.",
+    "step4_title": "4. Navegación",
+    "step4_desc": "Navegue en tiempo real con 6 vistas simultáneas (3D, Paralela, Ortogonal, Axial, Coronal y Sagital) para una localización espacial superior. Utilice la segmentación en tiempo real para identificar fácilmente las estructuras anatómicas de interés."
   },
   "testimonials": {
     "title": "La opinión de quienes ya confían en Orion One",

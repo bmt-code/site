@@ -1,74 +1,56 @@
-{
-    "page": {
-        "title": "Orion One | Neuronavegação Veterinária de Alta Precisão em São Carlos"
-    },
-    "meta": {
-        "description": "Eleve a segurança da sua clínica com o Orion One, o navegador cirúrgico para neuro e ortopedia veterinária. Tecnologia de ponta, desenvolvida em São Carlos. Peça sua demonstração!",
-        "keywords": "neuronavegação veterinária, navegador cirúrgico veterinário, cirurgia ortopédica veterinária de precisão, Orion One BMT, tecnologia cirúrgica veterinária"
-    },
-    "nav": {
-        "about": "Sobre",
-        "features": "Recursos",
-        "howToUse": "Como Usar",
-        "testimonials": "Depoimentos",
-        "aboutUs": "Sobre Nós",
-        "contact": "Contato"
-    },
-    "hero": {
-        "title": "Orion One: Revolucione a Cirurgia com Neuronavegação Veterinária de Precisão",
-        "subtitle": "Menos incerteza, mais segurança. A tecnologia que faltava para os procedimentos de neuro e ortopedia na sua clínica."
-    },
-    "buttons": {
-        "cta": "Solicitar Demonstração Agora",
-        "submit": "Sim, Quero Mais Segurança e Precisão"
-    },
-    "clients": {
-        "title": "Clínicas e hospitais que elevaram seu padrão cirúrgico com a BMT"
-    },
-    "aboutOrion": {
-        "title": "O que é o Orion One?",
-        "p1": "O Orion One é um sistema de neuronavegação cirúrgica de última geração, projetado especificamente para a medicina veterinária. Ele funciona como um \"GPS para o cirurgião\", permitindo visualizar a posição exata dos instrumentos em tempo real sobre imagens de tomografia (TC) ou ressonância magnética (RM) do paciente.",
-        "p2": "Essa tecnologia transforma procedimentos complexos em cirurgias mais seguras, rápidas e minimamente invasivas, elevando drasticamente o padrão de cuidado e os resultados para neurocirurgias e ortopedia de precisão."
-    },
-    "features": {
-        "title": "Recursos que fazem a diferença",
-        "card1": { "title": "Fusão de Imagens", "p": "Combine imagens de diferentes modalidades (TC, RM) em um único exame, proporcionando uma visão mais completa e precisa da anatomia do paciente." },
-        "card2": { "title": "Rastreamento em Tempo Real", "p": "Acompanhe a posição exata dos seus instrumentos cirúrgicos no modelo 3D e em vistas bidimensionais, garantindo abordagens precisas e seguras." },
-        "card3": { "title": "Planejamento Avançado", "p": "Planeje abordagens cirúrgicas complexas com precisão milimétrica, utilizando segmentações inteligentes que otimizam o resultado cirúrgico." },
-        "card4": { "title": "Interface Intuitiva e Compatível", "p": "Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos e ressonâncias do mercado, facilitando a integração na sua rotina." },
-        "card5": { "title": "Instrumentos Personalizáveis", "p": "Cadastre e calibre facilmente seus próprios instrumentos cirúrgicos, oferecendo total flexibilidade para se adaptar às suas técnicas e preferências." },
-        "card6": { "title": "Suporte e Treinamento Dedicado", "p": "Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One." }
-    },
-    "workflow": {
-        "title": "Como funciona o Orion One?",
-        "step1": { "title": "Importe a Imagem", "p": "Carregue os exames de Tomografia (TC) ou Ressonância (RM) do paciente no sistema com poucos cliques." },
-        "step2": { "title": "Planeje a Cirurgia", "p": "Utilize o modelo 3D para definir trajetórias, marcar alvos e simular o procedimento antes da primeira incisão." },
-        "step3": { "title": "Faça o Registro", "p": "Correlacione a anatomia do paciente na mesa cirúrgica com o modelo 3D, garantindo a precisão do sistema." },
-        "step4": { "title": "Comece a Navegar", "p": "Execute a cirurgia com a confiança de ver a posição exata dos seus instrumentos em tempo real." }
-    },
-    "testimonials": {
-        "title": "A opinião de quem já confia no Orion One",
-        "card1": { "p": "\"Além de procedimentos mais eficazes, seguros e precisos, ele permite que a gente faça coisas que antes eram impensáveis. Além disso, muitos dos nossos pacientes agora tem uma recuperação muito melhor e muito mais rápida.\"", "author": "- Dr. Ricardo Shimizu, Hospital Veterinário VEROS, SP." },
-        "card2": { "p": "\"O Orion facilitou que conseguíssemos ter ressecções cirúrgicas mais proveitosas, bem como direcionadas, assim evitando lesões graves aos pacientes.\"", "author": "- Dra. Ayanne Fireman, Maceió, AL." },
-        "card3": { "p": "\"O Orion One nos deu a confiança para realizar procedimentos que antes considerávamos de alto risco. A precisão é impressionante e o suporte da BMT é excepcional.\"", "author": "- Dr. Nome Sobrenome, Clínica Exemplo, Cidade" }
-    },
-    "aboutUs": {
-        "title": "Nossa Origem: Inovação e Excelência",
-        "intro": "A BMT nasceu da união de mentes brilhantes da USP de São Carlos, em colaboração com o Laboratório de Inovação Aerotech da Aeronautica da EESC e o Hospital das Clínicas de Ribeirão Preto. Estamos orgulhosamente sediados no Parque Tecnológico de São Carlos e carregamos o selo DNA USP, um sinônimo de pesquisa e tecnologia de ponta a serviço da saúde."
-    },
-    "contact": {
-        "title": "Pronto para transformar sua prática cirúrgica? Fale conosco.",
-        "intro": "Preencha o formulário abaixo e um de nossos especialistas entrará em contato para agendar uma demonstração exclusiva do sistema de neuronavegação veterinária Orion One."
-    },
-    "form": {
-        "name": "Nome",
-        "clinic": "Clínica/Hospital",
-        "email": "E-mail",
-        "phone": "Telefone/WhatsApp"
-    },
-    "footer": {
-        "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79",
-        "developedIn": "Desenvolvido em São Carlos - SP, o polo da inovação.",
-        "rights": "Todos os direitos reservados."
-    }
-}
+  },
+  "aboutOrion": {
+    "title": "O que é o Orion One?",
+    "p1": "O Orion One é um sistema de neuronavegação cirúrgica de última geração, projetado especificamente para a medicina veterinária. Ele funciona como um \"GPS para o cirurgião\", permitindo visualizar a posição exata dos instrumentos em tempo real sobre imagens de tomografia (TC) ou ressonância magnética (RM) do paciente.",
+    "p2": "Essa tecnologia transforma procedimentos complexos em cirurgias mais seguras, rápidas e minimamente invasivas, elevando drasticamente o padrão de cuidado e os resultados para neurocirurgias e ortopedia de precisão."
+  },
+  "features": {
+    "title": "Recursos que fazem a diferença",
+    "card1": { "title": "Fusão de Imagens", "p": "Combine imagens de diferentes modalidades (TC, RM) em um único exame, proporcionando uma visão mais completa e precisa da anatomia do paciente." },
+    "card2": { "title": "Rastreamento em Tempo Real", "p": "Acompanhe a posição exata dos seus instrumentos cirúrgicos no modelo 3D e em vistas bidimensionais, garantindo abordagens precisas e seguras." },
+    "card3": { "title": "Planejamento Avançado", "p": "Planeje abordagens cirúrgicas complexas com precisão milimétrica, utilizando segmentações inteligentes que otimizam o resultado cirúrgico." },
+    "card4": { "title": "Interface Intuitiva e Compatível", "p": "Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos e ressonâncias do mercado, facilitando a integração na sua rotina." },
+    "card5": { "title": "Instrumentos Personalizáveis", "p": "Cadastre e calibre facilmente seus próprios instrumentos cirúrgicos, oferecendo total flexibilidade para se adaptar às suas técnicas e preferências." },
+    "card6": { "title": "Suporte e Treinamento Dedicado", "p": "Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One." }
+  },
+  "workflow": {
+    "step1_title": "1. Importação",
+    "step1_desc": "Importe o exame de forma simples: arraste o arquivo para a tela e todas as vistas, incluindo o modelo 3D do paciente, serão carregadas instantaneamente.",
+    "step2_title": "2. Planejamento",
+    "step2_desc": "A plataforma GuideOs oferece ferramentas de planejamento exclusivas. Realize medições, defina ângulos, desenhe contornos e segmente estruturas com alta precisão para otimizar e agilizar o procedimento cirúrgico.",
+    "step3_title": "3. Registro",
+    "step3_desc": "O registro para neurocirurgia é feito em duas etapas: primeiro, a captura de 3 pontos fiduciais no paciente e no exame. Em seguida, um registro de superfície com 10 pontos aleatórios na área de interesse refina a precisão do sistema.",
+    "step4_title": "4. Navegação",
+    "step4_desc": "Navegue em tempo real com 6 vistas simultâneas (3D, Paralela, Ortogonal, Axial, Coronal e Sagital) para uma localização espacial superior. Utilize a segmentação em tempo real para identificar facilmente as estruturas anatômicas de interesse."
+  },
+  "testimonials": {
+    "title": "A opinião de quem já confia no Orion One",
+    "card1": { "p": "\"Além de procedimentos mais eficazes, seguros e precisos, ele permite que a gente faça coisas que antes eram impensáveis. Além disso, muitos dos nossos pacientes agora tem uma recuperação muito melhor e muito mais rápida.\"", "author": "- Dr. Ricardo Shimizu, Hospital Veterinário VEROS, SP." },
+    "card2": { "p": "\"O Orion facilitou que conseguíssemos ter ressecções cirúrgicas mais proveitosas, bem como direcionadas, assim evitando lesões graves aos pacientes.\"", "author": "- Dra. Ayanne Fireman, Maceió, AL." },
+    "card3": { "p": "\"O Orion One nos deu a confiança para realizar procedimentos que antes considerávamos de alto risco. A precisão é impressionante e o suporte da BMT é excepcional.\"", "author": "- Dr. Nome Sobrenome, Clínica Exemplo, Cidade" }
+  },
+  "aboutUs": {
+    "title": "Nossa Origem: Inovação e Excelência",
+    "intro": "A BMT nasceu da união de mentes brilhantes da USP de São Carlos, em colaboração com o Laboratório de Inovação Aerotech da Aeronautica da EESC e o Hospital das Clínicas de Ribeirão Preto. Estamos orgulhosamente sediados no Parque Tecnológico de São Carlos e carregamos o selo DNA USP, um sinônimo de pesquisa e tecnologia de ponta a serviço da saúde."
+  },
+  "contact": {
+    "title": "Pronto para transformar sua prática cirúrgica? Fale conosco.",
+    "intro": "Preencha o formulário abaixo e um de nossos especialistas entrará em contato para agendar uma demonstração exclusiva do sistema de neuronavegação veterinária Orion One."
+  },
+  "buttons": {
+    "cta": "Solicitar Demonstração Agora",
+    "submit": "Sim, Quero Mais Segurança e Precisão",
+    "whatsapp": "Fale Conosco"
+  },
+  "form": {
+    "name": "Nome",
+    "clinic": "Clínica/Hospital",
+    "email": "E-mail",
+    "phone": "Telefone/WhatsApp"
+  },
+  "footer": {
+    "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79",
+    "developedIn": "Desenvolvido em São Carlos - SP, o polo da inovação.",
+    "rights": "Todos os direitos reservados."
+  }
+} 

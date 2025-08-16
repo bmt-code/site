@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Workflow Video and Steps Interaction
     const workflowContainer = document.querySelector('.workflow-container');
-    const workflowSteps = document.querySelectorAll('#como-usar .step-number');
+    const workflowSteps = document.querySelectorAll('#como-usar .workflow-step');
     const workflowVideoPlayer = document.getElementById('workflowVideoPlayer');
 
     if (workflowContainer && workflowSteps.length > 0 && workflowVideoPlayer) {
@@ -89,17 +89,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        workflowSteps.forEach(button => {
-            button.addEventListener('click', () => {
-                const parentStep = button.parentNode;
-                const isAlreadyActive = parentStep.classList.contains('active');
+        workflowSteps.forEach(step => {
+            step.addEventListener('click', () => {
+                const isAlreadyActive = step.classList.contains('active');
 
                 if (isAlreadyActive) {
                     // Se o passo clicado já está ativo, redefine para a grade
                     resetToGridView();
                 } else {
                     // Caso contrário, mostra o vídeo selecionado
-                    const videoSrc = button.getAttribute('data-video-src');
+                    // Busca o botão dentro do passo para pegar o atributo do vídeo
+                    const numberButton = step.querySelector('.step-number');
+                    if (!numberButton) return; // Segurança: não faz nada se não encontrar o botão
+
+                    const videoSrc = numberButton.getAttribute('data-video-src');
                     if (videoSrc) {
                         workflowVideoPlayer.src = videoSrc;
                         // Garante que o vídeo só toque quando estiver pronto, evitando erros
@@ -116,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (currentActiveStep) {
                             currentActiveStep.classList.remove('active');
                         }
-                        parentStep.classList.add('active');
-                        currentActiveStep = parentStep; // Atualiza a referência do passo ativo
+                        step.classList.add('active');
+                        currentActiveStep = step; // Atualiza a referência do passo ativo
                     }
                 }
             });
@@ -136,5 +139,95 @@ document.addEventListener('DOMContentLoaded', () => {
         workflowObserver.observe(workflowContainer);
     } else {
         console.warn('Workflow section elements not found. Interaction will be disabled.');
+    }
+
+    // 5. Client Logos Draggable Carousel
+    const slider = document.querySelector('.logos-slider');
+    const track = document.querySelector('.logos-track');
+
+    // Garante que os elementos do carrossel existam antes de adicionar os eventos.
+    if (slider && track) {
+        // Para um loop infinito e suave, o conteúdo dentro de .logos-track
+        // deve ser duplicado no seu arquivo HTML.
+        // Ex: Se você tem 5 logos, coloque os mesmos 5 logos novamente, totalizando 10.
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isPaused = false;
+        let animationFrameId;
+
+        // Previne o comportamento padrão de arrastar imagens, que pode interferir.
+        track.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+
+        // 1. Giro Automático
+        const autoScroll = () => {
+            // A rolagem só acontece se não estiver pausada (pelo hover)
+            if (!isPaused) {
+                slider.scrollLeft += 1; // Ajuste este valor para mudar a velocidade
+                // Quando o carrossel rolar metade do seu conteúdo, reseta para o início,
+                // criando a ilusão de um loop infinito.
+                if (slider.scrollLeft >= track.scrollWidth / 2) {
+                    slider.scrollLeft = 0;
+                }
+            }
+            // Continua o loop de animação para uma rolagem suave.
+            animationFrameId = requestAnimationFrame(autoScroll);
+        };
+
+        // 3. Arrastar Manual (Desktop e Mobile)
+        const startDragging = (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            // Unifica eventos de mouse e toque para obter a posição inicial.
+            startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            // Pausa o giro automático ao iniciar o arrasto.
+            cancelAnimationFrame(animationFrameId);
+
+            // Adiciona os listeners no documento para que o arrasto continue
+            // mesmo que o cursor saia da área do carrossel.
+            document.addEventListener('mousemove', whileDragging);
+            document.addEventListener('mouseup', stopDragging);
+            document.addEventListener('touchmove', whileDragging);
+            document.addEventListener('touchend', stopDragging);
+        };
+
+        // 4. Retomar Giro (após o arrasto)
+        const stopDragging = () => {
+            if (!isDown) return;
+            isDown = false;
+            slider.classList.remove('active');
+
+            // Remove os listeners do documento para não afetar outras interações.
+            document.removeEventListener('mousemove', whileDragging);
+            document.removeEventListener('mouseup', stopDragging);
+            document.removeEventListener('touchmove', whileDragging);
+            document.removeEventListener('touchend', stopDragging);
+
+            // Reinicia o loop de animação quando o arrasto termina.
+            requestAnimationFrame(autoScroll);
+        };
+
+        const whileDragging = (e) => {
+            if (!isDown) return;
+            e.preventDefault(); // Previne seleção de texto e rolagem da página no mobile.
+            const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Multiplicador para sentir o arrasto mais rápido.
+            slider.scrollLeft = scrollLeft - walk;
+        };
+
+        // 2. Pausar no Hover
+        slider.addEventListener('mouseenter', () => { isPaused = true; });
+        slider.addEventListener('mouseleave', () => { isPaused = false; });
+
+        // 5. Responsividade: Adiciona listeners para mouse e toque.
+        slider.addEventListener('mousedown', startDragging);
+        slider.addEventListener('touchstart', startDragging);
+
+        // Inicia o carrossel.
+        autoScroll();
     }
 });
