@@ -514,6 +514,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+    align-items: start; /* Impede que os cards estiquem para preencher a altura da linha */
 }
 
 .testimonial-card {
@@ -523,6 +524,51 @@ h2 {
     border: 1px solid rgba(82, 95, 127, 0.3);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-left: 5px solid var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+    height: 270px; /* Altura fixa para garantir que todos os cards tenham o mesmo tamanho inicial */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease; /* Transição suave para todas as propriedades animáveis */
+    cursor: pointer;
+}
+
+.testimonial-content {
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.testimonial-card.is-showing-video {
+    padding: 0; /* Remove o padding para o vídeo ocupar todo o espaço */
+    height: auto; /* Permite que o aspect-ratio controle a altura */
+    aspect-ratio: 9 / 16; /* Define a proporção do card para o vídeo */
+    background-color: #000; /* Garante o fundo preto imediatamente */
+}
+
+.testimonial-card.is-showing-video .testimonial-content {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimonial-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0.1s;
+    background-color: #000;
+}
+
+.testimonial-card.is-showing-video .testimonial-video-container {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .testimonial-card p {
@@ -533,6 +579,12 @@ h2 {
 .testimonial-card footer {
     font-weight: bold;
     color: var(--primary-blue);
+}
+
+.testimonial-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 6. Seção de Clientes (Carrossel) */

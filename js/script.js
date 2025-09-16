@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const videoSrc = numberButton.getAttribute('data-video-src');
                     if (videoSrc) {
                         workflowVideoPlayer.src = videoSrc;
+                        workflowVideoPlayer.currentTime = 0; // Reinicia o vídeo para o início
                         // Garante que o vídeo só toque quando estiver pronto, evitando erros
                         const playPromise = workflowVideoPlayer.play();
                         if (playPromise !== undefined) {
@@ -156,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollLeft;
         let isPaused = false;
         let animationFrameId;
+        const scrollSpeed = 0.5; // Ajuste este valor para mudar a velocidade (ex: 0.5, 1, 2)
 
         // Previne o comportamento padrão de arrastar imagens, que pode interferir.
         track.addEventListener('dragstart', (e) => {
@@ -166,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const autoScroll = () => {
             // A rolagem só acontece se não estiver pausada (pelo hover)
             if (!isPaused) {
-                slider.scrollLeft += 1; // Ajuste este valor para mudar a velocidade
+                slider.scrollLeft += scrollSpeed;
                 // Quando o carrossel rolar metade do seu conteúdo, reseta para o início,
                 // criando a ilusão de um loop infinito.
                 if (slider.scrollLeft >= track.scrollWidth / 2) {
@@ -230,4 +232,67 @@ document.addEventListener('DOMContentLoaded', () => {
         // Inicia o carrossel.
         autoScroll();
     }
+
+    // 6. Testimonial Videos Interaction
+    const handleTestimonialVideos = () => {
+        const testimonialCards = document.querySelectorAll('#depoimentos .testimonial-card');
+        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+        const showVideo = (card) => {
+            const video = card.querySelector('video');
+            const videoSrc = card.getAttribute('data-video-src');
+            if (!video || !videoSrc) return;
+
+            // Carrega a fonte do vídeo se ainda não estiver carregada
+            if (!video.src || !video.src.endsWith(videoSrc)) {
+                video.src = videoSrc;
+            }
+
+            card.classList.add('is-showing-video');
+            video.play().catch(error => console.warn("Video autoplay foi impedido:", error));
+        };
+
+        const hideVideo = (card) => {
+            const video = card.querySelector('video');
+            if (!video) return;
+
+            card.classList.remove('is-showing-video');
+            video.pause();
+        };
+
+        testimonialCards.forEach(card => {
+            if (isTouchDevice) {
+                // On touch devices, a click on the card should toggle the video.
+                card.addEventListener('click', (e) => {
+                    const isShowing = card.classList.contains('is-showing-video');
+                    const clickedOnVideo = e.target.tagName === 'VIDEO';
+
+                    if (isShowing) {
+                        // If the video is showing, any click on the card should close it.
+                        // If the click was on the video, we prevent its default play/pause action.
+                        if (clickedOnVideo) {
+                            e.preventDefault();
+                        }
+                        hideVideo(card);
+                    } else {
+                        // If the video is not showing, a click opens it.
+                        // First, close any other open videos to ensure only one plays at a time.
+                        testimonialCards.forEach(otherCard => {
+                            if (otherCard !== card) {
+                                hideVideo(otherCard);
+                            }
+                        });
+                        showVideo(card);
+                    }
+                });
+            } else {
+                // No desktop, usa hover e focus para acessibilidade
+                card.addEventListener('mouseenter', () => showVideo(card));
+                card.addEventListener('mouseleave', () => hideVideo(card));
+                card.addEventListener('focus', () => showVideo(card));
+                card.addEventListener('blur', () => hideVideo(card));
+            }
+        });
+    };
+    handleTestimonialVideos();
 });
