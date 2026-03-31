@@ -21,9 +21,38 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#080d14">
 
+    <!-- Preconnect recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.bmt-brazil.com/">
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/">
+    <link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/?lang=en">
+    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/?lang=es-LA">
+    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BMT - Brazilian Medical Technologies">
+    <meta property="og:url" content="https://www.bmt-brazil.com/">
+    <meta property="og:title" content="BMT | Tecnologia Cirúrgica Veterinária de Precisão">
+    <meta property="og:description" content="Orion One: o neuronavegador cirúrgico que guia cada instrumento com precisão milimétrica. Desenvolvido a partir de pesquisa em neurocirurgia para elevar a segurança de cada procedimento.">
+    <meta property="og:image" content="https://www.bmt-brazil.com/img/og-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Orion One — Neuronavegador Cirúrgico Veterinário da BMT">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BMT | Tecnologia Cirúrgica Veterinária de Precisão">
+    <meta name="twitter:description" content="Orion One: neuronavegador cirúrgico veterinário de precisão milimétrica. Desenvolvido pela BMT em São Carlos.">
+    <meta name="twitter:image" content="https://www.bmt-brazil.com/img/og-home.jpg">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
@@ -32,12 +61,18 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "Organization",
+      "@id": "https://www.bmt-brazil.com/#organization",
       "name": "BMT - Brazilian Medical Technologies",
-      "image": "https://www.bmt-brazil.com/img/logo-bmt.png",
-      "@id": "https://www.bmt-brazil.com/",
       "url": "https://www.bmt-brazil.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.bmt-brazil.com/img/logo-bmt.png"
+      },
+      "image": "https://www.bmt-brazil.com/img/og-home.jpg",
+      "description": "Desenvolvimento de tecnologia cirúrgica de precisão para veterinária, com o sistema de neuronavegação Orion One.",
       "telephone": "+55-16-99994-1212",
+      "email": "contato@bmt-brazil.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Alfredo Lopes, 1717",
@@ -46,7 +81,22 @@
         "postalCode": "13560-460",
         "addressCountry": "BR"
       },
-      "description": "Desenvolvimento de tecnologia de ponta para neuronavegação veterinária com o sistema Orion One."
+      "sameAs": [
+        "https://www.linkedin.com/company/bmt-brazil",
+        "https://www.instagram.com/bmt.brazil"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.bmt-brazil.com/#website",
+      "url": "https://www.bmt-brazil.com",
+      "name": "BMT - Brazilian Medical Technologies",
+      "publisher": {
+        "@id": "https://www.bmt-brazil.com/#organization"
+      }
     }
     </script>
 </head>

@@ -179,6 +179,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Expand (fullscreen) button on each chapter video
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    document.querySelectorAll('.workflow-chapter .chapter-media').forEach(media => {
+        const btn = document.createElement('button');
+        btn.className = 'chapter-media-expand';
+        btn.setAttribute('aria-label', 'Expandir vídeo');
+
+        const svg = document.createElementNS(SVG_NS, 'svg');
+        svg.setAttribute('width', '14');
+        svg.setAttribute('height', '14');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '2.5');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+        const path = document.createElementNS(SVG_NS, 'path');
+        path.setAttribute('d', 'M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3');
+        svg.appendChild(path);
+        btn.appendChild(svg);
+
+        btn.addEventListener('click', () => {
+            const video = media.querySelector('video');
+            if (!video) return;
+            const target = video.requestFullscreen ? video : media;
+            const fsMethod = target.requestFullscreen
+                || target.webkitRequestFullscreen
+                || target.mozRequestFullScreen
+                || target.msRequestFullscreen;
+            if (fsMethod) fsMethod.call(target);
+        });
+        media.appendChild(btn);
+    });
+
     if ('IntersectionObserver' in window) chapterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const chapter = entry.target;
@@ -195,7 +229,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (entry.isIntersecting) {
                 const src = video.getAttribute('data-src');
-                if (src && !video.src) video.src = src;
+                if (src && !video.src) {
+                    const chapterMedia = video.closest('.chapter-media');
+                    chapterMedia.classList.add('is-loading');
+                    video.src = src;
+                    video.addEventListener('canplay', () => {
+                        chapterMedia.classList.remove('is-loading');
+                    }, { once: true });
+                }
                 video.play().catch(() => {});
             } else {
                 video.pause();

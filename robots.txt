@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /demo-orion
+Disallow: /demo-orion.html
+Disallow: /demo-zenith
+Disallow: /demo-zenith.html
+Disallow: /obrigado
+Disallow: /obrigado.html
+
+Sitemap: https://www.bmt-brazil.com/sitemap.xml

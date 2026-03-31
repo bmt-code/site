@@ -6,7 +6,8 @@
 
     <!-- SEO Meta Tags -->
     <title data-i18n-key="orionPage.title">Orion One | Neuronavegação Veterinária de Precisão</title>
-    <meta name="description" data-i18n-key="[content]meta.description" content="Orion One: sistema de neuronavegação cirúrgica veterinária. O GPS do cirurgião para neurocirurgia e ortopedia de precisão. Desenvolvido pela BMT em São Carlos.">
+    <meta name="description" data-i18n-key="[content]meta.orionDescription" content="Orion One: sistema de neuronavegação cirúrgica veterinária. O GPS do cirurgião para neurocirurgia e ortopedia de precisão. Módulos Brain, Spine e Hip — desenvolvido pela BMT em São Carlos.">
+    <meta name="keywords" content="Orion One, neuronavegação veterinária, neuronavegador veterinário, cirurgia de coluna veterinária, neurocirurgia veterinária, GPS cirúrgico, BMT neuronavegação">
     <meta name="author" content="BMT - Brazilian Medical Technologies">
 
     <!-- Favicon -->
@@ -17,11 +18,93 @@
     <meta name="apple-mobile-web-app-title" content="BMT" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0088f1">
-    <link rel="canonical" href="https://www.bmt-brazil.com/orion.html">
 
+    <!-- Preconnect recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bmt-brazil.com/orion">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/orion">
+    <link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/orion?lang=en">
+    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/orion?lang=es-LA">
+    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/orion">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:site_name" content="BMT - Brazilian Medical Technologies">
+    <meta property="og:url" content="https://www.bmt-brazil.com/orion">
+    <meta property="og:title" content="Orion One | Neuronavegação Veterinária de Precisão">
+    <meta property="og:description" content="O GPS do cirurgião veterinário. Orion One guia cada instrumento com precisão milimétrica em neurocirurgia e ortopedia. Módulos Brain, Spine e Hip.">
+    <meta property="og:image" content="https://www.bmt-brazil.com/img/og-orion.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Orion One — Sistema de Neuronavegação Veterinária">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orion One | Neuronavegação Veterinária de Precisão">
+    <meta name="twitter:description" content="O GPS do cirurgião veterinário. Precisão milimétrica para neurocirurgia e ortopedia. Desenvolvido pela BMT.">
+    <meta name="twitter:image" content="https://www.bmt-brazil.com/img/og-orion.jpg">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalDevice",
+      "@id": "https://www.bmt-brazil.com/orion#product",
+      "name": "Orion One",
+      "description": "Sistema de neuronavegação cirúrgica veterinária com módulos Brain, Spine e Hip. Precisão milimétrica em tempo real para neurocirurgia e ortopedia veterinária.",
+      "image": "https://www.bmt-brazil.com/img/orion-one-produto.png",
+      "url": "https://www.bmt-brazil.com/orion",
+      "brand": {
+        "@type": "Brand",
+        "name": "BMT"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "@id": "https://www.bmt-brazil.com/#organization",
+        "name": "BMT - Brazilian Medical Technologies",
+        "url": "https://www.bmt-brazil.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "BRL",
+        "seller": {
+          "@id": "https://www.bmt-brazil.com/#organization"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.bmt-brazil.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Orion One",
+          "item": "https://www.bmt-brazil.com/orion"
+        }
+      ]
+    }
+    </script>
 </head>
 <body data-page="orion">
 

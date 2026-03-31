@@ -1132,11 +1132,86 @@ main.hip-active .hide-for-hip {
     aspect-ratio: 16 / 9;
 }
 
+/* Loading skeleton */
+@keyframes chapter-shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+@keyframes chapter-spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.chapter-media.is-loading::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.05) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    animation: chapter-shimmer 1.8s ease-in-out infinite;
+}
+
+.chapter-media.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.08);
+    border-top-color: rgba(0, 136, 241, 0.7);
+    animation: chapter-spin 0.9s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
 .chapter-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.4s ease;
+}
+
+.chapter-media.is-loading video {
+    opacity: 0;
+}
+
+/* Expand button */
+.chapter-media-expand {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 4;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s, transform 0.15s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0;
+}
+
+.chapter-media:hover .chapter-media-expand {
+    opacity: 1;
+}
+
+.chapter-media-expand:hover {
+    background: rgba(0, 136, 241, 0.45);
+    transform: scale(1.08);
 }
 
 @media (max-width: 768px) {

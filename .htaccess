@@ -1,3 +1,15 @@
 RewriteEngine On
+
+# Non-www → www
 RewriteCond %{HTTP_HOST} ^bmt-brazil\.com [NC]
 RewriteRule ^(.*)$ https://www.bmt-brazil.com/$1 [L,R=301,NC]
+
+# Redirect .html URLs to clean URLs (removes extension canonically)
+RewriteCond %{THE_REQUEST} \s/([^?]*?)\.html(\?[^\s]*)?\s [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Serve clean URLs without .html extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L,QSA]
