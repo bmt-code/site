@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title data-i18n-key="orionPage.title">Orion One | Neuronavegação Veterinária de Precisão</title>
+    <meta name="description" data-i18n-key="[content]meta.description" content="Orion One: sistema de neuronavegação cirúrgica veterinária. O GPS do cirurgião para neurocirurgia e ortopedia de precisão. Desenvolvido pela BMT em São Carlos.">
+    <meta name="author" content="BMT - Brazilian Medical Technologies">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
+    <link rel="shortcut icon" href="img/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="BMT" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0088f1">
+    <link rel="canonical" href="https://www.bmt-brazil.com/orion.html">
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="orion">
+
+    <!-- Cabeçalho de Navegação Fixo -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo-placeholder.png" alt="BMT Logo" class="logo">
+            </a>
+            <div class="header-controls">
+                <nav class="main-nav">
+                    <ul>
+                        <li class="nav-dropdown">
+                            <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+                                <span data-i18n-key="nav.products">Produtos</span>
+                                <svg class="nav-dropdown__chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+                            </button>
+                            <div class="nav-dropdown__menu">
+                                <a href="orion.html" class="nav-dropdown__item">
+                                    <span class="nav-dropdown__label" data-i18n-key="nav.orionOne">Orion One</span>
+                                    <span class="nav-dropdown__sub" data-i18n-key="nav.orionOneSub">Neuronavegação Veterinária</span>
+                                </a>
+                                <!-- <a href="zenith.html" class="nav-dropdown__item nav-dropdown__item--zenith">
+                                    <span class="nav-dropdown__label" data-i18n-key="nav.zenith">Zenith</span>
+                                    <span class="nav-dropdown__sub" data-i18n-key="nav.zenithSub">Microscópio 3D Imersivo</span>
+                                </a> -->
+                            </div>
+                        </li>
+                        <li><a href="#funcionalidades" data-i18n-key="nav.features">Recursos</a></li>
+                        <li><a href="#como-usar" data-i18n-key="nav.howToUse">Como Usar</a></li>
+                        <li><a href="#depoimentos" data-i18n-key="nav.testimonials">Depoimentos</a></li>
+                        <li><a href="index.html#contato" data-i18n-key="nav.contact">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="lang-switcher">
+                    <button data-lang="pt-BR" data-text="BR" data-flag="img/flags/br.svg" aria-label="Mudar para Português do Brasil">BR</button>
+                    <button data-lang="en" data-text="US" data-flag="img/flags/us.svg" aria-label="Switch to English">US</button>
+                    <button data-lang="es-LA" data-text="ES" data-flag="img/flags/es.svg" aria-label="Cambiar a Español">ES</button>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Orion One Product Hero -->
+    <section id="hero" class="hero-section">
+        <div class="video-background">
+            <video playsinline autoplay muted loop poster="img/video-poster.jpg">
+                <source src="videos/video.mp4" type="video/mp4">
+                Seu navegador não suporta o vídeo.
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="eyebrow" data-i18n-key="orionPage.heroEyebrow">Neuronavegação Veterinária</span>
+            <h1 data-i18n-key="nav.orionOne">Orion One</h1>
+            <h2 data-i18n-key="orionPage.heroSubtitle">O GPS do cirurgião veterinário. Precisão milimétrica para neurocirurgia e ortopedia de precisão.</h2>
+            <a href="index.html#contato" class="cta-button"><span data-i18n-key="orionPage.heroCta">Solicitar Demonstração</span><span class="cta-arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Sobre o Orion One -->
+        <section id="sobre-orion" class="about-orion-section">
+            <div class="container">
+                <div class="about-orion-content">
+                    <div class="about-orion-image gsap-reveal">
+                        <img src="img/orion-one-produto.png" alt="Neuronavegador Veterinário Orion One em uma mesa cirúrgica" loading="lazy">
+                    </div>
+                    <div class="about-orion-text">
+                        <h2 class="gsap-reveal" data-i18n-key="aboutOrion.title">O que é o Orion One?</h2>
+                        <p class="gsap-reveal about-orion-origin" data-i18n-key="aboutOrion.origin">Desenvolvido a partir do Projeto Yara — sistema de assistência robótica à neurocirurgia em fase regulatória — o Orion One aplica mais de 6 anos de pesquisa cirúrgica à medicina veterinária de precisão.</p>
+                        <p class="gsap-reveal" data-i18n-key="aboutOrion.p1">
+                            O Orion One é um sistema de neuronavegação cirúrgica de última geração, projetado especificamente para a medicina veterinária. Ele funciona como um "GPS para o cirurgião", permitindo visualizar a posição exata dos instrumentos em tempo real sobre imagens de tomografia (TC) ou ressonância magnética (RM) do paciente.
+                        </p>
+                        <p class="gsap-reveal" data-i18n-key="aboutOrion.p2">
+                            Essa tecnologia transforma procedimentos complexos em cirurgias mais seguras, rápidas e minimamente invasivas, elevando drasticamente o padrão de cuidado e os resultados para neurocirurgias e ortopedia de precisão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulos Brain & Spine -->
+        <section id="modulos" class="modules-section">
+            <div class="container">
+                <span class="eyebrow" data-i18n-key="modules.eyebrow">Uma plataforma, dois universos</span>
+                <h2 data-i18n-key="modules.title">Escolha o módulo para sua especialidade</h2>
+
+                <div class="module-tabs">
+                    <button class="module-tab active" data-module="brain">
+                        <span class="module-tab__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="10" y1="24" x2="14" y2="24"/></svg>
+                        </span>
+                        <span data-i18n-key="modules.brain.tab">Brain</span>
+                    </button>
+                    <button class="module-tab" data-module="spine">
+                        <span class="module-tab__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="9" y="7" width="6" height="4" rx="1"/><rect x="9" y="13" width="6" height="4" rx="1"/><rect x="9" y="19" width="6" height="4" rx="1"/><line x1="12" y1="5" x2="12" y2="7"/><line x1="12" y1="11" x2="12" y2="13"/><line x1="12" y1="17" x2="12" y2="19"/></svg>
+                        </span>
+                        <span data-i18n-key="modules.spine.tab">Spine</span>
+                    </button>
+                    <button class="module-tab" data-module="hip">
+                        <span class="module-tab__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3C6 3 4 5 4 8c0 2 1 4 3 5l1 8h2l1-5h2l1 5h2l1-8c2-1 3-3 3-5 0-3-2-5-4-5-1 0-2 .5-3 1.5C12 3.5 11 3 8 3z"/></svg>
+                        </span>
+                        <span data-i18n-key="modules.hip.tab">Hip</span>
+                        <span class="module-tab__badge" data-i18n-key="modules.hip.badge">Em Breve</span>
+                    </button>
+                </div>
+
+                <div class="module-panels">
+                    <!-- Brain Panel -->
+                    <div class="module-panel active" data-panel="brain">
+                        <div class="module-panel__inner">
+                            <div class="module-panel__visual">
+                                <div class="module-glow module-glow--brain"></div>
+                                <img src="img/orion-brain-produto.png" alt="Orion One — Módulo Brain" loading="lazy">
+                            </div>
+                            <div class="module-panel__content">
+                                <h3 data-i18n-key="modules.brain.title">Orion Brain</h3>
+                                <p class="module-panel__tagline" data-i18n-key="modules.brain.tagline">Navegue cada neurônio com precisão milimétrica.</p>
+                                <ul class="module-features">
+                                    <li data-i18n-key="modules.brain.f1">Neurocirurgia guiada por imagem em tempo real</li>
+                                    <li data-i18n-key="modules.brain.f2">Fusão de TC e RM para planejamento completo</li>
+                                    <li data-i18n-key="modules.brain.f3">Registro fiducial + superfície com alta precisão</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spine Panel -->
+                    <div class="module-panel" data-panel="spine">
+                        <div class="module-panel__inner">
+                            <div class="module-panel__visual">
+                                <div class="module-glow module-glow--spine"></div>
+                                <img src="img/orion-spine-produto.png" alt="Orion One — Módulo Spine" loading="lazy">
+                            </div>
+                            <div class="module-panel__content">
+                                <h3 data-i18n-key="modules.spine.title">Orion Spine</h3>
+                                <p class="module-panel__tagline" data-i18n-key="modules.spine.tagline">Precisão milimétrica, vértebra a vértebra.</p>
+                                <ul class="module-features">
+                                    <li data-i18n-key="modules.spine.f1">Navegação para cirurgias de coluna vertebral</li>
+                                    <li data-i18n-key="modules.spine.f2">Posicionamento guiado de implantes e parafusos</li>
+                                    <li data-i18n-key="modules.spine.f3">Planejamento de trajetórias com angulação precisa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hip Panel -->
+                    <div class="module-panel" data-panel="hip">
+                        <div class="module-panel__inner">
+                            <div class="module-panel__visual">
+                                <div class="module-glow module-glow--hip"></div>
+                                <img src="img/orion-hip-produto.jpg" alt="Orion One — Módulo Hip" loading="lazy">
+                            </div>
+                            <div class="module-panel__content">
+                                <h3 data-i18n-key="modules.hip.title">Orion Hip</h3>
+                                <p class="module-panel__tagline" data-i18n-key="modules.hip.tagline">Cirurgias de quadril guiadas com precisão milimétrica.</p>
+                                <ul class="module-features">
+                                    <li data-i18n-key="modules.hip.f1">Navegação para cirurgias de substituição de quadril</li>
+                                    <li data-i18n-key="modules.hip.f2">Planejamento de implantes com guias personalizados</li>
+                                    <li data-i18n-key="modules.hip.f3">Em desenvolvimento e validação clínica</li>
+                                </ul>
+                                <p class="module-coming-soon-note" data-i18n-key="modules.hip.comingSoon">O módulo Orion Hip está em desenvolvimento. Em breve estará disponível com todas as ferramentas para cirurgias de quadril de alta precisão.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hip Coming Soon Outdoor (shown only when Hip tab is active) -->
+        <section id="hip-coming-soon" class="hip-outdoor-section">
+            <div class="hip-outdoor-glow"></div>
+            <div class="container hip-outdoor-content">
+                <span class="eyebrow hip-outdoor-eyebrow" data-i18n-key="modules.hip.badge">Em Breve</span>
+                <h2 class="hip-outdoor-title" data-i18n-key="modules.hip.title">Orion Hip</h2>
+                <p class="hip-outdoor-headline" data-i18n-key="comingSoon.headline">Estamos trabalhando nisso.</p>
+                <p class="hip-outdoor-sub" data-i18n-key="modules.hip.comingSoon">O módulo Orion Hip está em desenvolvimento. Em breve estará disponível com todas as ferramentas para cirurgias de quadril de alta precisão.</p>
+                <a href="index.html#contato" class="cta-button hip-outdoor-cta"><span data-i18n-key="orionPage.heroCta">Solicitar Demonstração</span><span class="cta-arrow" aria-hidden="true">&rarr;</span></a>
+            </div>
+        </section>
+
+        <!-- Funcionalidades — Alternating Feature Rows -->
+        <section id="funcionalidades" class="features-section hide-for-hip">
+            <div class="container">
+                <h2 data-i18n-key="features.title">Recursos que fazem a diferença</h2>
+            </div>
+
+            <!-- Brain Features -->
+            <div class="features-group active" data-features="brain">
+                <article class="feature-row">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-static-1.png" muted loop playsinline preload="none">
+                                    <source src="videos/feature-animated-1.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.card1.eyebrow">Diagnóstico</span>
+                            <h3 data-i18n-key="features.card1.title">Fusão de Imagens</h3>
+                            <p data-i18n-key="features.card1.p">Combine imagens de diferentes modalidades (TC, RM) em um único exame, proporcionando uma visão mais completa e precisa da anatomia do paciente.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row feature-row--reversed">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-static-2.png" muted loop playsinline preload="none">
+                                    <source src="videos/feature-animated-2.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.card2.eyebrow">Navegação</span>
+                            <h3 data-i18n-key="features.card2.title">Rastreamento em Tempo Real</h3>
+                            <p data-i18n-key="features.card2.p">Acompanhe a posição exata dos seus instrumentos cirúrgicos no modelo 3D e em vistas bidimensionais, garantindo abordagens precisas e seguras.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-static-3.png" muted loop playsinline preload="none">
+                                    <source src="videos/feature-animated-3.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.card3.eyebrow">Planejamento</span>
+                            <h3 data-i18n-key="features.card3.title">Planejamento Avançado</h3>
+                            <p data-i18n-key="features.card3.p">Planeje abordagens cirúrgicas complexas com precisão milimétrica, utilizando segmentações inteligentes que otimizam o resultado cirúrgico.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row feature-row--reversed">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-static-4.png" muted loop playsinline preload="none">
+                                    <source src="videos/feature-animated-4.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.card4.eyebrow">Compatibilidade</span>
+                            <h3 data-i18n-key="features.card4.title">Interface Intuitiva e Compatível</h3>
+                            <p data-i18n-key="features.card4.p">Desenvolvido com foco no cirurgião, o Orion One possui uma interface limpa e é compatível com os principais tomógrafos e ressonâncias do mercado, facilitando a integração na sua rotina.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-static-6.png" muted loop playsinline preload="none">
+                                    <source src="videos/feature-animated-6.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.card6.eyebrow">Suporte</span>
+                            <h3 data-i18n-key="features.card6.title">Suporte e Treinamento Dedicado</h3>
+                            <p data-i18n-key="features.card6.p">Conte com nossa equipe de especialistas para um treinamento completo e suporte contínuo, garantindo que você extraia o máximo potencial do Orion One.</p>
+                        </div>
+                    </div>
+                </article>
+            </div><!-- end features-group[brain] -->
+
+            <!-- Spine Features -->
+            <div class="features-group" data-features="spine">
+                <article class="feature-row">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-spine-1.png" muted loop playsinline preload="none">
+                                    <source src="videos/spine-feature-animated-1.webm" type="video/webm">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.spine.card1.eyebrow">Diagnóstico</span>
+                            <h3 data-i18n-key="features.spine.card1.title">Definição de TC</h3>
+                            <p data-i18n-key="features.spine.card1.p">Importe e processe imagens de tomografia computadorizada com alta resolução, obtendo um modelo 3D detalhado da coluna do paciente para planejar cada etapa da cirurgia.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row feature-row--reversed">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-spine-2.png" muted loop playsinline preload="none">
+                                    <source src="videos/spine-feature-animated-2.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.spine.card2.eyebrow">Navegação</span>
+                            <h3 data-i18n-key="features.spine.card2.title">Rastreamento em Tempo Real</h3>
+                            <p data-i18n-key="features.spine.card2.p">Acompanhe a posição exata dos instrumentos cirúrgicos em relação às vértebras em tempo real, garantindo abordagens precisas e minimamente invasivas.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-spine-3.png" muted loop playsinline preload="none">
+                                    <source src="videos/spine-feature-animated-3.webm" type="video/webm">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.spine.card3.eyebrow">Planejamento</span>
+                            <h3 data-i18n-key="features.spine.card3.title">Planejamento Avançado com Parafusos</h3>
+                            <p data-i18n-key="features.spine.card3.p">Planeje virtualmente a trajetória e o posicionamento de cada parafuso pedicular antes da cirurgia, reduzindo riscos e otimizando os resultados clínicos.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row feature-row--reversed">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-spine-4.jpeg" muted loop playsinline preload="none">
+                                    <source src="videos/spine-feature-animated-4.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.spine.card4.eyebrow">Flexibilidade</span>
+                            <h3 data-i18n-key="features.spine.card4.title">Instrumentos Personalizados</h3>
+                            <p data-i18n-key="features.spine.card4.p">Calibre e utilize seus próprios instrumentos e implantes, adaptando o sistema às suas preferências técnicas e aos protocolos da sua equipe cirúrgica.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-row">
+                    <div class="feature-row__inner container">
+                        <div class="feature-row__media">
+                            <div class="video-container">
+                                <video poster="img/feature-static-6.png" muted loop playsinline preload="none">
+                                    <source src="videos/feature-animated-6.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-row__text">
+                            <span class="eyebrow" data-i18n-key="features.spine.card5.eyebrow">Suporte</span>
+                            <h3 data-i18n-key="features.spine.card5.title">Suporte Dedicado</h3>
+                            <p data-i18n-key="features.spine.card5.p">Nossa equipe de especialistas oferece treinamento completo e suporte contínuo, garantindo que você aproveite todo o potencial do módulo Spine do Orion One.</p>
+                        </div>
+                    </div>
+                </article>
+            </div><!-- end features-group[spine] -->
+        </section>
+
+        <!-- Como Usar — Workflow -->
+        <section id="como-usar" class="workflow-section hide-for-hip">
+
+            <div class="workflow-section-header container">
+                <h2 data-i18n-key="workflow.title">Como funciona o Orion One?</h2>
+            </div>
+
+            <!-- Brain Workflow -->
+            <div class="workflow-steps-group active" data-workflow="brain">
+
+                <div class="workflow-chapter">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">01</span>
+                            <h3 data-i18n-key="workflow.step1.title">Importe a Imagem</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.step1.p">Carregue os exames de Tomografia (TC) ou Ressonância (RM) do paciente no sistema com poucos cliques.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.step1.detailed_p">Importe o exame de forma simples: arraste o arquivo para a tela e todas as vistas, incluindo o modelo 3D do paciente, serão carregadas instantaneamente.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/step1.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-chapter workflow-chapter--reversed">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">02</span>
+                            <h3 data-i18n-key="workflow.step2.title">Planeje a Cirurgia</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.step2.p">Utilize o modelo 3D para definir trajetórias, marcar alvos e simular o procedimento antes da primeira incisão.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.step2.detailed_p">A plataforma GuideOs oferece ferramentas de planejamento exclusivas. Realize medições, defina ângulos, desenhe contornos e segmente estruturas com alta precisão para otimizar e agilizar o procedimento cirúrgico.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/step2.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-chapter">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">03</span>
+                            <h3 data-i18n-key="workflow.step3.title">Faça o Registro</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.step3.p">Correlacione a anatomia do paciente na mesa cirúrgica com o modelo 3D, garantindo a precisão do sistema.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.step3.detailed_p">O registro para neurocirurgia é feito em duas etapas: primeiro, a captura de 3 pontos fiduciais no paciente e no exame. Em seguida, um registro de superfície com 10 pontos aleatórios na área de interesse refina a precisão do sistema.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/step3.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-chapter workflow-chapter--reversed">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">04</span>
+                            <h3 data-i18n-key="workflow.step4.title">Comece a Navegar</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.step4.p">Execute a cirurgia com a confiança de ver a posição exata dos seus instrumentos em tempo real.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.step4.detailed_p">Navegue em tempo real com 6 vistas simultâneas (3D, Paralela, Ortogonal, Axial, Coronal e Sagital) para uma localização espacial superior. Utilize a segmentação em tempo real para identificar facilmente as estruturas anatômicas de interesse.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/step4.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end workflow-steps-group[brain] -->
+
+            <!-- Spine Workflow -->
+            <div class="workflow-steps-group" data-workflow="spine">
+
+                <div class="workflow-chapter">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">01</span>
+                            <h3 data-i18n-key="workflow.spine.step1.title">Importe a TC</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.spine.step1.p">Carregue a tomografia computadorizada da coluna do paciente e obtenha um modelo 3D completo das vértebras.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.spine.step1.detailed_p">Importe o exame de forma simples: arraste o arquivo para a tela e todas as vistas vertebrais, incluindo o modelo 3D, serão carregadas instantaneamente para o planejamento.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/spine-step1.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-chapter workflow-chapter--reversed">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">02</span>
+                            <h3 data-i18n-key="workflow.spine.step2.title">Planeje os Parafusos</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.spine.step2.p">Defina virtualmente as trajetórias dos parafusos pediculares com angulação e profundidade precisas.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.spine.step2.detailed_p">Utilize as ferramentas de planejamento do Orion Spine para posicionar cada parafuso virtualmente, verificar distâncias de segurança e otimizar a estratégia cirúrgica antes da primeira incisão.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/spine-step2.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-chapter">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">03</span>
+                            <h3 data-i18n-key="workflow.spine.step3.title">Faça o Registro</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.spine.step3.p">Correlacione a anatomia da coluna na mesa cirúrgica com o modelo 3D, garantindo precisão milimétrica.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.spine.step3.detailed_p">O registro para cirurgia de coluna correlaciona landmarks anatômicos das vértebras com o modelo 3D de forma rápida e precisa, garantindo navegação milimétrica durante todo o procedimento.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/spine-step3.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-chapter workflow-chapter--reversed">
+                    <div class="chapter-inner container">
+                        <div class="chapter-text">
+                            <span class="chapter-number">04</span>
+                            <h3 data-i18n-key="workflow.spine.step4.title">Navegue com Segurança</h3>
+                            <p class="chapter-short" data-i18n-key="workflow.spine.step4.p">Execute a inserção dos parafusos com a confiança de ver a posição exata dos instrumentos em tempo real.</p>
+                            <p class="chapter-detail" data-i18n-key="workflow.spine.step4.detailed_p">Navegue em tempo real seguindo as trajetórias planejadas, com visualização simultânea em múltiplas vistas para confirmar o posicionamento perfeito de cada implante vertebral.</p>
+                        </div>
+                        <div class="chapter-media">
+                            <video data-src="videos/spine-step4.mp4" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end workflow-steps-group[spine] -->
+
+        </section>
+
+        <!-- Depoimentos -->
+        <section id="depoimentos" class="testimonials-cinematic">
+            <p class="cinematic-label" data-i18n-key="testimonials.title">A opinião de quem já confia no Orion One</p>
+            <div class="cinematic-track">
+
+                <div class="cinematic-slide active" data-video-src="videos/depoimento1.mp4">
+                    <div class="cinematic-slide-inner container">
+                        <div class="cinematic-content">
+                            <blockquote class="cinematic-quote" data-i18n-key="testimonials.card1.p">"Além de procedimentos mais eficazes, seguros e precisos, ele permite operações que antes eram impensáveis. Além disso, muitos dos nossos pacientes agora tem uma recuperação muito melhor e muito mais rápida."</blockquote>
+                            <cite class="cinematic-author" data-i18n-key="testimonials.card1.author">- Dr. Ricardo Shimizu, Hospital Veterinário VEROS, SP.</cite>
+                            <button class="cinematic-play-btn" aria-label="Assistir depoimento com som">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                                <span data-i18n-key="testimonials.watchVideo">Assistir com som</span>
+                            </button>
+                        </div>
+                        <div class="cinematic-portrait">
+                            <video class="cinematic-bg" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cinematic-slide" data-video-src="videos/depoimento2.mp4">
+                    <div class="cinematic-slide-inner container">
+                        <div class="cinematic-content">
+                            <blockquote class="cinematic-quote" data-i18n-key="testimonials.card2.p">"O Orion facilitou que conseguíssemos ter ressecções cirúrgicas mais proveitosas, bem como direcionadas, assim evitando lesões graves aos pacientes."</blockquote>
+                            <cite class="cinematic-author" data-i18n-key="testimonials.card2.author">- Dra. Ayanne Fireman, Maceió, AL.</cite>
+                            <button class="cinematic-play-btn" aria-label="Assistir depoimento com som">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                                <span data-i18n-key="testimonials.watchVideo">Assistir com som</span>
+                            </button>
+                        </div>
+                        <div class="cinematic-portrait">
+                            <video class="cinematic-bg" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cinematic-slide" data-video-src="videos/depoimento3.mp4">
+                    <div class="cinematic-slide-inner container">
+                        <div class="cinematic-content">
+                            <blockquote class="cinematic-quote" data-i18n-key="testimonials.card3.p">"Foi um divisor de águas quando começamos a utilizar o neuronavegador da BMT. Com o Orion, foi muito melhor para localizar as lesões, sejam elas extraxiais ou intraxiais, que tinhamos bastante dificuldade com a localização."</blockquote>
+                            <cite class="cinematic-author" data-i18n-key="testimonials.card3.author">- Dr. Felipe Purcell, Iconvet Bahia, Salvador</cite>
+                            <button class="cinematic-play-btn" aria-label="Assistir depoimento com som">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                                <span data-i18n-key="testimonials.watchVideo">Assistir com som</span>
+                            </button>
+                        </div>
+                        <div class="cinematic-portrait">
+                            <video class="cinematic-bg" muted loop playsinline preload="none"></video>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cinematic-nav">
+                <button class="cinematic-prev" aria-label="Depoimento anterior">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div class="cinematic-dots">
+                    <button class="cinematic-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="cinematic-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="cinematic-dot" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+                <button class="cinematic-next" aria-label="Próximo depoimento">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="product-cta-section">
+            <div class="container">
+                <h2 data-i18n-key="orionPage.finalCtaTitle">Pronto para operar com mais precisão?</h2>
+                <p data-i18n-key="orionPage.finalCtaSub">Disponível em locação anual ou venda direta. Descubra qual modelo se encaixa na sua clínica em uma demonstração gratuita de 30 minutos.</p>
+                <a href="demo-orion.html" class="cta-button"><span data-i18n-key="orionPage.heroCta">Solicitar Demonstração</span><span class="cta-arrow" aria-hidden="true">&rarr;</span></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p data-i18n-key="footer.copyright">&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79</p>
+            <p data-i18n-key="footer.developedIn">Desenvolvido em São Carlos - SP, o polo da inovação.</p>
+            <p data-i18n-key="footer.rights">Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/5516999941212" class="whatsapp-widget" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+        <img src="img/whatsapp-icon.jpg" alt="Ícone do WhatsApp">
+    </a>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="close-modal" aria-label="Fechar vídeo">&times;</button>
+            <video id="modalVideoPlayer" width="100%" controls playsinline>
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+    </div>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/i18n.js"></script>
+
+</body>
+</html>

@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize AOS (Animate on Scroll)
-    AOS.init({
-        duration: 800, // values from 0 to 3000, with step 50ms
-        once: true, // whether animation should happen only once - while scrolling down
-    });
+    const page = document.body.dataset.page || '';
 
-    // 2. Mobile Menu Toggle
+    // Shared state — assigned later by workflow section
+    let resetToGridView = () => {};
+    let chapterObserver = null;
+
+    // 1. Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     if (menuToggle && mainNav) {
@@ -30,117 +30,186 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 2.5. Nav Dropdown (Products)
+    const navDropdown = document.querySelector('.nav-dropdown');
+    const dropdownTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropdownMenu = document.querySelector('.nav-dropdown__menu');
+
+    if (navDropdown && dropdownTrigger) {
+        const isMobileNav = () => window.matchMedia('(max-width: 992px)').matches;
+
+        // Desktop: hover to open
+        navDropdown.addEventListener('mouseenter', () => {
+            if (!isMobileNav()) {
+                navDropdown.classList.add('is-open');
+                dropdownTrigger.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        navDropdown.addEventListener('mouseleave', () => {
+            if (!isMobileNav()) {
+                navDropdown.classList.remove('is-open');
+                dropdownTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Mobile + desktop click: toggle
+        dropdownTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isOpen = navDropdown.classList.toggle('is-open');
+            dropdownTrigger.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close dropdown when a dropdown link is clicked
+        if (dropdownMenu) {
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navDropdown.classList.remove('is-open');
+                    dropdownTrigger.setAttribute('aria-expanded', 'false');
+
+                    // Also close mobile menu if open
+                    if (mainNav && mainNav.classList.contains('is-open')) {
+                        menuToggle.classList.remove('is-open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                        document.body.classList.remove('no-scroll');
+                    }
+                });
+            });
+        }
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (!navDropdown.contains(e.target)) {
+                navDropdown.classList.remove('is-open');
+                dropdownTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // ── Orion-page only ──────────────────────────────────────────────
+    if (page === 'orion') {
+
     // 3. Feature Videos Interaction (Autoplay on Mobile, Hover on Desktop)
     const handleFeatureVideos = () => {
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
-        const featureCards = document.querySelectorAll('#funcionalidades .feature-card');
+        const featureRows = document.querySelectorAll('#funcionalidades .feature-row');
 
         if (isMobile) {
-            // On mobile, autoplay videos when they scroll into view.
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const video = entry.target.querySelector('video');
                     const overlay = entry.target.querySelector('.play-overlay');
                     if (entry.isIntersecting) {
                         video.play().catch(error => console.error("Video autoplay failed:", error));
-                        if (overlay) overlay.style.opacity = '0'; // Esconde o overlay no mobile
+                        if (overlay) overlay.style.opacity = '0';
                     } else {
                         video.pause();
-                        if (overlay) overlay.style.opacity = '1'; // Mostra o overlay novamente
+                        if (overlay) overlay.style.opacity = '1';
                     }
                 });
-            }, {
-                rootMargin: '0px',
-                threshold: 0.5 // Trigger when 50% of the card is visible
-            });
+            }, { rootMargin: '0px', threshold: 0.3 });
 
-            featureCards.forEach(card => observer.observe(card));
+            featureRows.forEach(row => observer.observe(row));
         } else {
-            // On desktop, play videos on hover for a better user experience.
-            featureCards.forEach(card => {
-                const video = card.querySelector('video');
-                card.addEventListener('mouseenter', () => {
-                    video.play().catch(error => console.error("Video hover-play failed:", error));
-                });
-                card.addEventListener('mouseleave', () => {
-                    video.pause();
-                });
+            featureRows.forEach(row => {
+                const videoContainer = row.querySelector('.video-container');
+                const video = row.querySelector('video');
+                if (videoContainer && video) {
+                    videoContainer.addEventListener('mouseenter', () => {
+                        video.play().catch(error => console.error("Video hover-play failed:", error));
+                    });
+                    videoContainer.addEventListener('mouseleave', () => {
+                        video.pause();
+                    });
+                }
             });
         }
     };
-    handleFeatureVideos(); // Run the function on page load
+    handleFeatureVideos();
 
-    // 4. Workflow Video and Steps Interaction
-    const workflowContainer = document.querySelector('.workflow-container');
-    const workflowSteps = document.querySelectorAll('#como-usar .workflow-step');
-    const workflowVideoPlayer = document.getElementById('workflowVideoPlayer');
+    // 3.5. Module Tabs (Brain / Spine / Hip)
+    const moduleTabs = document.querySelectorAll('.module-tab');
+    const modulePanels = document.querySelectorAll('.module-panel');
 
-    if (workflowContainer && workflowSteps.length > 0 && workflowVideoPlayer) {
-        let currentActiveStep = null; // Variável para rastrear o passo ativo
+    if (moduleTabs.length > 0 && modulePanels.length > 0) {
+        moduleTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-module');
 
-        // Função reutilizável para redefinir a seção para o estado de grade
-        const resetToGridView = () => {
-            workflowContainer.classList.remove('video-is-active');
-            workflowVideoPlayer.pause();
-            workflowVideoPlayer.src = ''; // Descarrega o vídeo para economizar recursos
-            if (currentActiveStep) {
-                currentActiveStep.classList.remove('active');
-                currentActiveStep = null;
-            }
-        };
+                // Update tabs
+                moduleTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
 
-        workflowSteps.forEach(step => {
-            step.addEventListener('click', () => {
-                const isAlreadyActive = step.classList.contains('active');
+                // Update module panels
+                modulePanels.forEach(panel => {
+                    panel.classList.toggle('active', panel.getAttribute('data-panel') === target);
+                });
 
-                if (isAlreadyActive) {
-                    // Se o passo clicado já está ativo, redefine para a grade
-                    resetToGridView();
-                } else {
-                    // Caso contrário, mostra o vídeo selecionado
-                    // Busca o botão dentro do passo para pegar o atributo do vídeo
-                    const numberButton = step.querySelector('.step-number');
-                    if (!numberButton) return; // Segurança: não faz nada se não encontrar o botão
+                // Hip: show outdoor billboard, hide features+workflow sections
+                const orionMain = document.querySelector('main');
+                if (orionMain) orionMain.classList.toggle('hip-active', target === 'hip');
 
-                    const videoSrc = numberButton.getAttribute('data-video-src');
-                    if (videoSrc) {
-                        workflowVideoPlayer.src = videoSrc;
-                        workflowVideoPlayer.currentTime = 0; // Reinicia o vídeo para o início
-                        // Garante que o vídeo só toque quando estiver pronto, evitando erros
-                        const playPromise = workflowVideoPlayer.play();
-                        if (playPromise !== undefined) {
-                            playPromise.catch(error => {
-                                console.error("Erro ao tentar reproduzir o vídeo:", error);
-                            });
-                        }
+                // Brain/Spine: switch features and workflow groups
+                document.querySelectorAll('.features-group').forEach(g => {
+                    g.classList.toggle('active', g.getAttribute('data-features') === target);
+                });
+                document.querySelectorAll('.workflow-steps-group').forEach(g => {
+                    g.classList.toggle('active', g.getAttribute('data-workflow') === target);
+                });
 
-                        workflowContainer.classList.add('video-is-active');
+                resetToGridView();
 
-                        // Remove a classe do passo ativo anterior (se houver)
-                        if (currentActiveStep) {
-                            currentActiveStep.classList.remove('active');
-                        }
-                        step.classList.add('active');
-                        currentActiveStep = step; // Atualiza a referência do passo ativo
-                    }
+                // Re-trigger chapter observer for newly visible group
+                if (chapterObserver) {
+                    document.querySelectorAll('.workflow-chapter').forEach(ch => {
+                        chapterObserver.unobserve(ch);
+                        chapterObserver.observe(ch);
+                    });
                 }
             });
         });
-
-        // Observador para redefinir a seção quando ela sai da tela
-        const workflowObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Se o container não estiver visível e o modo de vídeo estiver ativo
-                if (!entry.isIntersecting && workflowContainer.classList.contains('video-is-active')) {
-                    resetToGridView();
-                }
-            });
-        }, { threshold: 0.1 }); // Aciona quando menos de 10% da seção está visível
-
-        workflowObserver.observe(workflowContainer);
-    } else {
-        console.warn('Workflow section elements not found. Interaction will be disabled.');
     }
+
+    // 4. Workflow Chapters — scroll-reveal + video autoplay
+    resetToGridView = () => {
+        document.querySelectorAll('.workflow-chapter .chapter-media video').forEach(v => {
+            v.pause();
+            v.currentTime = 0;
+        });
+    };
+
+    if ('IntersectionObserver' in window) chapterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const chapter = entry.target;
+
+            // Reveal animation
+            chapter.classList.toggle('is-visible', entry.isIntersecting);
+
+            // Only autoplay if the parent group is active
+            const group = chapter.closest('.workflow-steps-group');
+            if (group && !group.classList.contains('active')) return;
+
+            const video = chapter.querySelector('.chapter-media video');
+            if (!video) return;
+
+            if (entry.isIntersecting) {
+                const src = video.getAttribute('data-src');
+                if (src && !video.src) video.src = src;
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.4 });
+
+    if (chapterObserver) {
+        document.querySelectorAll('.workflow-chapter').forEach(ch => {
+            chapterObserver.observe(ch);
+        });
+    }
+
+    } // end orion-only block
 
     // 5. Client Logos Draggable Carousel
     const slider = document.querySelector('.logos-slider');
@@ -157,25 +226,23 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollLeft;
         let isPaused = false;
         let animationFrameId;
-        const scrollSpeed = 0.5; // Ajuste este valor para mudar a velocidade (ex: 0.5, 1, 2)
+        let lastTimestamp = null;
+        const SCROLL_PX_PER_SECOND = 40; // device-independent speed
 
-        // Previne o comportamento padrão de arrastar imagens, que pode interferir.
         track.addEventListener('dragstart', (e) => {
             e.preventDefault();
         });
 
-        // 1. Giro Automático
-        const autoScroll = () => {
-            // A rolagem só acontece se não estiver pausada (pelo hover)
-            if (!isPaused) {
-                slider.scrollLeft += scrollSpeed;
-                // Quando o carrossel rolar metade do seu conteúdo, reseta para o início,
-                // criando a ilusão de um loop infinito.
+        // 1. Giro Automático — delta-time based (same speed on 60Hz and 120Hz)
+        const autoScroll = (timestamp) => {
+            if (!isPaused && lastTimestamp !== null) {
+                const delta = timestamp - lastTimestamp;
+                slider.scrollLeft += (SCROLL_PX_PER_SECOND * delta) / 1000;
                 if (slider.scrollLeft >= track.scrollWidth / 2) {
                     slider.scrollLeft = 0;
                 }
             }
-            // Continua o loop de animação para uma rolagem suave.
+            lastTimestamp = timestamp;
             animationFrameId = requestAnimationFrame(autoScroll);
         };
 
@@ -186,8 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Unifica eventos de mouse e toque para obter a posição inicial.
             startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
-            // Pausa o giro automático ao iniciar o arrasto.
             cancelAnimationFrame(animationFrameId);
+            lastTimestamp = null;
 
             // Adiciona os listeners no documento para que o arrasto continue
             // mesmo que o cursor saia da área do carrossel.
@@ -209,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.removeEventListener('touchmove', whileDragging);
             document.removeEventListener('touchend', stopDragging);
 
-            // Reinicia o loop de animação quando o arrasto termina.
+            lastTimestamp = null;
             requestAnimationFrame(autoScroll);
         };
 
@@ -233,66 +300,135 @@ document.addEventListener('DOMContentLoaded', () => {
         autoScroll();
     }
 
-    // 6. Testimonial Videos Interaction
-    const handleTestimonialVideos = () => {
-        const testimonialCards = document.querySelectorAll('#depoimentos .testimonial-card');
-        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    // 6. Cinematic Testimonials Carousel
+    const initCinematicCarousel = () => {
+        const slides = document.querySelectorAll('.cinematic-slide');
+        const dots = document.querySelectorAll('.cinematic-dot');
+        const prevBtn = document.querySelector('.cinematic-prev');
+        const nextBtn = document.querySelector('.cinematic-next');
 
-        const showVideo = (card) => {
-            const video = card.querySelector('video');
-            const videoSrc = card.getAttribute('data-video-src');
-            if (!video || !videoSrc) return;
+        if (!slides.length) return;
 
-            // Carrega a fonte do vídeo se ainda não estiver carregada
-            if (!video.src || !video.src.endsWith(videoSrc)) {
-                video.src = videoSrc;
+        let current = 0;
+        let autoTimer = null;
+        let touchStartX = 0;
+
+        const goTo = (index) => {
+            const prevSlide = slides[current];
+            prevSlide.classList.remove('active');
+            dots[current]?.classList.remove('active');
+            const prevVideo = prevSlide.querySelector('.cinematic-bg');
+            if (prevVideo) { prevVideo.pause(); prevVideo.currentTime = 0; }
+
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            dots[current]?.classList.add('active');
+
+            const newVideo = slides[current].querySelector('.cinematic-bg');
+            if (newVideo) {
+                const src = slides[current].getAttribute('data-video-src');
+                if (src && (!newVideo.src || !newVideo.src.endsWith(src))) newVideo.src = src;
+                newVideo.play().catch(() => {});
             }
-
-            card.classList.add('is-showing-video');
-            video.play().catch(error => console.warn("Video autoplay foi impedido:", error));
         };
 
-        const hideVideo = (card) => {
-            const video = card.querySelector('video');
-            if (!video) return;
-
-            card.classList.remove('is-showing-video');
-            video.pause();
+        const startAuto = () => {
+            stopAuto();
+            autoTimer = setInterval(() => goTo(current + 1), 7000);
         };
 
-        testimonialCards.forEach(card => {
-            if (isTouchDevice) {
-                // On touch devices, a click on the card should toggle the video.
-                card.addEventListener('click', (e) => {
-                    const isShowing = card.classList.contains('is-showing-video');
-                    const clickedOnVideo = e.target.tagName === 'VIDEO';
+        const stopAuto = () => {
+            if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+        };
 
-                    if (isShowing) {
-                        // If the video is showing, any click on the card should close it.
-                        // If the click was on the video, we prevent its default play/pause action.
-                        if (clickedOnVideo) {
-                            e.preventDefault();
-                        }
-                        hideVideo(card);
-                    } else {
-                        // If the video is not showing, a click opens it.
-                        // First, close any other open videos to ensure only one plays at a time.
-                        testimonialCards.forEach(otherCard => {
-                            if (otherCard !== card) {
-                                hideVideo(otherCard);
-                            }
-                        });
-                        showVideo(card);
-                    }
-                });
-            } else {
-                // No desktop, usa hover e focus para acessibilidade
-                card.addEventListener('mouseenter', () => showVideo(card));
-                card.addEventListener('mouseleave', () => hideVideo(card));
-                card.addEventListener('focus', () => showVideo(card));
-                card.addEventListener('blur', () => hideVideo(card));
-            }
+        goTo(0);
+        startAuto();
+
+        prevBtn?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+        nextBtn?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+        dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
+
+        // Swipe support
+        const track = document.querySelector('.cinematic-track');
+        if (track) {
+            track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) { goTo(diff > 0 ? current + 1 : current - 1); startAuto(); }
+            });
+        }
+
+        // Play with sound → open modal
+        document.querySelectorAll('.cinematic-play-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const slide = btn.closest('.cinematic-slide');
+                const videoSrc = slide?.getAttribute('data-video-src');
+                const modal = document.getElementById('videoModal');
+                const modalPlayer = document.getElementById('modalVideoPlayer');
+                if (modal && modalPlayer && videoSrc) {
+                    modalPlayer.src = videoSrc;
+                    modalPlayer.currentTime = 0;
+                    modal.classList.add('is-visible');
+                    modalPlayer.play().catch(() => {});
+                }
+            });
         });
     };
-    handleTestimonialVideos();
+    initCinematicCarousel();
+
+    // Video Modal
+    const videoModal = document.getElementById('videoModal');
+    const modalVideoPlayer = document.getElementById('modalVideoPlayer');
+    const closeModalBtn = document.querySelector('.close-modal');
+    if (videoModal) {
+        const closeModal = () => {
+            videoModal.classList.remove('is-visible');
+            if (modalVideoPlayer) { modalVideoPlayer.pause(); modalVideoPlayer.src = ''; }
+        };
+        closeModalBtn?.addEventListener('click', closeModal);
+        videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    }
+
+    // 7. Form Validation — Phone (DDI+DDD) and Email
+    const VALIDATION_MSGS = {
+        'pt-BR': {
+            phoneFormat: 'Inclua o DDI e DDD. Ex: +55 11 99999-9999',
+            emailInvalid: 'Insira um e-mail válido. Ex: nome@clinica.com'
+        },
+        'en': {
+            phoneFormat: 'Include country code and area code. Ex: +1 (234) 56789',
+            emailInvalid: 'Enter a valid email. Ex: name@clinic.com'
+        },
+        'es-LA': {
+            phoneFormat: 'Incluya el código de país y área. Ej: +55 11 99999-9999',
+            emailInvalid: 'Ingrese un correo válido. Ej: nombre@clinica.com'
+        }
+    };
+
+    const getValidationMsgs = () => {
+        const lang = localStorage.getItem('lang') || 'pt-BR';
+        return VALIDATION_MSGS[lang] || VALIDATION_MSGS['pt-BR'];
+    };
+
+    const phoneInput = document.getElementById('telefone');
+    const emailInput = document.getElementById('email');
+
+    if (phoneInput) {
+        phoneInput.addEventListener('invalid', () => {
+            if (!phoneInput.validity.valueMissing) {
+                phoneInput.setCustomValidity(getValidationMsgs().phoneFormat);
+            }
+        });
+        phoneInput.addEventListener('input', () => phoneInput.setCustomValidity(''));
+    }
+
+    if (emailInput) {
+        emailInput.addEventListener('invalid', () => {
+            if (!emailInput.validity.valueMissing) {
+                emailInput.setCustomValidity(getValidationMsgs().emailInvalid);
+            }
+        });
+        emailInput.addEventListener('input', () => emailInput.setCustomValidity(''));
+    }
 });

@@ -100,8 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Lógica de inicialização
     const init = () => {
-        // Detecta o idioma salvo ou o idioma do navegador, com fallback para 'pt-BR'
-        const userLang = localStorage.getItem('lang') || navigator.language || 'pt-BR';
+        // Detecta idioma via ?lang= na URL, localStorage ou navegador, com fallback para 'pt-BR'
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        const userLang = urlLang || localStorage.getItem('lang') || navigator.language || 'pt-BR';
         
         console.log(`[i18n] Idioma detectado (usuário/navegador): ${userLang}`);
         // Encontra o idioma suportado mais próximo (ex: 'en-US' se torna 'en')

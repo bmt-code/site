@@ -7,7 +7,13 @@
     "keywords": "veterinary neuronavigation, veterinary surgical navigator, precision veterinary orthopedic surgery, Orion One BMT, veterinary surgical technology"
   },
   "nav": {
-    "about": "About Orion",
+    "products": "Products",
+    "orionOne": "Orion One",
+    "orionOneSub": "Veterinary Neuronavigation",
+    "modules": "Brain & Spine",
+    "modulesSub": "Specialized modules",
+    "zenith": "Zenith",
+    "zenithSub": "Immersive 3D Microscope",
     "features": "Features",
     "howToUse": "How It Works",
     "testimonials": "Testimonials",
@@ -15,8 +21,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Orion One: Revolutionize Surgery with High-Precision Veterinary Neuronavigation",
-    "subtitle": "Less uncertainty, more safety. The technology your clinic's neuro and orthopedic procedures have been missing."
+    "eyebrow": "Brazilian Medical Technologies",
+    "title": "Precision Surgical Technology for Veterinary Medicine",
+    "subtitle": "Built from neurosurgical research to elevate the safety and precision of every procedure."
   },
   "buttons": {
     "cta": "Request a Demo Now",
@@ -28,17 +35,80 @@
   },
   "aboutOrion": {
     "title": "What is Orion One?",
+    "origin": "Built on the foundation of Projeto Yara — a robotic neurosurgery assistance system currently in regulatory review — Orion One applies over 6 years of surgical research to precision veterinary medicine.",
     "p1": "Orion One is a state-of-the-art surgical neuronavigation system designed specifically for veterinary medicine. It acts as a \"GPS for the surgeon,\" allowing them to visualize the exact position of instruments in real-time on the patient's CT or MRI scans.",
     "p2": "This technology transforms complex procedures into safer, faster, and minimally invasive surgeries, dramatically raising the standard of care and improving outcomes for neurosurgeries and precision orthopedics."
   },
+  "modules": {
+    "eyebrow": "One platform, two universes",
+    "title": "Choose the module for your specialty",
+    "brain": {
+      "tab": "Brain",
+      "title": "Orion Brain",
+      "tagline": "Navigate every neuron with millimetric precision.",
+      "f1": "Real-time image-guided neurosurgery",
+      "f2": "CT and MRI fusion for complete planning",
+      "f3": "Fiducial + surface registration with high accuracy"
+    },
+    "spine": {
+      "tab": "Spine",
+      "title": "Orion Spine",
+      "tagline": "Millimetric precision, vertebra by vertebra.",
+      "f1": "Navigation for spinal surgery procedures",
+      "f2": "Guided positioning of implants and screws",
+      "f3": "Trajectory planning with precise angulation"
+    },
+    "hip": {
+      "tab": "Hip",
+      "badge": "Coming Soon",
+      "title": "Orion Hip",
+      "tagline": "Hip surgeries guided with millimetric precision.",
+      "f1": "Navigation for hip replacement surgeries",
+      "f2": "Implant planning with personalized guides",
+      "f3": "Currently in development and clinical validation",
+      "comingSoon": "The Orion Hip module is in development. It will soon be available with all the tools for high-precision hip surgeries."
+    }
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "headline": "We're working on it.",
+    "featuresMsg": "The Hip module features are currently in development.",
+    "workflowMsg": "The Hip module workflow will be available soon."
+  },
+  "zenith": {
+    "eyebrow": "New Product",
+    "title": "Zenith: Total Immersion in Surgery",
+    "tagline": "The microscope adapter for 3D glasses that transforms how you see the surgical field.",
+    "description": "Zenith connects your surgical microscope to 3D reality glasses, delivering an immersive experience with real depth of field. More comfort, more precision, more freedom of movement.",
+    "pillar1": {
+      "title": "Real Depth of Field",
+      "p": "Visualize anatomical structures in real stereoscopic 3D, with natural depth perception that boosts your confidence in every movement."
+    },
+    "pillar2": {
+      "title": "Superior Ergonomics",
+      "p": "Free yourself from the microscope's fixed position. With 3D glasses, operate with freedom of movement and comfort during long procedures."
+    },
+    "pillar3": {
+      "title": "Universal Compatibility",
+      "p": "Designed to integrate with the main surgical microscopes on the market, with no need to replace your existing equipment."
+    },
+    "cta": "Learn More about Zenith"
+  },
   "features": {
     "title": "Features That Make a Difference",
-    "card1": { "title": "Image Fusion", "p": "Combine images from different modalities (CT, MRI) into a single view, providing a more complete and accurate picture of the patient's anatomy." },
-    "card2": { "title": "Real-Time Tracking", "p": "Track the exact position of your surgical instruments on the 3D model and in 2D views, ensuring precise and safe approaches." },
-    "card3": { "title": "Advanced Planning", "p": "Plan complex surgical approaches with millimeter precision, using intelligent segmentations that optimize the surgical outcome." },
-    "card4": { "title": "Intuitive & Compatible Interface", "p": "Developed with the surgeon in mind, Orion One features a clean interface and is compatible with major CT and MRI scanners on the market, facilitating seamless integration into your workflow." },
-    "card5": { "title": "Customizable Instruments", "p": "Easily register and calibrate your own surgical instruments, offering full flexibility to adapt to your techniques and preferences." },
-    "card6": { "title": "Dedicated Support and Training", "p": "Rely on our team of specialists for comprehensive training and ongoing support, ensuring you get the most out of Orion One." }
+    "card1": { "eyebrow": "Diagnostics", "title": "Image Fusion", "p": "Combine images from different modalities (CT, MRI) into a single view, providing a more complete and accurate picture of the patient's anatomy." },
+    "card2": { "eyebrow": "Navigation", "title": "Real-Time Tracking", "p": "Track the exact position of your surgical instruments on the 3D model and in 2D views, ensuring precise and safe approaches." },
+    "card3": { "eyebrow": "Planning", "title": "Advanced Planning", "p": "Plan complex surgical approaches with millimeter precision, using intelligent segmentations that optimize the surgical outcome." },
+    "card4": { "eyebrow": "Compatibility", "title": "Intuitive & Compatible Interface", "p": "Developed with the surgeon in mind, Orion One features a clean interface and is compatible with major CT and MRI scanners on the market, facilitating seamless integration into your workflow." },
+    "card5": { "eyebrow": "Flexibility", "title": "Customizable Instruments", "p": "Easily register and calibrate your own surgical instruments, offering full flexibility to adapt to your techniques and preferences." },
+    "card6": { "eyebrow": "Support", "title": "Dedicated Support and Training", "p": "Rely on our team of specialists for comprehensive training and ongoing support, ensuring you get the most out of Orion One." },
+    "spine": {
+      "card1": { "eyebrow": "Diagnostics", "title": "CT Scan Definition", "p": "Import and process high-resolution CT scan images to obtain a detailed 3D model of the patient's spine for planning each step of the surgery." },
+      "card2": { "eyebrow": "Navigation", "title": "Real-Time Tracking", "p": "Track the exact position of surgical instruments relative to the vertebrae in real time, ensuring precise and minimally invasive approaches." },
+      "card3": { "eyebrow": "Planning", "title": "Advanced Planning with Screw Planning", "p": "Virtually plan the trajectory and positioning of each pedicle screw before surgery, reducing risks and optimizing clinical outcomes." },
+      "card4": { "eyebrow": "Flexibility", "title": "Personalized Instruments", "p": "Calibrate and use your own instruments and implants, adapting the system to your technical preferences and your surgical team's protocols." },
+      "card5": { "eyebrow": "Support", "title": "Dedicated Support", "p": "Our team of specialists provides comprehensive training and continuous support, ensuring you get the most out of the Orion One Spine module." }
+    }
   },
   "workflow": {
     "title": "How does Orion One work?",
@@ -61,17 +131,41 @@
       "title": "Start Navigating",
       "p": "Perform the surgery with the confidence of seeing the exact position of your instruments in real-time.",
       "detailed_p": "Navigate in real-time with 6 simultaneous views (3D, Parallel, Orthogonal, Axial, Coronal, and Sagittal) for superior spatial awareness. Use real-time segmentation to easily identify anatomical structures of interest."
+    },
+    "spine": {
+      "step1": {
+        "title": "Import the CT Scan",
+        "p": "Load the patient's spinal CT scan and obtain a complete 3D model of the vertebrae.",
+        "detailed_p": "Import the exam easily: drag the file onto the screen and all vertebral views, including the 3D model, will be loaded instantly for planning."
+      },
+      "step2": {
+        "title": "Plan the Screws",
+        "p": "Virtually define the pedicle screw trajectories with precise angulation and depth.",
+        "detailed_p": "Use the Orion Spine planning tools to virtually position each screw, check safety distances, and optimize the surgical strategy before the first incision."
+      },
+      "step3": {
+        "title": "Perform Registration",
+        "p": "Correlate the spinal anatomy on the surgical table with the 3D model, ensuring millimetric accuracy.",
+        "detailed_p": "Registration for spinal surgery correlates anatomical landmarks of the vertebrae with the 3D model quickly and accurately, ensuring millimetric navigation throughout the entire procedure."
+      },
+      "step4": {
+        "title": "Navigate Safely",
+        "p": "Perform screw insertion with the confidence of seeing the exact position of your instruments in real time.",
+        "detailed_p": "Navigate in real time following the planned trajectories, with simultaneous multi-view visualization to confirm the perfect positioning of each vertebral implant."
+      }
     }
   },
   "testimonials": {
     "title": "What Those Who Trust Orion One Have to Say",
+    "watchVideo": "Watch with sound",
     "card1": { "p": "\"Beyond more effective, safer, and precise procedures, it allows us to do things that were previously unthinkable. Additionally, many of our patients now have a much better and faster recovery.\"", "author": "- Dr. Ricardo Shimizu, VEROS Veterinary Hospital, SP." },
     "card2": { "p": "\"Orion made it easier for us to achieve more successful and targeted surgical resections, thus avoiding serious injuries to patients.\"", "author": "- Dr. Ayanne Fireman, Maceió, AL." },
     "card3": { "p": "\"It was a game-changer when we started using BMT's neuronavigator. With Orion, it became much easier to locate lesions, whether extra-axial or intra-axial, which we used to have great difficulty locating.\"", "author": "- Dr. Felipe Purcell, Iconvet Bahia, Salvador" }
   },
   "aboutUs": {
-    "title": "Our Origin: Innovation and Excellence",
-    "intro": "BMT was born from the union of brilliant minds from the University of São Paulo (USP) in São Carlos, in collaboration with the EESC's Aerotech Innovation Laboratory and the Ribeirão Preto Clinical Hospital. We are proudly based in the São Carlos Technology Park and hold the DNA USP seal, a symbol of cutting-edge research and technology at the service of health."
+    "eyebrow": "Our Story",
+    "title": "From Research to the Operating Room",
+    "originLabel": "Institutional Roots"
   },
   "contact": {
     "title": "Ready to transform your surgical practice? Let's talk.",
@@ -81,11 +175,136 @@
     "name": "Name",
     "clinic": "Clinic/Hospital",
     "email": "Email",
-    "phone": "Phone/WhatsApp"
+    "phone": "Phone/WhatsApp",
+    "phonePlaceholder": "+1 (234) 56789",
+    "phoneError": "Please include country code and area code. Ex: +1 (234) 56789",
+    "emailError": "Please enter a valid email. Ex: name@clinic.com"
   },
   "footer": {
     "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA.",
     "developedIn": "Proudly developed in São Carlos - SP, Brazil's innovation hub.",
     "rights": "All rights reserved."
+  },
+  "partners": {
+    "eyebrow": "Compatible Ecosystem",
+    "title": "Business Partners",
+    "sub": "Orion One integrates with leading implant systems on the market, ensuring compatibility for spinal and hip surgeries."
+  },
+  "timeline": {
+    "yara": { "year": "2018 – 2024", "label": "Projeto Yara", "desc": "Robotic-assisted neurosurgery system (SEEG), developed at EESC USP in partnership with HC FMRP." },
+    "founded": { "year": "Apr. 2024", "label": "BMT Founded", "desc": "Four mechatronic engineers from EESC turn years of research into a product." },
+    "orionStart": { "year": "Oct. 2024", "label": "Orion One Begins", "desc": "6+ years of Projeto Yara research applied to precision veterinary medicine." },
+    "brain": { "year": "Feb. 2025", "label": "Orion Brain", "desc": "Market launch. Image-guided veterinary neurosurgery with millimetric precision." },
+    "spine": { "year": "Mar. 2025", "label": "Orion Spine", "desc": "Spinal module: navigation for surgeries with implants and pedicle screws." },
+    "hip": { "year": "Coming soon", "label": "Orion Hip", "desc": "Hip surgeries and expansion into new specialties." }
+  },
+  "outdoor": {
+    "orion": {
+      "eyebrow": "Surgical Navigation",
+      "title": "Orion One",
+      "tagline": "The veterinary neuronavigator that guides every movement with millimetric precision.",
+      "more": "Learn More",
+      "contact": "Request Demo"
+    },
+    "zenith": {
+      "eyebrow": "Immersive 3D Visualization",
+      "title": "Zenith",
+      "tagline": "See the surgical field like never before. Real depth of field with 3D glasses.",
+      "more": "Learn More",
+      "contact": "Request Demo"
+    }
+  },
+  "orionPage": {
+    "title": "Orion One | High-Precision Veterinary Neuronavigation",
+    "heroEyebrow": "Veterinary Neuronavigation",
+    "heroSubtitle": "The surgeon's GPS for veterinary medicine. Millimetric precision for neurosurgery and precision orthopedics.",
+    "heroCta": "Request a Demo",
+    "finalCtaTitle": "Ready to operate with greater precision?",
+    "finalCtaSub": "Schedule an exclusive Orion One demonstration with our team of specialists."
+  },
+  "zenithPage": {
+    "title": "Zenith | Immersive 3D Microscope Adapter",
+    "heroEyebrow": "3D Surgical Visualization",
+    "heroSubtitle": "Total immersion in the surgical field. Real depth of field with 3D glasses.",
+    "heroCta": "Request a Demo",
+    "finalCtaTitle": "See it with your own eyes.",
+    "finalCtaSub": "Schedule a Zenith demonstration and experience the difference of real 3D immersion."
+  },
+  "demoOrion": {
+    "title": "Orion One Demo | BMT",
+    "headerCta": "Schedule Free Demo",
+    "heroEyebrow": "Free Demo — 30 minutes",
+    "heroH1": "Operate with the precision of someone who knows exactly where they are.",
+    "heroH2": "See live how Orion One guides every instrument in real time — Brain, Spine and soon Hip.",
+    "heroCta": "Choose my time slot",
+    "guarantee": "Google Meet · No commitment · Cancel with 1 click",
+    "proofLabel": "Used by surgeons at",
+    "previewEyebrow": "The demonstration",
+    "previewH2": "In 30 minutes you'll see:",
+    "preview1": { "title": "Live navigation", "p": "Instruments tracked in real time over CT or MRI of a real patient — Brain or Spine, you choose the focus." },
+    "preview2": { "title": "Complete clinical case", "p": "From image import to surgical planning: every step of the Orion One workflow without cuts." },
+    "preview3": { "title": "Your questions answered", "p": "Compatibility with your CT scanner, training, support and investment — all live with a BMT specialist." },
+    "quoteText": "\"Beyond more effective, safer and more precise procedures, it allows operations that were previously unthinkable. Many of our patients now have a much better and faster recovery.\"",
+    "quoteAuthor": "Dr. Ricardo Shimizu — VEROS Veterinary Hospital, SP",
+    "calendlyEyebrow": "Choose your time slot",
+    "calendlyH2": "Free Orion One demo",
+    "badge1": "30 minutes",
+    "badge2": "Google Meet — auto-generated",
+    "badge3": "No commitment",
+    "accessEyebrow": "System access",
+    "accessH2": "Two ways to bring Orion One to your clinic",
+    "accessSub": "Each model was designed for a different clinic profile. During the demo, we present the investment details for each option.",
+    "access1": { "title": "Annual Lease", "p": "Pay per surgery performed with the system, with a guaranteed minimum monthly fee. Ideal for clinics that want to incorporate the technology without a high initial investment — and charge for a differentiated service from day one.", "tag": "More flexibility" },
+    "access2": { "title": "Direct Purchase", "p": "Acquire the system with full ownership. No recurring contract dependency, no fee per surgery. The choice of surgical centers with high procedure volume that want to maximize return on investment.", "tag": "Full ownership" },
+    "accessCtaNote": "Investment values for each model are presented during the demo — schedule below and find out which fits best with your clinic.",
+    "accessCta": "Find my ideal option",
+    "faqEyebrow": "Frequently asked questions",
+    "faqH2": "Before scheduling",
+    "faq1": { "q": "Does Orion One work with my CT scanner?", "a": "Yes. Orion One imports images in DICOM format, the universal standard for all CT scanners and MRI machines on the market. No special integration or equipment replacement is needed." },
+    "faq2": { "q": "Do I need special training?", "a": "Orion One was designed to have a short learning curve. We provide comprehensive training for all clients and ongoing support from the BMT team. Most surgeons operate independently after the first in-person training." },
+    "faq3": { "q": "Which procedures are available today?", "a": "Orion One is currently available for neurosurgery (Orion Brain) and spinal surgery (Orion Spine). The module for hip surgeries (Orion Hip) is in development and will be launched soon." },
+    "faq4": { "q": "Does the demo have any cost?", "a": "None. The demo is completely free and no-commitment. You'll see the system live and talk directly with a BMT specialist — no sales pressure." },
+    "footerLink": "Explore the full BMT site"
+  },
+  "demoZenith": {
+    "title": "Zenith Demo | BMT",
+    "headerCta": "Schedule Free Demo",
+    "heroEyebrow": "Free Demo — 30 minutes",
+    "heroH1": "See the surgical field like never before.",
+    "heroH2": "Real depth of field in stereoscopic 3D — without replacing your microscope. See Zenith live in an exclusive demo.",
+    "heroCta": "Choose my time slot",
+    "guarantee": "Google Meet · No commitment · Cancel with 1 click",
+    "proofLabel": "Developed by BMT — same technology as Orion One",
+    "previewEyebrow": "The demonstration",
+    "previewH2": "In 30 minutes you'll see:",
+    "preview1": { "title": "The system in action", "p": "Real videos of surgeons operating with Zenith — the 3D glasses in use, the 3D vision from 4K cameras and the freedom of movement the system provides." },
+    "preview2": { "title": "Installation and connectivity", "p": "How the adapter fits your microscope, how WiFi recording works and real-time streaming to laptop, phone and external platforms." },
+    "preview3": { "title": "Your questions answered", "p": "Compatibility with your microscope, ergonomics, training, investment and everything about the direct sale — with a BMT specialist, no filters." },
+    "pillarsEyebrow": "Why Zenith",
+    "pillarsH2": "Four differentials that change surgery",
+    "pillar1": { "title": "3D Vision with 4K Cameras", "p": "Two 4K cameras inside the adapter replicate the surgeon's binocular vision and project onto the two screens of the 3D glasses — real depth of field, no digital tricks." },
+    "pillar2": { "title": "Freedom and Physical Health", "p": "Zenith frees the surgeon from the microscope. No more fixed position at the eyepiece — operate with natural posture, protecting your spine and neck during long procedures." },
+    "pillar3": { "title": "Real-Time Streaming", "p": "Stream the surgical view in real time to laptop, phone and external platforms via WiFi. Ideal for remote training, remote supervision and live classes directly from the operating room." },
+    "pillar4": { "title": "Recording and WiFi Download", "p": "Record every surgery in 4K directly on the adapter and download via WiFi. Case documentation, clinical archive and teaching material — no cables, no hassle." },
+    "calendlyEyebrow": "Choose your time slot",
+    "calendlyH2": "Free Zenith demo",
+    "badge1": "30 minutes",
+    "badge2": "Google Meet — auto-generated",
+    "badge3": "No commitment",
+    "accessEyebrow": "System access",
+    "accessH2": "Direct sale — full ownership",
+    "accessSub": "Zenith is sold exclusively through direct sale. No recurring contracts, no fee per surgery — you buy the system and it's yours.",
+    "accessCardTitle": "Direct Purchase",
+    "accessCardP": "Acquire the Zenith adapter with 3D glasses and have full ownership of the system. Use it in as many surgeries as you want, no per-procedure cost, no annual renewals. Investment and conditions are presented during the demo.",
+    "accessCardTag": "Full ownership · No monthly fee",
+    "accessCtaNote": "Investment amount is presented during the demo — schedule below.",
+    "accessCta": "I want to see Zenith",
+    "faqEyebrow": "Frequently asked questions",
+    "faqH2": "Before scheduling",
+    "faq1": { "q": "Does Zenith work with my microscope?", "a": "Zenith was designed for universal compatibility with the main surgical microscopes on the market. During the demo we verify exact compatibility with your model — if there is any exception, you'll know before making any decision." },
+    "faq2": { "q": "How does Zenith's 3D technology work?", "a": "The Zenith adapter has two 4K cameras positioned at the microscope's binocular, replicating the stereoscopic view of each eye. Images are transmitted in real time to the 3D glasses, which have two independent screens — one per eye — generating real depth of field without digital tricks." },
+    "faq3": { "q": "Do I need to replace my current microscope?", "a": "No. Zenith is an adapter — it integrates with your existing microscope. No replacement needed, no major renovations to the operating room." },
+    "faq4": { "q": "Does the demo have any cost?", "a": "None. The demo is completely free and no-commitment. You'll see Zenith live and talk directly with a BMT specialist — no sales pressure." },
+    "footerLink": "Explore the full BMT site"
   }
 }

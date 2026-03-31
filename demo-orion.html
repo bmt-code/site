@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title data-i18n-key="demoOrion.title">Demonstração Orion One | BMT</title>
+    <meta name="description" content="Agende sua demonstração gratuita do Orion One — sistema de neuronavegação cirúrgica da BMT.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
+    <link rel="shortcut icon" href="img/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#090d14">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ═══ META PIXEL ═══ -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+    <!-- ═══ LINKEDIN INSIGHT TAG ═══ -->
+    <script>
+    _linkedin_partner_id = "SEU_PARTNER_ID";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    (function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s=document.getElementsByTagName("script")[0];
+    var b=document.createElement("script");
+    b.type="text/javascript";b.async=true;
+    b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b,s);})(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display:none" alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=SEU_PARTNER_ID&fmt=gif"/></noscript>
+
+    <style>
+    /* ── LP Header ─────────────────────────────────────────────────── */
+    .lp-header .main-nav,
+    .lp-header .menu-toggle { display: none !important; }
+
+    .lp-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .lp-header-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 22px;
+        background: var(--primary-blue);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        transition: background 0.2s, transform 0.18s;
+        white-space: nowrap;
+    }
+    .lp-header-cta:hover { background: #1a9fff; transform: translateY(-1px); }
+    .lp-header-cta svg { flex-shrink: 0; }
+
+    /* ── Hero LP overrides ─────────────────────────────────────────── */
+    .lp-hero-content h1 {
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+        margin-bottom: 20px;
+    }
+
+    .lp-guarantee {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0;
+    }
+    .lp-guarantee svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        stroke: #0bcf25;
+    }
+
+    /* ── Proof Strip ───────────────────────────────────────────────── */
+    .lp-proof {
+        background: rgba(0, 136, 241, 0.04);
+        border-top: 1px solid rgba(0, 136, 241, 0.1);
+        border-bottom: 1px solid rgba(0, 136, 241, 0.1);
+        padding: 32px 0;
+    }
+    .lp-proof__inner {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .lp-proof__inner::-webkit-scrollbar { display: none; }
+    .lp-proof__label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .lp-proof__logos {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        flex-wrap: wrap;
+    }
+    .lp-proof__logos img {
+        height: 44px;
+        width: auto;
+        opacity: 0.7;
+        filter: grayscale(1) brightness(1);
+        object-fit: contain;
+        transition: opacity 0.2s, filter 0.2s;
+    }
+    .lp-proof__logos img:hover { opacity: 0.85; filter: grayscale(0) brightness(1); }
+
+    /* ── Preview (o que você vai ver) ──────────────────────────────── */
+    .lp-preview { padding: 88px 0; }
+    .lp-preview__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 44px;
+    }
+    .lp-preview__item {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 18px;
+        padding: 32px 28px;
+        transition: border-color 0.2s;
+    }
+    .lp-preview__item:hover { border-color: rgba(0, 136, 241, 0.25); }
+    .lp-preview__num {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--primary-blue);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+    .lp-preview__item h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #fff;
+        letter-spacing: -0.02em;
+    }
+    .lp-preview__item p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.65;
+    }
+
+    /* ── Quote ──────────────────────────────────────────────────────── */
+    .lp-quote {
+        padding: 80px 0;
+        background: linear-gradient(135deg, rgba(0,136,241,0.05) 0%, transparent 70%);
+        border-top: 1px solid var(--glass-border);
+        border-bottom: 1px solid var(--glass-border);
+    }
+    .lp-quote__inner {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .lp-quote__stars {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 24px;
+    }
+    .lp-quote__stars svg {
+        width: 18px;
+        height: 18px;
+        fill: #f59e0b;
+    }
+    .lp-quote__text {
+        font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+        font-weight: 400;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.85);
+        font-style: italic;
+        margin-bottom: 24px;
+    }
+    .lp-quote__author {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--primary-blue);
+        font-style: normal;
+    }
+
+    /* ── Calendly Section ───────────────────────────────────────────── */
+    .lp-calendly { padding: 88px 0; }
+    .lp-calendly__header {
+        text-align: center;
+        margin-bottom: 44px;
+    }
+    .lp-calendly__header h2 { margin-bottom: 20px; }
+    .lp-calendly__meta {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+    }
+    .lp-calendly__badge {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .lp-calendly__badge svg {
+        width: 15px;
+        height: 15px;
+        stroke: var(--primary-blue);
+        flex-shrink: 0;
+        fill: none;
+    }
+    .calendly-embed-wrap {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--glass-border);
+    }
+
+    /* ── FAQ ────────────────────────────────────────────────────────── */
+    .lp-faq { padding: 88px 0; }
+    .lp-faq > .container > h2 { text-align: center; }
+    .lp-faq__list {
+        max-width: 680px;
+        margin: 40px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .lp-faq__item {
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--glass-bg);
+        transition: border-color 0.2s;
+    }
+    .lp-faq__item.open { border-color: rgba(0, 136, 241, 0.2); }
+    .lp-faq__question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 20px 24px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+        gap: 12px;
+        font-family: var(--font-primary);
+        transition: color 0.2s;
+    }
+    .lp-faq__question:hover { color: var(--primary-blue); }
+    .lp-faq__chevron {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        stroke: currentColor;
+        fill: none;
+        transition: transform 0.3s ease;
+    }
+    .lp-faq__item.open .lp-faq__chevron { transform: rotate(180deg); }
+    .lp-faq__answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+        padding: 0 24px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .lp-faq__item.open .lp-faq__answer {
+        max-height: 220px;
+        padding: 0 24px 22px;
+    }
+
+    /* ── Modelos de Acesso ──────────────────────────────────────────── */
+    .lp-access { padding: 88px 0; background: rgba(0,136,241,0.03); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+    .lp-access > .container > h2 { max-width: 560px; }
+    .lp-access .section-sub { max-width: 560px; color: rgba(255,255,255,0.55); font-size: 16px; margin: 14px 0 40px; line-height: 1.65; }
+    .lp-access__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 36px; }
+    .lp-access__card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 36px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: border-color 0.2s;
+    }
+    .lp-access__card:hover { border-color: rgba(0,136,241,0.2); }
+    .lp-access__card--highlight { border-color: rgba(0,136,241,0.18); background: linear-gradient(160deg, rgba(0,136,241,0.06) 0%, transparent 100%); }
+    .lp-access__icon {
+        width: 46px; height: 46px;
+        border-radius: 12px;
+        background: rgba(0,136,241,0.1);
+        display: flex; align-items: center; justify-content: center;
+    }
+    .lp-access__icon svg { width: 22px; height: 22px; stroke: var(--primary-blue); }
+    .lp-access__card h3 { font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin: 0; }
+    .lp-access__card p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin: 0; }
+    .lp-access__tag {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 600;
+        background: rgba(255,255,255,0.07);
+        color: rgba(255,255,255,0.55);
+        letter-spacing: 0.02em;
+        width: fit-content;
+    }
+    .lp-access__tag--blue { background: rgba(0,136,241,0.12); color: var(--primary-blue); }
+    .lp-access__cta-note { font-size: 14px; color: rgba(255,255,255,0.42); margin-bottom: 18px; }
+
+    @media (max-width: 600px) { .lp-access__grid { grid-template-columns: 1fr; } }
+
+    /* ── LP Footer ──────────────────────────────────────────────────── */
+    .lp-footer {
+        padding: 22px 0;
+        border-top: 1px solid var(--glass-border);
+        text-align: center;
+    }
+    .lp-footer p { font-size: 13px; color: var(--text-muted); }
+    .lp-footer a { color: var(--primary-blue); text-decoration: none; }
+    .lp-footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ─────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+        .lp-preview__grid { grid-template-columns: 1fr; }
+        .lp-calendly__meta { gap: 16px; }
+        .lp-proof__logos { flex-wrap: nowrap; }
+    }
+    </style>
+</head>
+
+<body data-page="lp-orion">
+
+    <!-- Header mínimo: logo + lang switcher + CTA -->
+    <header class="main-header lp-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo-placeholder.png" alt="BMT Logo" class="logo">
+            </a>
+            <div class="lang-switcher">
+                <button data-lang="pt-BR" data-text="BR" data-flag="img/flags/br.svg" aria-label="Português">BR</button>
+                <button data-lang="en" data-text="US" data-flag="img/flags/us.svg" aria-label="English">US</button>
+                <button data-lang="es-LA" data-text="ES" data-flag="img/flags/es.svg" aria-label="Español">ES</button>
+            </div>
+            <a href="#agendar" class="lp-header-cta">
+                <span data-i18n-key="demoOrion.headerCta">Agendar Demo Gratuita</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="hero-section">
+        <div class="video-background">
+            <video playsinline autoplay muted loop poster="img/video-poster.jpg">
+                <source src="videos/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content lp-hero-content">
+            <span class="eyebrow" data-i18n-key="demoOrion.heroEyebrow">Demonstração Gratuita — 30 minutos</span>
+            <h1 data-i18n-key="demoOrion.heroH1">Opere com a precisão de quem sabe exatamente onde está.</h1>
+            <h2 data-i18n-key="demoOrion.heroH2">Veja ao vivo como o Orion One guia cada instrumento em tempo real — Brain, Spine e em breve Hip.</h2>
+            <a href="#agendar" class="cta-button">
+                <span data-i18n-key="demoOrion.heroCta">Escolher meu horário</span>
+                <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="lp-guarantee">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span data-i18n-key="demoOrion.guarantee">Google Meet &nbsp;·&nbsp; Sem compromisso &nbsp;·&nbsp; Cancelamento com 1 clique</span>
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- Prova Social -->
+        <div class="lp-proof">
+            <div class="container">
+                <div class="lp-proof__inner">
+                    <span class="lp-proof__label" data-i18n-key="demoOrion.proofLabel">Usado por cirurgiões em</span>
+                    <div class="lp-proof__logos">
+                        <img src="img/cliente1.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente2.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente3.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente4.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente5.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente6.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente7.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente8.jpg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente9.jpeg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente10.jpeg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente11.png" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente12.jpeg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente13.jpeg" alt="CLiente parceiro" loading="lazy">
+                        <img src="img/cliente14.png" alt="CLiente parceiro" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- O que você vai ver -->
+        <section class="lp-preview">
+            <div class="container">
+                <span class="eyebrow" data-i18n-key="demoOrion.previewEyebrow">A demonstração</span>
+                <h2 data-i18n-key="demoOrion.previewH2">Em 30 minutos você vai ver:</h2>
+                <div class="lp-preview__grid">
+                    <div class="lp-preview__item">
+                        <p class="lp-preview__num">01</p>
+                        <h3 data-i18n-key="demoOrion.preview1.title">Navegação ao vivo</h3>
+                        <p data-i18n-key="demoOrion.preview1.p">Instrumentos rastreados em tempo real sobre TC ou RM de um paciente real — Brain ou Spine, você escolhe o foco.</p>
+                    </div>
+                    <div class="lp-preview__item">
+                        <p class="lp-preview__num">02</p>
+                        <h3 data-i18n-key="demoOrion.preview2.title">Caso clínico completo</h3>
+                        <p data-i18n-key="demoOrion.preview2.p">Do import da imagem ao planejamento cirúrgico: cada etapa do fluxo de trabalho do Orion One sem cortes.</p>
+                    </div>
+                    <div class="lp-preview__item">
+                        <p class="lp-preview__num">03</p>
+                        <h3 data-i18n-key="demoOrion.preview3.title">Suas dúvidas respondidas</h3>
+                        <p data-i18n-key="demoOrion.preview3.p">Compatibilidade com seu tomógrafo, treinamento, suporte e investimento — tudo ao vivo com um especialista BMT.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimento -->
+        <div class="lp-quote">
+            <div class="container">
+                <div class="lp-quote__inner">
+                    <div class="lp-quote__stars">
+                        <svg viewBox="0 0 20 20"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+                    </div>
+                    <p class="lp-quote__text" data-i18n-key="demoOrion.quoteText">"Além de procedimentos mais eficazes, seguros e precisos, ele permite operações que antes eram impensáveis. Muitos dos nossos pacientes agora têm uma recuperação muito melhor e muito mais rápida."</p>
+                    <p class="lp-quote__author" data-i18n-key="demoOrion.quoteAuthor">Dr. Ricardo Shimizu — Hospital Veterinário VEROS, SP</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendly -->
+        <section id="agendar" class="lp-calendly">
+            <div class="container">
+                <div class="lp-calendly__header">
+                    <span class="eyebrow" data-i18n-key="demoOrion.calendlyEyebrow">Escolha seu horário</span>
+                    <h2 data-i18n-key="demoOrion.calendlyH2">Demo gratuita do Orion One</h2>
+                    <div class="lp-calendly__meta">
+                        <span class="lp-calendly__badge">
+                            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span data-i18n-key="demoOrion.badge1">30 minutos</span>
+                        </span>
+                        <span class="lp-calendly__badge">
+                            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <span data-i18n-key="demoOrion.badge2">Google Meet — gerado automaticamente</span>
+                        </span>
+                        <span class="lp-calendly__badge">
+                            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span data-i18n-key="demoOrion.badge3">Sem compromisso</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="calendly-embed-wrap">
+                    <!-- Substitua SEU_USUARIO pelo seu usuário no Calendly -->
+                    <div class="calendly-inline-widget"
+                         data-url="https://calendly.com/contact-bmt-brazil/30min"
+                         style="min-width: 320px; height: 700px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modelos de Acesso -->
+        <section class="lp-access">
+            <div class="container">
+                <span class="eyebrow" data-i18n-key="demoOrion.accessEyebrow">Acesso ao sistema</span>
+                <h2 data-i18n-key="demoOrion.accessH2">Duas formas de levar o Orion One para a sua clínica</h2>
+                <p class="section-sub" data-i18n-key="demoOrion.accessSub">Cada modelo foi pensado para um perfil diferente de clínica. Na demonstração, apresentamos os detalhes de investimento para cada opção.</p>
+                <div class="lp-access__grid">
+                    <div class="lp-access__card">
+                        <div class="lp-access__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n-key="demoOrion.access1.title">Locação Anual</h3>
+                        <p data-i18n-key="demoOrion.access1.p">Pague por cirurgia realizada com o sistema, com uma taxa mínima mensal garantida. Ideal para clínicas que querem incorporar a tecnologia sem um investimento inicial elevado — e cobrar por um serviço diferenciado desde o primeiro caso.</p>
+                        <span class="lp-access__tag" data-i18n-key="demoOrion.access1.tag">Mais flexibilidade</span>
+                    </div>
+                    <div class="lp-access__card lp-access__card--highlight">
+                        <div class="lp-access__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n-key="demoOrion.access2.title">Venda Direta</h3>
+                        <p data-i18n-key="demoOrion.access2.p">Adquira o sistema com propriedade total. Sem dependência de contrato recorrente, sem taxa por cirurgia. A escolha de centros cirúrgicos com alto volume de procedimentos que querem maximizar o retorno sobre o investimento.</p>
+                        <span class="lp-access__tag lp-access__tag--blue" data-i18n-key="demoOrion.access2.tag">Propriedade total</span>
+                    </div>
+                </div>
+                <p class="lp-access__cta-note" data-i18n-key="demoOrion.accessCtaNote">Os valores de cada modelo são apresentados na demonstração — agende abaixo e descubra qual se encaixa melhor na realidade da sua clínica.</p>
+                <a href="#agendar" class="cta-button" style="display:inline-flex;margin-top:8px;">
+                    <span data-i18n-key="demoOrion.accessCta">Ver minha opção ideal</span>
+                    <span class="cta-arrow">&rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="lp-faq">
+            <div class="container">
+                <span class="eyebrow" style="display:block;text-align:center;" data-i18n-key="demoOrion.faqEyebrow">Dúvidas frequentes</span>
+                <h2 data-i18n-key="demoOrion.faqH2">Antes de agendar</h2>
+                <div class="lp-faq__list">
+                    <div class="lp-faq__item">
+                        <button class="lp-faq__question" aria-expanded="false">
+                            <span data-i18n-key="demoOrion.faq1.q">O Orion One funciona com o meu tomógrafo?</span>
+                            <svg class="lp-faq__chevron" viewBox="0 0 10 6" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+                        </button>
+                        <div class="lp-faq__answer" data-i18n-key="demoOrion.faq1.a">
+                            Sim. O Orion One importa imagens no padrão DICOM, que é o formato universal de todos os tomógrafos e ressonâncias do mercado. Não há necessidade de integração especial nem substituição de equipamentos.
+                        </div>
+                    </div>
+                    <div class="lp-faq__item">
+                        <button class="lp-faq__question" aria-expanded="false">
+                            <span data-i18n-key="demoOrion.faq2.q">Preciso de treinamento especial?</span>
+                            <svg class="lp-faq__chevron" viewBox="0 0 10 6" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+                        </button>
+                        <div class="lp-faq__answer" data-i18n-key="demoOrion.faq2.a">
+                            O Orion One foi desenvolvido para ter curva de aprendizado curta. Incluímos treinamento completo com todos os clientes e suporte contínuo da equipe BMT. A maioria dos cirurgiões opera com autonomia após o primeiro treinamento presencial.
+                        </div>
+                    </div>
+                    <div class="lp-faq__item">
+                        <button class="lp-faq__question" aria-expanded="false">
+                            <span data-i18n-key="demoOrion.faq3.q">Para quais procedimentos está disponível hoje?</span>
+                            <svg class="lp-faq__chevron" viewBox="0 0 10 6" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+                        </button>
+                        <div class="lp-faq__answer" data-i18n-key="demoOrion.faq3.a">
+                            Atualmente o Orion One está disponível para neurocirurgia (Orion Brain) e cirurgia de coluna vertebral (Orion Spine). O módulo para cirurgias de quadril (Orion Hip) está em desenvolvimento e será lançado em breve.
+                        </div>
+                    </div>
+                    <div class="lp-faq__item">
+                        <button class="lp-faq__question" aria-expanded="false">
+                            <span data-i18n-key="demoOrion.faq4.q">A demonstração tem algum custo?</span>
+                            <svg class="lp-faq__chevron" viewBox="0 0 10 6" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+                        </button>
+                        <div class="lp-faq__answer" data-i18n-key="demoOrion.faq4.a">
+                            Nenhum. A demonstração é completamente gratuita e sem compromisso. Você vai ver o sistema ao vivo e conversar diretamente com um especialista BMT — sem pressão de venda.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer mínimo -->
+    <footer class="lp-footer">
+        <div class="container">
+            <p>&copy; 2025 Brazilian Medical Technologies LTDA. &nbsp;·&nbsp; <a href="index.html" data-i18n-key="demoOrion.footerLink">Conheça a BMT completa</a></p>
+        </div>
+    </footer>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- Calendly -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <!-- i18n -->
+    <script src="js/i18n.js"></script>
+
+    <!-- Animations + interactions -->
+    <script src="js/animations.js"></script>
+
+    <script>
+    // ── Calendly: detectar agendamento confirmado e redirecionar ──────
+    window.addEventListener('message', function (e) {
+        if (!e.data || typeof e.data.event !== 'string') return;
+        if (!e.data.event.startsWith('calendly')) return;
+
+        if (e.data.event === 'calendly.event_scheduled') {
+            // Disparo browser-side antes do redirect (fallback se Make/webhook falhar)
+            if (typeof fbq === 'function') {
+                fbq('track', 'Schedule', { content_name: 'Demo Orion One' });
+            }
+            if (typeof lintrk === 'function') {
+                lintrk('track', { conversion_id: 'SEU_CONVERSION_ID_LINKEDIN' });
+            }
+            // Pequeno delay para garantir envio dos pixels antes de sair
+            setTimeout(function () {
+                window.location.href = 'obrigado.html';
+            }, 800);
+        }
+    });
+
+    // ── FAQ Accordion ─────────────────────────────────────────────────
+    document.querySelectorAll('.lp-faq__question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item = this.closest('.lp-faq__item');
+            var isOpen = item.classList.contains('open');
+
+            // Fecha todos
+            document.querySelectorAll('.lp-faq__item.open').forEach(function (el) {
+                el.classList.remove('open');
+                el.querySelector('.lp-faq__question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Abre o clicado se não estava aberto
+            if (!isOpen) {
+                item.classList.add('open');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>
