@@ -1,15 +1,16 @@
 {
   "page": {
-    "title": "Orion One | High-Precision Veterinary Neuronavigation"
+    "title": "Orion One | High-Precision Surgical Neuronavigation"
   },
   "meta": {
-    "description": "Enhance your clinic's safety with Orion One, the surgical navigator for veterinary neurosurgery and orthopedics. Cutting-edge technology, proudly developed in Brazil. Request your demo!",
-    "keywords": "veterinary neuronavigation, veterinary surgical navigator, precision veterinary orthopedic surgery, Orion One BMT, veterinary surgical technology"
+    "description": "Elevate your clinic's surgical standard with Orion One, the image-guided navigation system for neurosurgery and precision orthopedics. Developed in Brazil. Request your demo!",
+    "keywords": "veterinary neuronavigation, veterinary surgical navigator, precision veterinary orthopedic surgery, Orion One BMT, veterinary surgical technology",
+    "orionDescription": "Orion One: next-generation surgical neuronavigation system. The surgeon's GPS for neurosurgery and precision orthopedics. Brain, Spine, and Hip modules — developed by BMT in Brazil."
   },
   "nav": {
     "products": "Products",
     "orionOne": "Orion One",
-    "orionOneSub": "Veterinary Neuronavigation",
+    "orionOneSub": "Surgical Neuronavigation",
     "modules": "Brain & Spine",
     "modulesSub": "Specialized modules",
     "zenith": "Zenith",
@@ -22,7 +23,7 @@
   },
   "hero": {
     "eyebrow": "Brazilian Medical Technologies",
-    "title": "Precision Surgical Technology for Veterinary Medicine",
+    "title": "Precision Surgical Engineering.",
     "subtitle": "Built from neurosurgical research to elevate the safety and precision of every procedure."
   },
   "buttons": {
@@ -35,8 +36,8 @@
   },
   "aboutOrion": {
     "title": "What is Orion One?",
-    "origin": "Built on the foundation of Projeto Yara — a robotic neurosurgery assistance system currently in regulatory review — Orion One applies over 6 years of surgical research to precision veterinary medicine.",
-    "p1": "Orion One is a state-of-the-art surgical neuronavigation system designed specifically for veterinary medicine. It acts as a \"GPS for the surgeon,\" allowing them to visualize the exact position of instruments in real-time on the patient's CT or MRI scans.",
+    "origin": "Built on the foundation of Projeto Yara — a robotic neurosurgery assistance system currently in regulatory review — Orion One applies over 6 years of surgical research to precision medicine.",
+    "p1": "Orion One is a state-of-the-art surgical neuronavigation system developed for precision medicine. It acts as a \"GPS for the surgeon,\" allowing them to visualize the exact position of instruments in real-time on the patient's CT or MRI scans.",
     "p2": "This technology transforms complex procedures into safer, faster, and minimally invasive surgeries, dramatically raising the standard of care and improving outcomes for neurosurgeries and precision orthopedics."
   },
   "modules": {
@@ -76,21 +77,21 @@
     "workflowMsg": "The Hip module workflow will be available soon."
   },
   "zenith": {
-    "eyebrow": "New Product",
-    "title": "Zenith: Total Immersion in Surgery",
-    "tagline": "The microscope adapter for 3D glasses that transforms how you see the surgical field.",
-    "description": "Zenith connects your surgical microscope to 3D reality glasses, delivering an immersive experience with real depth of field. More comfort, more precision, more freedom of movement.",
+    "eyebrow": "3D Surgical Visualization",
+    "title": "Zenith: Total Freedom in Surgery",
+    "tagline": "The adapter that frees the surgeon from the microscope — 4K cameras, 3D glasses and real 3D vision directly in your eyes.",
+    "description": "Zenith is a surgical microscope adapter equipped with two 4K cameras and connected to 3D glasses. Each camera captures the view of one eye — the result is real depth of field projected directly into the glasses, freeing the surgeon from the eyepiece and the fixed microscope position.",
     "pillar1": {
-      "title": "Real Depth of Field",
-      "p": "Visualize anatomical structures in real stereoscopic 3D, with natural depth perception that boosts your confidence in every movement."
+      "title": "3D Vision with 4K Cameras",
+      "p": "Two 4K cameras on the adapter replicate binocular vision and project onto the 3D glasses screens — real depth of field, no digital tricks."
     },
     "pillar2": {
-      "title": "Superior Ergonomics",
-      "p": "Free yourself from the microscope's fixed position. With 3D glasses, operate with freedom of movement and comfort during long procedures."
+      "title": "Freedom and Physical Health",
+      "p": "No more fixed position at the eyepiece. Zenith frees the surgeon from the microscope, protecting the spine and neck during long procedures."
     },
     "pillar3": {
-      "title": "Universal Compatibility",
-      "p": "Designed to integrate with the main surgical microscopes on the market, with no need to replace your existing equipment."
+      "title": "Streaming and Recording via WiFi",
+      "p": "Stream the surgical view in real time to laptop, phone and external platforms. Record in 4K and download via WiFi — ideal for remote training and clinical documentation."
     },
     "cta": "Learn More about Zenith"
   },
@@ -160,7 +161,8 @@
     "watchVideo": "Watch with sound",
     "card1": { "p": "\"Beyond more effective, safer, and precise procedures, it allows us to do things that were previously unthinkable. Additionally, many of our patients now have a much better and faster recovery.\"", "author": "- Dr. Ricardo Shimizu, VEROS Veterinary Hospital, SP." },
     "card2": { "p": "\"Orion made it easier for us to achieve more successful and targeted surgical resections, thus avoiding serious injuries to patients.\"", "author": "- Dr. Ayanne Fireman, Maceió, AL." },
-    "card3": { "p": "\"It was a game-changer when we started using BMT's neuronavigator. With Orion, it became much easier to locate lesions, whether extra-axial or intra-axial, which we used to have great difficulty locating.\"", "author": "- Dr. Felipe Purcell, Iconvet Bahia, Salvador" }
+    "card3": { "p": "\"It was a game-changer when we started using BMT's neuronavigator. With Orion, it became much easier to locate lesions, whether extra-axial or intra-axial, which we used to have great difficulty locating.\"", "author": "- Dr. Felipe Purcell, Iconvet Bahia, Salvador" },
+    "card4": { "p": "\"I am certain that at least 60% of the surgeries I performed in these 2 months — I would not have achieved the same margin of success in resection and planning without microscopy and neuronavigation.\"", "author": "- Dr. Matheus Marçal, Ilha Animal, RJ." }
   },
   "aboutUs": {
     "eyebrow": "Our Story",
@@ -169,7 +171,7 @@
   },
   "contact": {
     "title": "Ready to transform your surgical practice? Let's talk.",
-    "intro": "Fill out the form below, and one of our specialists will contact you to schedule an exclusive demonstration of the Orion One veterinary neuronavigation system."
+    "intro": "Fill out the form below, and one of our specialists will contact you to schedule an exclusive demonstration of the Orion One neuronavigation system."
   },
   "form": {
     "name": "Name",
@@ -193,8 +195,8 @@
   "timeline": {
     "yara": { "year": "2018 – 2024", "label": "Projeto Yara", "desc": "Robotic-assisted neurosurgery system (SEEG), developed at EESC USP in partnership with HC FMRP." },
     "founded": { "year": "Apr. 2024", "label": "BMT Founded", "desc": "Four mechatronic engineers from EESC turn years of research into a product." },
-    "orionStart": { "year": "Oct. 2024", "label": "Orion One Begins", "desc": "6+ years of Projeto Yara research applied to precision veterinary medicine." },
-    "brain": { "year": "Feb. 2025", "label": "Orion Brain", "desc": "Market launch. Image-guided veterinary neurosurgery with millimetric precision." },
+    "orionStart": { "year": "Oct. 2024", "label": "Orion One Begins", "desc": "6+ years of Projeto Yara research applied to precision medicine." },
+    "brain": { "year": "Feb. 2025", "label": "Orion Brain", "desc": "Market launch. Image-guided neurosurgery with millimetric precision." },
     "spine": { "year": "Mar. 2025", "label": "Orion Spine", "desc": "Spinal module: navigation for surgeries with implants and pedicle screws." },
     "hip": { "year": "Coming soon", "label": "Orion Hip", "desc": "Hip surgeries and expansion into new specialties." }
   },
@@ -202,7 +204,7 @@
     "orion": {
       "eyebrow": "Surgical Navigation",
       "title": "Orion One",
-      "tagline": "The veterinary neuronavigator that guides every movement with millimetric precision.",
+      "tagline": "The neuronavigator that guides every movement with millimetric precision.",
       "more": "Learn More",
       "contact": "Request Demo"
     },
@@ -215,9 +217,9 @@
     }
   },
   "orionPage": {
-    "title": "Orion One | High-Precision Veterinary Neuronavigation",
-    "heroEyebrow": "Veterinary Neuronavigation",
-    "heroSubtitle": "The surgeon's GPS for veterinary medicine. Millimetric precision for neurosurgery and precision orthopedics.",
+    "title": "Orion One | High-Precision Surgical Neuronavigation",
+    "heroEyebrow": "Surgical Neuronavigation",
+    "heroSubtitle": "The surgeon's GPS for precision surgery. Millimetric accuracy in neurosurgery and orthopedics.",
     "heroCta": "Request a Demo",
     "finalCtaTitle": "Ready to operate with greater precision?",
     "finalCtaSub": "Schedule an exclusive Orion One demonstration with our team of specialists."

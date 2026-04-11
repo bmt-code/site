@@ -1,15 +1,16 @@
 {
   "page": {
-    "title": "Orion One | Neuronavegación Veterinaria de Alta Precisión"
+    "title": "Orion One | Neuronavegación Quirúrgica de Alta Precisión"
   },
   "meta": {
-    "description": "Eleve la seguridad de su clínica con Orion One, el navegador quirúrgico para neurocirugía y ortopedia veterinaria. Tecnología de punta, desarrollada en São Carlos. ¡Solicite su demostración!",
-    "keywords": "neuronavegación veterinaria, navegador quirúrgico veterinario, cirugía ortopédica veterinaria de precisión, Orion One BMT, tecnología quirúrgica veterinaria"
+    "description": "Eleve el estándar quirúrgico de su clínica con Orion One, el sistema de navegación guiada por imagen para neurocirugía y ortopedia de precisión. Desarrollado en Brasil. ¡Solicite su demostración!",
+    "keywords": "neuronavegación veterinaria, navegador quirúrgico veterinario, cirugía ortopédica veterinaria de precisión, Orion One BMT, tecnología quirúrgica veterinaria",
+    "orionDescription": "Orion One: sistema de neuronavegación quirúrgica de última generación. El GPS del cirujano para neurocirugía y ortopedia de precisión. Módulos Brain, Spine y Hip — desarrollado por BMT en Brasil."
   },
   "nav": {
     "products": "Productos",
     "orionOne": "Orion One",
-    "orionOneSub": "Neuronavegación Veterinaria",
+    "orionOneSub": "Neuronavegación Quirúrgica",
     "modules": "Brain & Spine",
     "modulesSub": "Módulos especializados",
     "zenith": "Zenith",
@@ -22,7 +23,7 @@
   },
   "hero": {
     "eyebrow": "Brazilian Medical Technologies",
-    "title": "Tecnología Quirúrgica de Precisión para Medicina Veterinaria",
+    "title": "Ingeniería Quirúrgica de Precisión.",
     "subtitle": "Desarrollado a partir de investigación en neurocirugía para elevar la seguridad y precisión de cada procedimiento."
   },
   "buttons": {
@@ -35,8 +36,8 @@
   },
   "aboutOrion": {
     "title": "¿Qué es Orion One?",
-    "origin": "Desarrollado a partir del Proyecto Yara — sistema de asistencia robótica a la neurocirugía en fase regulatoria — Orion One aplica más de 6 años de investigación quirúrgica a la medicina veterinaria de precisión.",
-    "p1": "Orion One es un sistema de neuronavegación quirúrgica de última generación, diseñado específicamente para la medicina veterinaria. Funciona como un \"GPS para el cirujano\", permitiendo visualizar la posición exacta de los instrumentos en tiempo real sobre imágenes de tomografía (TC) o resonancia magnética (RM) del paciente.",
+    "origin": "Desarrollado a partir del Proyecto Yara — sistema de asistencia robótica a la neurocirugía en fase regulatoria — Orion One aplica más de 6 años de investigación quirúrgica a la medicina de precisión.",
+    "p1": "Orion One es un sistema de neuronavegación quirúrgica de última generación, desarrollado para la medicina de precisión. Funciona como un \"GPS para el cirujano\", permitiendo visualizar la posición exacta de los instrumentos en tiempo real sobre imágenes de tomografía (TC) o resonancia magnética (RM) del paciente.",
     "p2": "Esta tecnología transforma procedimientos complejos en cirugías más seguras, rápidas y mínimamente invasivas, elevando drásticamente el estándar de cuidado y los resultados para neurocirugías y ortopedia de precisión."
   },
   "modules": {
@@ -76,21 +77,21 @@
     "workflowMsg": "El flujo de trabajo del módulo Hip estará disponible próximamente."
   },
   "zenith": {
-    "eyebrow": "Nuevo Producto",
-    "title": "Zenith: Inmersión Total en la Cirugía",
-    "tagline": "El adaptador de microscopio para gafas 3D que transforma cómo ve el campo quirúrgico.",
-    "description": "Zenith conecta su microscopio quirúrgico a gafas de realidad 3D, ofreciendo una experiencia inmersiva con profundidad de campo real. Más comodidad, más precisión, más libertad de movimiento.",
+    "eyebrow": "Visualización Quirúrgica 3D",
+    "title": "Zenith: Libertad Total en la Cirugía",
+    "tagline": "El adaptador que libera al cirujano del microscopio — cámaras 4K, gafas 3D y visión 3D real directamente en sus ojos.",
+    "description": "Zenith es un adaptador para microscopio quirúrgico equipado con dos cámaras 4K y conectado a gafas 3D. Cada cámara capta la visión de un ojo — el resultado es profundidad de campo real proyectada directamente en las gafas, liberando al cirujano del ocular y de la posición fija del microscopio.",
     "pillar1": {
-      "title": "Profundidad de Campo Real",
-      "p": "Visualice estructuras anatómicas en 3D estereoscópico real, con percepción de profundidad natural que amplía su confianza en cada movimiento."
+      "title": "Visión 3D con Cámaras 4K",
+      "p": "Dos cámaras 4K en el adaptador replican la visión binocular y proyectan en las pantallas de las gafas 3D — profundidad de campo real, sin trucos digitales."
     },
     "pillar2": {
-      "title": "Ergonomía Superior",
-      "p": "Libérese de la posición fija del microscopio. Con las gafas 3D, opere con libertad de movimiento y comodidad durante procedimientos prolongados."
+      "title": "Libertad y Salud Física",
+      "p": "Sin más posición fija en el ocular. Zenith libera al cirujano del microscopio, protegiendo la columna y el cuello en procedimientos prolongados."
     },
     "pillar3": {
-      "title": "Compatibilidad Universal",
-      "p": "Diseñado para integrarse con los principales microscopios quirúrgicos del mercado, sin necesidad de sustituir su equipo existente."
+      "title": "Streaming y Grabación vía WiFi",
+      "p": "Transmita la visión quirúrgica en tiempo real a laptop, celular y plataformas externas. Grabe en 4K y descargue vía WiFi — ideal para formación remota y documentación clínica."
     },
     "cta": "Conozca Más sobre Zenith"
   },
@@ -160,7 +161,8 @@
     "watchVideo": "Ver con sonido",
     "card1": { "p": "\"Además de procedimientos más eficaces, seguros y precisos, nos permite hacer cosas que antes eran impensables. Asimismo, muchos de nuestros pacientes ahora tienen una recuperación mucho mejor y más rápida.\"", "author": "- Dr. Ricardo Shimizu, Hospital Veterinario VEROS, SP." },
     "card2": { "p": "\"Orion facilitó que consiguiéramos tener resecciones quirúrgicas más provechosas y dirigidas, evitando así lesiones graves a los pacientes.\"", "author": "- Dra. Ayanne Fireman, Maceió, AL." },
-    "card3": { "p": "\"Fue un antes y un después cuando comenzamos a utilizar el neuronavegador de BMT. Con Orion, fue mucho más fácil localizar las lesiones, ya fueran extraaxiales o intraaxiales, con las que teníamos bastante dificultad de localización.\"", "author": "- Dr. Felipe Purcell, Iconvet Bahia, Salvador" }
+    "card3": { "p": "\"Fue un antes y un después cuando comenzamos a utilizar el neuronavegador de BMT. Con Orion, fue mucho más fácil localizar las lesiones, ya fueran extraaxiales o intraaxiales, con las que teníamos bastante dificultad de localización.\"", "author": "- Dr. Felipe Purcell, Iconvet Bahia, Salvador" },
+    "card4": { "p": "\"Estoy seguro de que: al menos el 60% de las cirugías que realicé en estos 2 meses, no hubiera podido alcanzar el margen de éxito en resección y planificación sin microscopía y neuronavegación.\"", "author": "- Dr. Matheus Marçal, Ilha Animal, RJ." }
   },
   "aboutUs": {
     "eyebrow": "Nuestra Historia",
@@ -169,7 +171,7 @@
   },
   "contact": {
     "title": "¿Listo para transformar su práctica quirúrgica? Hable con nosotros.",
-    "intro": "Complete el siguiente formulario y uno de nuestros especialistas se pondrá en contacto para programar una demostración exclusiva del sistema de neuronavegación veterinaria Orion One."
+    "intro": "Complete el siguiente formulario y uno de nuestros especialistas se pondrá en contacto para programar una demostración exclusiva del sistema de neuronavegación Orion One."
   },
   "form": {
     "name": "Nombre",
@@ -193,8 +195,8 @@
   "timeline": {
     "yara": { "year": "2018 – 2024", "label": "Proyecto Yara", "desc": "Sistema de asistencia robótica a la neurocirugía (SEEG), desarrollado en la EESC USP en colaboración con el HC FMRP." },
     "founded": { "year": "Abr. 2024", "label": "Fundación de BMT", "desc": "Cuatro ingenieros mecatrónicos de la EESC convierten años de investigación en producto." },
-    "orionStart": { "year": "Oct. 2024", "label": "Inicio del Orion One", "desc": "Más de 6 años de investigación del Proyecto Yara aplicados a la medicina veterinaria de precisión." },
-    "brain": { "year": "Feb. 2025", "label": "Orion Brain", "desc": "Lanzamiento al mercado. Neurocirugía veterinaria guiada por imagen, con precisión milimétrica." },
+    "orionStart": { "year": "Oct. 2024", "label": "Inicio del Orion One", "desc": "Más de 6 años de investigación del Proyecto Yara aplicados a la medicina de precisión." },
+    "brain": { "year": "Feb. 2025", "label": "Orion Brain", "desc": "Lanzamiento al mercado. Neurocirugía guiada por imagen con precisión milimétrica." },
     "spine": { "year": "Mar. 2025", "label": "Orion Spine", "desc": "Módulo de columna vertebral: navegación para cirugías con implantes y tornillos pediculares." },
     "hip": { "year": "Próximamente", "label": "Orion Hip", "desc": "Cirugías de cadera y expansión hacia nuevas especialidades." }
   },
@@ -202,7 +204,7 @@
     "orion": {
       "eyebrow": "Navegación Quirúrgica",
       "title": "Orion One",
-      "tagline": "El neuronavegador veterinario que guía cada movimiento con precisión milimétrica.",
+      "tagline": "El neuronavegador que guía cada movimiento con precisión milimétrica.",
       "more": "Conocer Más",
       "contact": "Solicitar Demo"
     },
@@ -215,9 +217,9 @@
     }
   },
   "orionPage": {
-    "title": "Orion One | Neuronavegación Veterinaria de Alta Precisión",
-    "heroEyebrow": "Neuronavegación Veterinaria",
-    "heroSubtitle": "El GPS del cirujano veterinario. Precisión milimétrica para neurocirugía y ortopedia de precisión.",
+    "title": "Orion One | Neuronavegación Quirúrgica de Alta Precisión",
+    "heroEyebrow": "Neuronavegación Quirúrgica",
+    "heroSubtitle": "El GPS del cirujano de precisión. Exactitud milimétrica en neurocirugía y ortopedia.",
     "heroCta": "Solicitar Demostración",
     "finalCtaTitle": "¿Listo para operar con mayor precisión?",
     "finalCtaSub": "Programe una demostración exclusiva de Orion One con nuestro equipo de especialistas."
