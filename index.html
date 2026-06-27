@@ -334,13 +334,15 @@
                 <h2 data-i18n-key="contact.title">Pronto para transformar sua prática cirúrgica? Fale conosco.</h2>
                 <p class="contact-intro gsap-reveal" data-i18n-key="contact.intro">Preencha o formulário abaixo e um de nossos especialistas entrará em contato para agendar uma demonstração exclusiva do sistema de neuronavegação veterinária Orion One.</p>
                 <form class="contact-form" action="https://formspree.io/f/xldlnqoo" method="POST">
-                    <div class="form-group">
-                        <label for="nome" data-i18n-key="form.name">Nome</label>
-                        <input type="text" id="nome" name="nome" required autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="cidade" data-i18n-key="form.city">Cidade</label>
-                        <input type="text" id="cidade" name="cidade" required autocomplete="address-level2">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome" data-i18n-key="form.name">Nome</label>
+                            <input type="text" id="nome" name="nome" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade" data-i18n-key="form.city">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" required autocomplete="address-level2">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="clinica" data-i18n-key="form.clinic">Nome da Clínica</label>
@@ -370,15 +372,20 @@
                             </label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="casuistica-cranio" data-i18n-key="form.skullCaseload">Qual a casuística de crânio? (casos/mês)</label>
-                        <input type="number" id="casuistica-cranio" name="casuistica_cranio" min="0" placeholder="0">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="casuistica-cranio" data-i18n-key="form.skullCaseload">Qual a casuística de crânio? (casos/mês)</label>
+                            <input type="number" id="casuistica-cranio" name="casuistica_cranio" min="0" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="casuistica-coluna" data-i18n-key="form.spineCaseload">Qual a casuística de coluna? (casos/mês)</label>
+                            <input type="number" id="casuistica-coluna" name="casuistica_coluna" min="0" placeholder="0">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="casuistica-coluna" data-i18n-key="form.spineCaseload">Qual a casuística de coluna? (casos/mês)</label>
-                        <input type="number" id="casuistica-coluna" name="casuistica_coluna" min="0" placeholder="0">
-                    </div>
-                    <button type="submit" class="submit-button" data-i18n-key="buttons.submit">Sim, Quero Mais Segurança e Precisão</button>
+                    <button type="submit" class="submit-button">
+                        <span data-i18n-key="buttons.submit">Sim, Quero Mais Segurança e Precisão</span>
+                        <span class="submit-arrow" aria-hidden="true">→</span>
+                    </button>
                 </form>
             </div>
         </section>

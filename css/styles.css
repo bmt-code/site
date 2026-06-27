@@ -1543,18 +1543,28 @@ main.hip-active .hide-for-hip {
 }
 
 .contact-form {
-    max-width: 600px;
+    max-width: 680px;
     margin: 0 auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 36px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.form-group > label {
     display: block;
-    margin-bottom: 5px;
-    color: var(--text-light);
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .form-group input {
@@ -1567,6 +1577,7 @@ main.hip-active .hide-for-hip {
     font-family: var(--font-primary);
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -1577,35 +1588,96 @@ main.hip-active .hide-for-hip {
 
 .form-label {
     display: block;
-    margin-bottom: 8px;
-    color: var(--text-light);
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
 }
 
 .form-checkboxes {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 12px;
 }
 
 .checkbox-label {
+    flex: 1;
     display: flex;
     align-items: center;
     gap: 10px;
     color: var(--text-light);
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 16px;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    font-size: 0.9rem;
+}
+
+.checkbox-label:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.checkbox-label:has(input:checked) {
+    border-color: var(--primary-blue);
+    background: rgba(0, 136, 241, 0.08);
 }
 
 .checkbox-label input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
-    accent-color: var(--primary-blue);
+    align-self: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
     cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
 }
 
 .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
     padding: 16px;
+    margin-top: 8px;
     border: none;
     border-radius: 50px;
     background-color: var(--primary-blue);
@@ -1622,6 +1694,51 @@ main.hip-active .hide-for-hip {
     background-color: #1a9fff;
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0, 136, 241, 0.35);
+}
+
+.submit-arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+.submit-button:hover .submit-arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 24px 18px;
+        border-radius: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .form-row .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-checkboxes {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group input[type="number"]::-webkit-inner-spin-button,
+    .form-group input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .form-group input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    .submit-button {
+        font-size: 1rem;
+        padding: 14px 12px;
+    }
 }
 
 /* 8. Rodapé */
