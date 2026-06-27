@@ -175,12 +175,18 @@
   },
   "form": {
     "name": "Nombre",
-    "clinic": "Clínica/Hospital",
+    "city": "Ciudad",
+    "clinic": "Nombre de la Clínica",
     "email": "Correo Electrónico",
     "phone": "Teléfono/WhatsApp",
     "phonePlaceholder": "+55 11 99999-9999",
     "phoneError": "Incluya el código de país y área. Ej: +55 11 99999-9999",
-    "emailError": "Ingrese un correo válido. Ej: nombre@clinica.com"
+    "emailError": "Ingrese un correo válido. Ej: nombre@clinica.com",
+    "equipmentAccess": "¿Tiene acceso a:",
+    "mri": "Resonancia Magnética",
+    "ct": "Tomografía Computarizada",
+    "skullCaseload": "¿Cuál es su casuística de cráneo? (casos/mes)",
+    "spineCaseload": "¿Cuál es su casuística de columna? (casos/mes)"
   },
   "footer": {
     "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA.",

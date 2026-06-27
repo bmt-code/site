@@ -339,12 +339,12 @@
                         <input type="text" id="nome" name="nome" required autocomplete="name">
                     </div>
                     <div class="form-group">
-                        <label for="clinica" data-i18n-key="form.clinic">Clínica/Hospital</label>
-                        <input type="text" id="clinica" name="clinica" required autocomplete="organization">
+                        <label for="cidade" data-i18n-key="form.city">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" required autocomplete="address-level2">
                     </div>
                     <div class="form-group">
-                        <label for="email" data-i18n-key="form.email">E-mail</label>
-                        <input type="email" id="email" name="email" required autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                        <label for="clinica" data-i18n-key="form.clinic">Nome da Clínica</label>
+                        <input type="text" id="clinica" name="clinica" required autocomplete="organization">
                     </div>
                     <div class="form-group">
                         <label for="telefone" data-i18n-key="form.phone">Telefone/WhatsApp</label>
@@ -352,6 +352,31 @@
                                data-i18n-key="[placeholder]form.phonePlaceholder"
                                placeholder="+55 11 99999-9999"
                                pattern="^\+?[\d\s\-\(\)\.]{10,20}$">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n-key="form.email">E-mail</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label" data-i18n-key="form.equipmentAccess">Tem acesso a:</span>
+                        <div class="form-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="acesso_ressonancia" value="sim">
+                                <span data-i18n-key="form.mri">Ressonância Magnética</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="acesso_tomografia" value="sim">
+                                <span data-i18n-key="form.ct">Tomografia Computadorizada</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="casuistica-cranio" data-i18n-key="form.skullCaseload">Qual a casuística de crânio? (casos/mês)</label>
+                        <input type="number" id="casuistica-cranio" name="casuistica_cranio" min="0" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="casuistica-coluna" data-i18n-key="form.spineCaseload">Qual a casuística de coluna? (casos/mês)</label>
+                        <input type="number" id="casuistica-coluna" name="casuistica_coluna" min="0" placeholder="0">
                     </div>
                     <button type="submit" class="submit-button" data-i18n-key="buttons.submit">Sim, Quero Mais Segurança e Precisão</button>
                 </form>

@@ -175,12 +175,18 @@
   },
   "form": {
     "name": "Name",
-    "clinic": "Clinic/Hospital",
+    "city": "City",
+    "clinic": "Clinic Name",
     "email": "Email",
     "phone": "Phone/WhatsApp",
     "phonePlaceholder": "+1 (234) 56789",
     "phoneError": "Please include country code and area code. Ex: +1 (234) 56789",
-    "emailError": "Please enter a valid email. Ex: name@clinic.com"
+    "emailError": "Please enter a valid email. Ex: name@clinic.com",
+    "equipmentAccess": "Do you have access to:",
+    "mri": "MRI (Magnetic Resonance Imaging)",
+    "ct": "CT Scan (Computed Tomography)",
+    "skullCaseload": "What is your skull caseload? (cases/month)",
+    "spineCaseload": "What is your spine caseload? (cases/month)"
   },
   "footer": {
     "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA.",

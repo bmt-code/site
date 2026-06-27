@@ -183,12 +183,18 @@
   },
   "form": {
     "name": "Nome",
-    "clinic": "Clínica/Hospital",
+    "city": "Cidade",
+    "clinic": "Nome da Clínica",
     "email": "E-mail",
     "phone": "Telefone/WhatsApp",
     "phonePlaceholder": "+55 11 99999-9999",
     "phoneError": "Inclua o DDI e DDD. Ex: +55 11 99999-9999",
-    "emailError": "Insira um e-mail válido. Ex: nome@clinica.com"
+    "emailError": "Insira um e-mail válido. Ex: nome@clinica.com",
+    "equipmentAccess": "Tem acesso a:",
+    "mri": "Ressonância Magnética",
+    "ct": "Tomografia Computadorizada",
+    "skullCaseload": "Qual a casuística de crânio? (casos/mês)",
+    "spineCaseload": "Qual a casuística de coluna? (casos/mês)"
   },
   "footer": {
     "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79",
