@@ -5,7 +5,9 @@
   "meta": {
     "description": "Eleve el estándar quirúrgico de su clínica con Orion One, el sistema de navegación guiada por imagen para neurocirugía y ortopedia de precisión. Desarrollado en Brasil. ¡Solicite su demostración!",
     "keywords": "neuronavegación veterinaria, navegador quirúrgico veterinario, cirugía ortopédica veterinaria de precisión, Orion One BMT, tecnología quirúrgica veterinaria",
-    "orionDescription": "Orion One: sistema de neuronavegación quirúrgica de última generación. El GPS del cirujano para neurocirugía y ortopedia de precisión. Módulos Brain, Spine y Hip — desarrollado por BMT en Brasil."
+    "orionDescription": "Orion One: sistema de neuronavegación quirúrgica de última generación. El GPS del cirujano para neurocirugía y ortopedia de precisión. Módulos Brain, Spine y Hip — desarrollado por BMT en Brasil.",
+    "zenithDescription": "Zenith Lite y Pro: capture videos y fotos a 12 MP directamente desde su microscopio quirúrgico. El Lite tiene galería táctil integrada; el Pro envía imagen 3D estereoscópica a las gafas y convierte su microscopio en exoscopio. Todo guardado en la nube Guide, organizado por paciente.",
+    "guideDescription": "Guide: la plataforma clínica en la nube de BMT. Videos, fotos e historias clínicas organizados por paciente, con herramientas de planificación por imagen y acceso desde cualquier lugar. Integrada con Zenith y Orion One."
   },
   "nav": {
     "products": "Productos",
@@ -14,7 +16,9 @@
     "modules": "Brain & Spine",
     "modulesSub": "Módulos especializados",
     "zenith": "Zenith",
-    "zenithSub": "Microscopio 3D Inmersivo",
+    "zenithSub": "Captura, Nube y Visión 3D",
+    "guide": "Guide",
+    "guideSub": "Plataforma Clínica en la Nube",
     "features": "Recursos",
     "howToUse": "Cómo Funciona",
     "testimonials": "Testimonios",
@@ -77,23 +81,22 @@
     "workflowMsg": "El flujo de trabajo del módulo Hip estará disponible próximamente."
   },
   "zenith": {
-    "eyebrow": "Visualización Quirúrgica 3D",
-    "title": "Zenith: Libertad Total en la Cirugía",
-    "tagline": "El adaptador que libera al cirujano del microscopio — cámaras 4K, gafas 3D y visión 3D real directamente en sus ojos.",
-    "description": "Zenith es un adaptador para microscopio quirúrgico equipado con dos cámaras 4K y conectado a gafas 3D. Cada cámara capta la visión de un ojo — el resultado es profundidad de campo real proyectada directamente en las gafas, liberando al cirujano del ocular y de la posición fija del microscopio.",
+    "eyebrow": "Imagen Quirúrgica Conectada",
+    "title": "Zenith: su microscopio, mucho más allá del ocular",
+    "tagline": "Grabe, fotografíe y revise cada procedimiento — con todo guardado automáticamente en la nube y organizado por paciente.",
+    "description": "El Zenith se acopla al microscopio quirúrgico que ya tiene y convierte cada procedimiento en registro clínico. Sensor de 12 MP, conexión inalámbrica con cualquier equipo de la misma red y envío automático al Guide. En el Lite, galería en la pantalla táctil para revisión en el quirófano. En el Pro, visión 3D estereoscópica en las gafas — y el microscopio pasa a operar como exoscopio.",
     "pillar1": {
-      "title": "Visión 3D con Cámaras 4K",
-      "p": "Dos cámaras 4K en el adaptador replican la visión binocular y proyectan en las pantallas de las gafas 3D — profundidad de campo real, sin trucos digitales."
+      "title": "Sensor de 12 MP, Captura en Alta Resolución",
+      "p": "Grabe videos y capture fotos a 12 MP directamente desde el microscopio. En Lite, todo aparece al instante en la pantalla táctil. En Pro, siga el stream desde cualquier pantalla de la clínica."
     },
     "pillar2": {
-      "title": "Libertad y Salud Física",
-      "p": "Sin más posición fija en el ocular. Zenith libera al cirujano del microscopio, protegiendo la columna y el cuello en procedimientos prolongados."
+      "title": "Sin Cables, en Su Red",
+      "p": "Conecte notebooks, tablets y pantallas desde cualquier punto de la clínica por Wi-Fi. Ningún cable nuevo, ninguna obra en el quirófano."
     },
     "pillar3": {
-      "title": "Streaming y Grabación vía WiFi",
-      "p": "Transmita la visión quirúrgica en tiempo real a laptop, celular y plataformas externas. Grabe en 4K y descargue vía WiFi — ideal para formación remota y documentación clínica."
-    },
-    "cta": "Conozca Más sobre Zenith"
+      "title": "Nube Organizada por Paciente",
+      "p": "Cada imagen y video sube automáticamente al Guide, archivado en la historia clínica del paciente y accesible desde donde esté."
+    }
   },
   "features": {
     "title": "Recursos que marcan la diferencia",
@@ -121,7 +124,7 @@
     "step2": {
       "title": "Planifique la Cirugía",
       "p": "Utilice el modelo 3D para definir trayectorias, marcar objetivos y simular el procedimiento antes de la primera incisión.",
-      "detailed_p": "La plataforma GuideOs ofrece herramientas de planificación exclusivas. Realice mediciones, defina ángulos, dibuje contornos y segmente estructuras con alta precisión para optimizar y agilizar el procedimiento quirúrgico."
+      "detailed_p": "La plataforma <a href=\"guide.html\" class=\"inline-link\">Guide</a> ofrece herramientas de planificación exclusivas. Realice mediciones, defina ángulos, dibuje contornos y segmente estructuras con alta precisión para optimizar y agilizar el procedimiento quirúrgico."
     },
     "step3": {
       "title": "Realice el Registro",
@@ -167,7 +170,8 @@
   "aboutUs": {
     "eyebrow": "Nuestra Historia",
     "title": "De la investigación al quirófano",
-    "originLabel": "Raíces Institucionales"
+    "originLabel": "Raíces Institucionales",
+    "scrollHint": "Deslice hacia el lado para ver toda la historia &rarr;"
   },
   "contact": {
     "title": "¿Listo para transformar su práctica quirúrgica? Hable con nosotros.",
@@ -189,7 +193,7 @@
     "spineCaseload": "¿Cuál es su casuística de columna? (casos/mes)"
   },
   "footer": {
-    "copyright": "&copy; 2024 Brazilian Medical Technologies LTDA.",
+    "copyright": "&copy; 2026 Brazilian Medical Technologies LTDA.",
     "developedIn": "Desarrollado en São Carlos - SP, el polo de la innovación.",
     "rights": "Todos los derechos reservados."
   },
@@ -204,6 +208,8 @@
     "orionStart": { "year": "Oct. 2024", "label": "Inicio del Orion One", "desc": "Más de 6 años de investigación del Proyecto Yara aplicados a la medicina de precisión." },
     "brain": { "year": "Feb. 2025", "label": "Orion Brain", "desc": "Lanzamiento al mercado. Neurocirugía guiada por imagen con precisión milimétrica." },
     "spine": { "year": "Mar. 2025", "label": "Orion Spine", "desc": "Módulo de columna vertebral: navegación para cirugías con implantes y tornillos pediculares." },
+    "zenith": { "year": "Jul. 2026", "label": "Zenith Lite y Pro", "desc": "La captura de imagen quirúrgica entra al portafolio: grabación, galería en pantalla táctil y nube en los dos tiers — con visión 3D y modo exoscopio en el Pro." },
+    "guide": { "year": "Ago. 2026", "label": "Guide", "desc": "Lanzamiento de la plataforma web: historia clínica, imágenes y planificación quirúrgica de cada paciente en un solo lugar." },
     "hip": { "year": "Próximamente", "label": "Orion Hip", "desc": "Cirugías de cadera y expansión hacia nuevas especialidades." }
   },
   "outdoor": {
@@ -217,8 +223,15 @@
     "zenith": {
       "eyebrow": "Visualización 3D Inmersiva",
       "title": "Zenith",
-      "tagline": "Vea el campo quirúrgico como nunca antes. Profundidad de campo real con gafas 3D.",
+      "tagline": "Capture, guarde en la nube y — con el Pro — vea en 3D lejos del ocular.",
       "more": "Conocer Más",
+      "contact": "Solicitar Demo"
+    },
+    "guide": {
+      "eyebrow": "Plataforma Clínica",
+      "title": "Guide",
+      "tagline": "Imágenes, videos e historias clínicas de cada paciente en un solo lugar — accesible desde cualquier lugar.",
+      "more": "Saber Más",
       "contact": "Solicitar Demo"
     }
   },
@@ -231,12 +244,207 @@
     "finalCtaSub": "Programe una demostración exclusiva de Orion One con nuestro equipo de especialistas."
   },
   "zenithPage": {
-    "title": "Zenith | Adaptador de Microscopio 3D Inmersivo",
-    "heroEyebrow": "Visualización Quirúrgica 3D",
-    "heroSubtitle": "Inmersión total en el campo quirúrgico. Profundidad de campo real con gafas 3D.",
+    "title": "Zenith Lite y Pro | Captura, Nube y Visión 3D para Cirugía",
+    "heroEyebrow": "Imagen Quirúrgica Conectada",
+    "heroSubtitle": "Grabe, fotografíe y siga cada procedimiento — en la nube, organizado por paciente. Y con el Pro, vea en 3D lejos del ocular.",
     "heroCta": "Solicitar Demostración",
     "finalCtaTitle": "Véalo con sus propios ojos.",
-    "finalCtaSub": "Programe una demostración de Zenith y experimente la diferencia de la inmersión 3D real."
+    "finalCtaSub": "Agende una demostración y descubra qué tier encaja mejor con su rutina quirúrgica.",
+    "tiers": {
+      "eyebrow": "Dos tiers, una plataforma",
+      "title": "Elija el Zenith de su rutina",
+      "sub": "Los dos capturan, conectan y guardan en la nube. El Pro suma la visión 3D que lo saca del ocular.",
+      "lite": {
+        "tab": "Zenith Lite",
+        "title": "Zenith Lite",
+        "tagline": "Cada procedimiento registrado, organizado y accesible — sin un cable más en el quirófano.",
+        "f1": "Grabación de video y captura de fotos a 12 MP",
+        "f2": "Pantalla táctil con galería integrada",
+        "f3": "Conexión inalámbrica con cualquier equipo de la misma red",
+        "f4": "Envío automático a la nube Guide, por paciente"
+      },
+      "pro": {
+        "tab": "Zenith Pro",
+        "badge": "3D",
+        "inherits": "Captura 12 MP, Wi-Fi y nube. Agrega:",
+        "title": "Zenith Pro",
+        "tagline": "La misma base del Lite, con visión 3D estereoscópica en las gafas: su microscopio se vuelve exoscopio.",
+        "f1": "Imagen 3D estereoscópica enviada a las gafas",
+        "f2": "Modo exoscopio — opere sin tocar el ocular",
+        "f3": "Postura libre, protegiendo cervical y columna",
+        "f4": "Todo el equipo viendo el mismo campo quirúrgico",
+        "f5": "Control de grabación por mouse o stream viewer en otro equipo"
+      }
+    },
+    "shared": {
+      "eyebrow": "Disponible en Lite y Pro",
+      "title": "Lo que cambia en su quirófano",
+      "sub": "Recursos presentes en los dos tiers — la base de captura y conectividad del Zenith.",
+      "f1": {
+        "eyebrow": "Registro",
+        "title": "Cada caso documentado sin esfuerzo",
+        "p": "En Lite, empiece a grabar con un toque. En Pro, inicie por mouse o por el stream viewer en otro equipo. Lo que antes se perdía en la memoria se vuelve acervo clínico — útil para seguir la evolución, discutir con colegas y respaldar sus decisiones."
+      },
+      "f2": {
+        "eyebrow": "Galería — Lite",
+        "title": "Revise el procedimiento aún en el quirófano",
+        "p": "En Lite, la pantalla táctil trae la galería completa del caso — verifique el encuadre, muestre un detalle al residente y confirme el registro antes de cerrar, sin depender de otra computadora. En Pro, revise a través del stream viewer en cualquier pantalla de la clínica."
+      },
+      "f3": {
+        "eyebrow": "Conectividad",
+        "title": "Sin cables, en cualquier pantalla de la clínica",
+        "p": "El Zenith se comunica por Wi-Fi con cualquier equipo de la misma red. Refléjelo en un monitor del quirófano, envíelo al notebook de la discusión de caso o sígalo desde la tablet — sin pasar cables sobre el campo estéril."
+      },
+      "f4": {
+        "eyebrow": "Nube",
+        "title": "Todo en el Guide, archivado por paciente",
+        "p": "Al final, imágenes y videos ya están en la historia clínica del paciente dentro del Guide, accesibles desde casa, desde otra sede o desde un congreso. Sin pendrive, sin carpeta perdida en el escritorio."
+      }
+    },
+    "proOnly": {
+      "eyebrow": "Exclusivo del Zenith Pro",
+      "title": "La cirugía fuera del ocular",
+      "sub": "Lo que el tier Pro agrega sobre todo lo que el Lite ya hace.",
+      "f1": {
+        "eyebrow": "Visión 3D",
+        "title": "Profundidad real, directo en las gafas",
+        "p": "La imagen estereoscópica se envía a las gafas y reproduce la profundidad de campo que usted ya conoce del ocular — sin truco digital. Su microscopio pasa a funcionar como exoscopio, sin ser reemplazado."
+      },
+      "f2": {
+        "eyebrow": "Ergonomía",
+        "title": "Su columna lo agradece en cirugías largas",
+        "p": "Sin el ocular dictando la posición del cuerpo, usted opera con la cabeza erguida y cambia de postura cuando lo necesita. En procedimientos de horas, esa es la diferencia entre terminar entero y terminar con dolor cervical."
+      }
+    },
+    "guideTeaser": {
+      "eyebrow": "La plataforma detrás",
+      "title": "Guide",
+      "tagline": "Todo registro del Zenith cae directo en la historia clínica del paciente — con planificación por imagen y acceso desde cualquier lugar.",
+      "more": "Conocer el Guide",
+      "contact": "Solicitar Demo"
+    },
+    "compare": {
+      "title": "¿Lite o Pro?",
+      "sub": "La base es la misma en los dos. El Pro agrega la capa de visualización 3D.",
+      "colFeature": "Recurso",
+      "colLite": "Lite",
+      "colPro": "Pro",
+      "hint": "Deslice hacia el lado para ver los dos tiers →",
+      "yes": "Incluido",
+      "no": "No incluido",
+      "r1": {
+        "t": "Grabación de video en alta resolución",
+        "d": "Toque en Lite, mouse o stream viewer en Pro"
+      },
+      "r2": {
+        "t": "Captura de fotos a 12 MP",
+        "d": "Registro de los momentos clave del procedimiento"
+      },
+      "r3": {
+        "t": "Pantalla táctil con galería",
+        "d": "Revisión del caso aún en el quirófano"
+      },
+      "r4": {
+        "t": "Conexión inalámbrica por la red de la clínica",
+        "d": "Cualquier equipo en el mismo Wi-Fi, sin cables"
+      },
+      "r5": {
+        "t": "Envío automático a la nube Guide",
+        "d": "Sin pendrive, sin transferencia manual"
+      },
+      "r6": {
+        "t": "Historia clínica organizada por paciente",
+        "d": "Imágenes y videos archivados en el caso correcto"
+      },
+      "r7": {
+        "t": "Acceso desde cualquier lugar",
+        "d": "Desde la clínica, desde casa o desde otra sede"
+      },
+      "r8": {
+        "t": "Imagen 3D estereoscópica en las gafas",
+        "d": "Profundidad de campo real, sin truco digital"
+      },
+      "r9": {
+        "t": "Modo exoscopio, lejos del ocular",
+        "d": "Postura libre y cervical protegida"
+      }
+    }
+  },
+  "guide": {
+    "eyebrow": "Plataforma Clínica en la Nube",
+    "title": "Guide: el lugar único de cada paciente",
+    "tagline": "Imágenes, videos, historia clínica y planificación quirúrgica en la misma dirección — accesible desde donde esté.",
+    "description": "El Guide es la plataforma en la nube de BMT. Todo lo que el Zenith captura y todo lo que usted planifica en el Orion One llega organizado por paciente, junto al historial clínico. En vez de imágenes dispersas en pendrives, celulares y computadoras de la clínica, cada caso tiene una sola dirección — y abre en cualquier navegador.",
+    "pillar1": {
+      "title": "Una Historia Clínica por Paciente",
+      "p": "Videos, fotos, exámenes y anotaciones en el mismo caso clínico. Encuentre el procedimiento de hace meses en segundos, sin buscar archivos."
+    },
+    "pillar2": {
+      "title": "Planificación por Imagen",
+      "p": "Mida, marque ángulos, dibuje contornos y segmente estructuras antes de entrar al quirófano — las mismas herramientas usadas en el flujo del Orion One."
+    },
+    "pillar3": {
+      "title": "Acceso desde Cualquier Lugar",
+      "p": "Funciona en el navegador. Revise un caso desde casa, muestre la evolución al tutor en la consulta o discútalo con un colega de otra ciudad."
+    },
+    "f1": {
+      "eyebrow": "Organización",
+      "title": "El fin de las imágenes dispersas",
+      "p": "Cada video y cada foto llega ya vinculado al paciente correcto, con fecha y procedimiento. Se acaban el pendrive en el cajón, la carpeta sin nombre en el escritorio y el video importante en el celular de alguien."
+    },
+    "f2": {
+      "eyebrow": "Historia clínica",
+      "title": "Historial clínico junto a la imagen",
+      "p": "Anamnesis, evolución y conducta quedan al lado del material del procedimiento. A la hora de decidir el próximo paso, usted mira el caso entero de una vez — no pedazos de él."
+    },
+    "f3": {
+      "eyebrow": "Planificación",
+      "title": "Herramientas para planificar antes de operar",
+      "p": "Realice mediciones, defina ángulos, dibuje contornos y segmente estructuras con alta precisión. El mismo conjunto de herramientas que el cirujano usa en el flujo del Orion One, disponible para cualquier caso."
+    },
+    "f4": {
+      "eyebrow": "Movilidad",
+      "title": "La clínica entera en el navegador",
+      "p": "Sin instalar nada, sin depender de la computadora del quirófano. Abra el caso desde casa la víspera, muéstrelo al tutor en el control o revíselo entre una cirugía y otra desde la tablet."
+    },
+    "f5": {
+      "eyebrow": "Enseñanza",
+      "title": "Acervo listo para enseñar y presentar",
+      "p": "Casos bien documentados se vuelven material de clase, discusión de equipo y presentación en congresos. Lo que usted ya registra en la rutina pasa a rendir fuera del quirófano."
+    },
+    "ecosystem": {
+      "eyebrow": "Un ecosistema",
+      "title": "Conectado a los dos productos BMT",
+      "sub": "El Guide recibe lo que el Zenith captura y sostiene la planificación del Orion One."
+    }
+  },
+  "guidePage": {
+    "title": "Guide | Plataforma Clínica en la Nube de BMT",
+    "heroEyebrow": "Plataforma Clínica en la Nube",
+    "heroSubtitle": "Imágenes, videos, historia clínica y planificación quirúrgica de cada paciente en un solo lugar — abierto desde cualquier navegador.",
+    "heroCta": "Acceder al Guide",
+    "accessCta": "Acceder al Guide",
+    "finalCtaTitle": "Toda su casuística en un solo lugar.",
+    "finalCtaSub": "¿Ya es cliente BMT? Entre en la plataforma. ¿Aún no la conoce? Agende una demostración con nuestro equipo.",
+    "demoCta": "Solicitar Demostración"
+  },
+  "obrigado": {
+    "title": "Demostración confirmada | BMT",
+    "heading": "Demostración confirmada.",
+    "expectLabel": "Qué esperar en la demo",
+    "backCta": "Conozca toda la BMT",
+    "orion": {
+      "p": "Usted recibirá un correo con el enlace de Google Meet y todos los detalles. Nuestro equipo estará listo para mostrar el Orion One funcionando en vivo.",
+      "e1": "Navegación en tiempo real sobre TC o RM de un caso real",
+      "e2": "Orion Brain o Spine en acción — usted elige el enfoque",
+      "e3": "Espacio para todas sus dudas técnicas sin apuro"
+    },
+    "zenith": {
+      "p": "Usted recibirá un correo con el enlace de Google Meet y todos los detalles. Nuestro equipo estará listo para mostrar el Zenith funcionando en vivo.",
+      "e1": "Captura, galería y envío a la nube en un caso real",
+      "e2": "Lite o Pro — comparamos los dos con su rutina",
+      "e3": "Espacio para todas sus dudas técnicas sin apuro"
+    }
   },
   "demoOrion": {
     "title": "Demo Orion One | BMT",
@@ -278,41 +486,85 @@
     "title": "Demo Zenith | BMT",
     "headerCta": "Agendar Demo Gratuita",
     "heroEyebrow": "Demo Gratuita — 30 minutos",
-    "heroH1": "Vea el campo quirúrgico como nunca antes.",
-    "heroH2": "Profundidad de campo real en 3D estereoscópico — sin cambiar su microscopio. Vea el Zenith en vivo en una demostración exclusiva.",
+    "heroH1": "Cada cirugía registrada. Y, si quiere, en 3D.",
+    "heroH2": "Grabe, fotografíe y envíe todo a la nube directamente desde su microscopio — y, en el tier Pro, opere fuera del ocular con visión 3D real. Vea el Zenith en vivo en una demostración exclusiva.",
     "heroCta": "Elegir mi horario",
     "guarantee": "Google Meet · Sin compromiso · Cancelación con 1 clic",
     "proofLabel": "Desarrollado por BMT — la misma tecnología de Orion One",
     "previewEyebrow": "La demostración",
     "previewH2": "En 30 minutos verá:",
-    "preview1": { "title": "El sistema en acción", "p": "Videos reales de cirujanos operando con el Zenith — las gafas 3D en uso, la visión 3D de las cámaras 4K y la libertad de movimiento que proporciona el sistema." },
-    "preview2": { "title": "Instalación y conectividad", "p": "Cómo el adaptador encaja en su microscopio, cómo funciona el WiFi para la grabación y el streaming en tiempo real a laptop, celular y plataformas externas." },
-    "preview3": { "title": "Sus dudas respondidas", "p": "Compatibilidad con su microscopio, ergonomía, capacitación, inversión y todo sobre la venta directa — con un especialista BMT, sin filtros." },
+    "preview1": {
+      "title": "El sistema en acción",
+      "p": "Grabación, captura de fotos y la galería en la pantalla táctil en un caso real — y, en el Pro, la visión 3D en las gafas con el cirujano lejos del ocular."
+    },
+    "preview2": {
+      "title": "Instalación, red y nube",
+      "p": "Cómo el Zenith se acopla a su microscopio, cómo se comunica por Wi-Fi con los equipos de la clínica y cómo cada registro llega organizado por paciente en el Guide."
+    },
+    "preview3": {
+      "title": "Lite o Pro, y sus dudas",
+      "p": "Comparamos los dos tiers con su rutina real de cirugías y hablamos de compatibilidad, capacitación e inversión — con un especialista BMT, sin filtros."
+    },
     "pillarsEyebrow": "Por qué el Zenith",
     "pillarsH2": "Cuatro diferenciales que cambian la cirugía",
-    "pillar1": { "title": "Visión 3D con cámaras 4K", "p": "Dos cámaras 4K dentro del adaptador replican la visión binocular del cirujano y proyectan en las dos pantallas de las gafas 3D — profundidad de campo real, sin trucos digitales." },
-    "pillar2": { "title": "Libertad y salud física", "p": "El Zenith libera al cirujano del microscopio. Basta de posición fija en el ocular — opere con postura natural, protegiendo la columna y el cuello en procedimientos prolongados." },
-    "pillar3": { "title": "Streaming en tiempo real", "p": "Transmita la visión quirúrgica en tiempo real a laptop, celular y plataformas externas vía WiFi. Ideal para capacitación a distancia, supervisión remota y clases en vivo directamente desde el quirófano." },
-    "pillar4": { "title": "Grabación y descarga vía WiFi", "p": "Grabe cada cirugía en 4K directamente en el adaptador y descárguela por WiFi. Documentación de casos, archivo clínico y material educativo — sin cables, sin complicaciones." },
+    "pillar1": {
+      "title": "Captura 4K con galería integrada",
+      "p": "Grabe videos y capture fotos directamente desde el microscopio, con un toque. Todo aparece al instante en la pantalla táctil, listo para revisar sin salir del quirófano."
+    },
+    "pillar2": {
+      "title": "Sin cables, en la red de la clínica",
+      "p": "El Zenith se comunica por Wi-Fi con cualquier equipo de la misma red. Refléjelo en un monitor del quirófano, envíelo al notebook o sígalo desde la tablet — sin pasar cables sobre el campo estéril."
+    },
+    "pillar3": {
+      "title": "Nube Guide organizada por paciente",
+      "p": "Cada imagen y video sube automáticamente al Guide y queda archivado en la historia clínica del paciente, accesible desde casa, desde otra sede o desde un congreso. Sin pendrive, sin carpetas perdidas."
+    },
+    "pillar4": {
+      "title": "Visión 3D y modo exoscopio (Pro)",
+      "p": "En el tier Pro, la imagen estereoscópica va a las gafas y el microscopio pasa a operar como exoscopio: profundidad de campo real, postura libre y cervical protegida en cirugías largas."
+    },
     "calendlyEyebrow": "Elija su horario",
     "calendlyH2": "Demo gratuita del Zenith",
     "badge1": "30 minutos",
     "badge2": "Google Meet — generado automáticamente",
     "badge3": "Sin compromiso",
     "accessEyebrow": "Acceso al sistema",
-    "accessH2": "Venta directa — propiedad total",
-    "accessSub": "El Zenith se comercializa exclusivamente en modalidad de venta directa. Sin contratos recurrentes, sin tarifa por cirugía — usted adquiere el sistema y es suyo.",
-    "accessCardTitle": "Venta Directa",
-    "accessCardP": "Adquiera el adaptador Zenith con las gafas 3D y tenga propiedad total del sistema. Úselo en cuantas cirugías desee, sin costo por procedimiento, sin renovaciones anuales. La inversión y las condiciones se presentan en la demostración.",
-    "accessCardTag": "Propiedad total · Sin mensualidad",
-    "accessCtaNote": "El monto de la inversión se presenta durante la demostración — agende abajo.",
+    "accessH2": "Dos tiers, una decisión simple",
+    "accessSub": "El Zenith se comercializa en la modalidad de venta directa — sin contratos recurrentes, sin tarifa por cirugía. En la demostración presentamos la inversión de cada tier.",
+    "accessCtaNote": "La inversión de cada tier se presenta durante la demostración — agende abajo.",
     "accessCta": "Quiero ver el Zenith",
     "faqEyebrow": "Preguntas frecuentes",
     "faqH2": "Antes de agendar",
-    "faq1": { "q": "¿El Zenith funciona con mi microscopio?", "a": "El Zenith fue diseñado para compatibilidad universal con los principales microscopios quirúrgicos del mercado. En la demostración verificamos la compatibilidad exacta con su modelo — si hay alguna excepción, lo sabrá antes de tomar cualquier decisión." },
-    "faq2": { "q": "¿Cómo funciona la tecnología 3D del Zenith?", "a": "El adaptador Zenith tiene dos cámaras 4K posicionadas en el binocular del microscopio, replicando la visión estereoscópica de cada ojo. Las imágenes se transmiten en tiempo real a las gafas 3D, que tienen dos pantallas independientes — una para cada ojo — generando profundidad de campo real sin trucos digitales." },
-    "faq3": { "q": "¿Necesito reemplazar mi microscopio actual?", "a": "No. El Zenith es un adaptador — se integra a su microscopio existente. Sin necesidad de reemplazo ni grandes reformas en el quirófano." },
-    "faq4": { "q": "¿La demostración tiene algún costo?", "a": "Ninguno. La demostración es completamente gratuita y sin compromiso. Verá el Zenith en vivo y hablará directamente con un especialista BMT — sin presión de venta." },
-    "footerLink": "Conozca el sitio completo de BMT"
+    "faq1": {
+      "q": "¿El Zenith funciona con mi microscopio?",
+      "a": "El Zenith fue diseñado para compatibilidad universal con los principales microscopios quirúrgicos del mercado, y vale para los dos tiers. En la demostración verificamos la compatibilidad exacta con su modelo — si hay alguna excepción, usted lo sabe antes de cualquier decisión."
+    },
+    "faq2": {
+      "q": "¿Cuál es la diferencia entre el Lite y el Pro?",
+      "a": "La base de captura es idéntica: los dos graban video y capturan fotos a 12 MP, se conectan sin cables a la red de la clínica y envían todo a la nube Guide organizado por paciente. El Lite suma galería en la pantalla táctil — revisión en el quirófano, sin otra computadora. El Pro reemplaza la pantalla por visión 3D estereoscópica en las gafas y control de grabación por mouse o stream viewer: el microscopio pasa a operar como exoscopio."
+    },
+    "faq3": {
+      "q": "¿Necesito reemplazar mi microscopio actual?",
+      "a": "No. El Zenith se integra a su microscopio existente, en los dos tiers. Sin necesidad de reemplazo ni de grandes obras en el quirófano — y, como la conexión es por Wi-Fi, tampoco hay que pasar cables nuevos en la sala."
+    },
+    "faq4": {
+      "q": "¿Dónde quedan guardados los videos y las fotos?",
+      "a": "En el Guide, la plataforma en la nube de BMT. Cada registro sube automáticamente y queda archivado en la historia clínica del paciente correspondiente, junto al historial clínico, accesible desde el navegador en cualquier lugar. Sin pendrive ni carpetas sueltas en la computadora del quirófano."
+    },
+    "footerLink": "Conozca el sitio completo de BMT",
+    "accessLite": {
+      "title": "Zenith Lite",
+      "p": "Grabación, fotos, galería en la pantalla táctil, conexión inalámbrica con la red de la clínica y envío automático a la nube Guide, organizado por paciente. Para quien quiere documentar toda la casuística sin cambiar su forma de operar.",
+      "tag": "La base completa"
+    },
+    "accessPro": {
+      "title": "Zenith Pro",
+      "p": "Captura a 12 MP, Wi-Fi y nube Guide — más imagen 3D estereoscópica en las gafas y control de grabación por mouse o stream viewer. El microscopio pasa a operar como exoscopio, sin pantalla integrada. Para procedimientos largos y para quien quiere salir del ocular sin renunciar a la profundidad de campo.",
+      "tag": "Visión 3D · Modo exoscopio"
+    },
+    "faq5": {
+      "q": "¿La demostración tiene algún costo?",
+      "a": "Ninguno. La demostración es completamente gratuita y sin compromiso. Verá el Zenith en vivo y hablará directamente con un especialista BMT — sin presión de venta."
+    }
   }
 }

@@ -87,13 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Orion-page only ──────────────────────────────────────────────
-    if (page === 'orion') {
+    // ── Páginas de produto (Orion / Zenith / Guide) ────────────────
+    // Todas usam a mesma estrutura: #funcionalidades com .feature-row,
+    // abas .module-tab (Orion e Zenith) e capítulos de workflow (Orion).
+    // Cada bloco abaixo já é inerte quando a marcação não existe na página.
+    if (['orion', 'zenith', 'guide'].includes(page)) {
 
     // 3. Feature Videos Interaction (Autoplay on Mobile, Hover on Desktop)
     const handleFeatureVideos = () => {
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
-        const featureRows = document.querySelectorAll('#funcionalidades .feature-row');
+        const featureRows = document.querySelectorAll('.features-section .feature-row');
 
         if (isMobile) {
             const observer = new IntersectionObserver((entries) => {
@@ -128,11 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     handleFeatureVideos();
 
-    // 3.5. Module Tabs (Brain / Spine / Hip)
+    // 3.5. Module Tabs — Orion (Brain / Spine / Hip) e Zenith (Lite / Pro)
     const moduleTabs = document.querySelectorAll('.module-tab');
     const modulePanels = document.querySelectorAll('.module-panel');
 
     if (moduleTabs.length > 0 && modulePanels.length > 0) {
+        // Nomes dos módulos vêm das próprias abas, então o mesmo handler
+        // serve qualquer página sem nada hardcoded.
+        const moduleNames = Array.from(moduleTabs).map(t => t.getAttribute('data-module'));
+
         moduleTabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 const target = tab.getAttribute('data-module');
@@ -146,9 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     panel.classList.toggle('active', panel.getAttribute('data-panel') === target);
                 });
 
-                // Hip: show outdoor billboard, hide features+workflow sections
-                const orionMain = document.querySelector('main');
-                if (orionMain) orionMain.classList.toggle('hip-active', target === 'hip');
+                // Estado do módulo ativo no <main>: `<módulo>-active`.
+                // Orion usa `hip-active` (billboard Em Breve, esconde features
+                // e workflow); Zenith usa `pro-active` (revela .only-for-pro).
+                const mainEl = document.querySelector('main');
+                if (mainEl) {
+                    moduleNames.forEach(m => {
+                        mainEl.classList.toggle(`${m}-active`, m === target);
+                    });
+                }
 
                 // Brain/Spine: switch features and workflow groups
                 document.querySelectorAll('.features-group').forEach(g => {

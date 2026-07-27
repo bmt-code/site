@@ -24,8 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
 
-    <title>Demonstração Confirmada | BMT</title>
-    <meta name="description" content="Sua demonstração do Orion One foi confirmada. Em breve você receberá os detalhes por e-mail. Aguardamos você!">
+    <title data-i18n-key="obrigado.title">Demonstração confirmada | BMT</title>
+    <meta name="description" content="Sua demonstração da BMT foi confirmada. Em breve você receberá os detalhes por e-mail.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/icons/favicon-96x96.png" sizes="96x96" />
@@ -46,7 +46,9 @@
     }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', 'SEU_PIXEL_ID');
     fbq('track', 'PageView');
-    fbq('track', 'Schedule', { content_name: 'Demo Orion One' });
+    // Produto vem do parâmetro ?p= da URL (definido no redirect da LP).
+    var bmtProduct = (new URLSearchParams(location.search).get('p') === 'zenith') ? 'zenith' : 'orion';
+    fbq('track', 'Schedule', { content_name: bmtProduct === 'zenith' ? 'Demo Zenith' : 'Demo Orion One' });
     </script>
     <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=Schedule&noscript=1"/></noscript>
@@ -68,11 +70,17 @@
         src="https://px.ads.linkedin.com/collect/?pid=SEU_PARTNER_ID&fmt=gif"/></noscript>
 
     <style>
-    /* Dispara conversão LinkedIn depois que o script carregou */
+    /* Blocos por produto: só o que casa com body[data-product] aparece.
+       O valor vem do parâmetro ?p= que a landing page passa no redirect. */
+    [data-product] { display: none; }
+    body[data-product="orion"]  [data-product="orion"],
+    body[data-product="zenith"] [data-product="zenith"] { display: block; }
+    body[data-product="orion"]  ul[data-product="orion"],
+    body[data-product="zenith"] ul[data-product="zenith"] { display: flex; }
     </style>
 </head>
 
-<body data-page="obrigado">
+<body data-page="obrigado" data-product="orion">
 
     <!-- Header centralizado, apenas logo -->
     <header class="main-header" style="background: rgba(8,13,20,0.95);">
@@ -100,13 +108,20 @@
                 </svg>
             </div>
 
-            <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;">
+            <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;"
+                data-i18n-key="obrigado.heading">
                 Demonstração confirmada.
             </h1>
 
-            <p style="font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 40px;">
+            <p style="font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 40px;"
+                data-product="orion" data-i18n-key="obrigado.orion.p">
                 Você vai receber um e-mail com o link do Google Meet e todos os detalhes.
                 Nossa equipe estará pronta para mostrar o Orion One funcionando ao vivo.
+            </p>
+            <p style="font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 40px;"
+                data-product="zenith" data-i18n-key="obrigado.zenith.p">
+                Você vai receber um e-mail com o link do Google Meet e todos os detalhes.
+                Nossa equipe estará pronta para mostrar o Zenith funcionando ao vivo.
             </p>
 
             <!-- O que esperar -->
@@ -118,27 +133,42 @@
                 text-align: left;
                 margin-bottom: 40px;
             ">
-                <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary-blue); margin-bottom: 18px;">
+                <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary-blue); margin-bottom: 18px;"
+                    data-i18n-key="obrigado.expectLabel">
                     O que esperar na demo
                 </p>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;" data-product="orion">
                     <li style="display:flex; align-items:flex-start; gap:10px; color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55;">
                         <span style="color:var(--primary-blue);flex-shrink:0;margin-top:1px;">&rarr;</span>
-                        Navegação em tempo real sobre TC ou RM de um caso real
+                        <span data-i18n-key="obrigado.orion.e1">Navegação em tempo real sobre TC ou RM de um caso real</span>
                     </li>
                     <li style="display:flex; align-items:flex-start; gap:10px; color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55;">
                         <span style="color:var(--primary-blue);flex-shrink:0;margin-top:1px;">&rarr;</span>
-                        Orion Brain ou Spine em ação — você escolhe o foco
+                        <span data-i18n-key="obrigado.orion.e2">Orion Brain ou Spine em ação — você escolhe o foco</span>
                     </li>
                     <li style="display:flex; align-items:flex-start; gap:10px; color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55;">
                         <span style="color:var(--primary-blue);flex-shrink:0;margin-top:1px;">&rarr;</span>
-                        Espaço para todas as suas dúvidas técnicas sem pressa
+                        <span data-i18n-key="obrigado.orion.e3">Espaço para todas as suas dúvidas técnicas sem pressa</span>
+                    </li>
+                </ul>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;" data-product="zenith">
+                    <li style="display:flex; align-items:flex-start; gap:10px; color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55;">
+                        <span style="color:var(--primary-blue);flex-shrink:0;margin-top:1px;">&rarr;</span>
+                        <span data-i18n-key="obrigado.zenith.e1">Captura, galeria e envio para a nuvem em um caso real</span>
+                    </li>
+                    <li style="display:flex; align-items:flex-start; gap:10px; color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55;">
+                        <span style="color:var(--primary-blue);flex-shrink:0;margin-top:1px;">&rarr;</span>
+                        <span data-i18n-key="obrigado.zenith.e2">Lite ou Pro — comparamos os dois com a sua rotina</span>
+                    </li>
+                    <li style="display:flex; align-items:flex-start; gap:10px; color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55;">
+                        <span style="color:var(--primary-blue);flex-shrink:0;margin-top:1px;">&rarr;</span>
+                        <span data-i18n-key="obrigado.zenith.e3">Espaço para todas as suas dúvidas técnicas sem pressa</span>
                     </li>
                 </ul>
             </div>
 
             <a href="index.html" class="cta-button" style="display:inline-flex;">
-                <span>Conheça toda a BMT</span>
+                <span data-i18n-key="obrigado.backCta">Conheça toda a BMT</span>
                 <span class="cta-arrow">&rarr;</span>
             </a>
 
@@ -147,11 +177,15 @@
 
     <footer style="padding: 22px 0; border-top: 1px solid var(--glass-border); text-align:center;">
         <p style="font-size: 13px; color: var(--text-muted);">
-            &copy; 2025 Brazilian Medical Technologies LTDA.
+            &copy; 2026 Brazilian Medical Technologies LTDA.
         </p>
     </footer>
 
     <script>
+    // Produto agendado vem do ?p= da URL; default orion (LPs antigas sem o parâmetro)
+    document.body.dataset.product =
+        new URLSearchParams(location.search).get('p') === 'zenith' ? 'zenith' : 'orion';
+
     // Dispara conversão LinkedIn após carregamento do script
     window.addEventListener('load', function () {
         if (typeof lintrk === 'function') {
@@ -159,6 +193,8 @@
         }
     });
     </script>
+
+    <script src="js/i18n.js"></script>
 
 </body>
 </html>

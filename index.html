@@ -141,12 +141,14 @@
                                     <span class="nav-dropdown__label" data-i18n-key="nav.orionOne">Orion One</span>
                                     <span class="nav-dropdown__sub" data-i18n-key="nav.orionOneSub">Neuronavegação Veterinária</span>
                                 </a>
-                                <!-- Zenith: oculto até lançamento
                                 <a href="zenith.html" class="nav-dropdown__item nav-dropdown__item--zenith">
                                     <span class="nav-dropdown__label" data-i18n-key="nav.zenith">Zenith</span>
-                                    <span class="nav-dropdown__sub" data-i18n-key="nav.zenithSub">Microscópio 3D Imersivo</span>
+                                    <span class="nav-dropdown__sub" data-i18n-key="nav.zenithSub">Captura, Nuvem e Visão 3D</span>
                                 </a>
-                                -->
+                                <a href="guide.html" class="nav-dropdown__item">
+                                    <span class="nav-dropdown__label" data-i18n-key="nav.guide">Guide</span>
+                                    <span class="nav-dropdown__sub" data-i18n-key="nav.guideSub">Plataforma Clínica na Nuvem</span>
+                                </a>
                             </div>
                         </li>
                         <li><a href="orion.html#depoimentos" data-i18n-key="nav.testimonials">Depoimentos</a></li>
@@ -171,8 +173,7 @@
     <!-- Seção 1: Hero -->
     <section id="hero" class="hero-section">
         <div class="video-background">
-            <video playsinline autoplay muted loop poster="img/video-poster.jpg">
-                <source src="videos/video.mp4" type="video/mp4">
+            <video playsinline autoplay muted loop poster="img/video-poster.png">                <source src="videos/video.mp4" type="video/mp4">
                 Seu navegador não suporta o vídeo.
             </video>
         </div>
@@ -216,8 +217,8 @@
                     <img src="img/cliente9.jpeg" alt="" aria-hidden="true">
                     <img src="img/cliente10.jpeg" alt="" aria-hidden="true">
                     <img src="img/cliente11.jpeg" alt="" aria-hidden="true">
-                    <img src="img/cliente12.png" alt="" aria-hidden="true">
-                    <img src="img/cliente13.png" alt="" aria-hidden="true">
+                    <img src="img/cliente12.jpeg" alt="" aria-hidden="true">
+                    <img src="img/cliente13.jpeg" alt="" aria-hidden="true">
                     <img src="img/cliente14.png" alt="" aria-hidden="true">
                 </div>
             </div>
@@ -245,14 +246,13 @@
             </div>
         </section>
 
-        <!-- Zenith Outdoor Billboard: oculto até lançamento -->
-        <!--
+        <!-- Zenith Outdoor Billboard -->
         <section id="zenith-outdoor" class="product-outdoor product-outdoor--zenith">
             <div class="product-outdoor__inner product-outdoor__inner--reversed container">
                 <div class="product-outdoor__text">
                     <span class="eyebrow product-outdoor__eyebrow product-outdoor__eyebrow--zenith" data-i18n-key="outdoor.zenith.eyebrow">Visualização 3D Imersiva</span>
                     <h2 class="product-outdoor__title" data-i18n-key="outdoor.zenith.title">Zenith</h2>
-                    <p class="product-outdoor__tagline" data-i18n-key="outdoor.zenith.tagline">Enxergue o campo cirúrgico como nunca antes. Profundidade de campo real com óculos 3D.</p>
+                    <p class="product-outdoor__tagline" data-i18n-key="outdoor.zenith.tagline">Capture, guarde na nuvem e — no Pro — enxergue em 3D fora do ocular.</p>
                     <div class="product-outdoor__ctas">
                         <a href="zenith.html" class="outdoor-btn outdoor-btn--zenith">
                             <span data-i18n-key="outdoor.zenith.more">Saiba Mais</span>
@@ -263,11 +263,32 @@
                 </div>
                 <div class="product-outdoor__visual">
                     <div class="product-outdoor__glow product-outdoor__glow--zenith"></div>
-                    <img src="img/zenith-produto.png" alt="Zenith — Adaptador de Microscópio 3D" loading="lazy">
+                    <img src="img/zenith-produto.jpg" alt="Zenith — captura e visão 3D para microscopia cirúrgica" loading="lazy">
                 </div>
             </div>
         </section>
-        -->
+
+        <!-- Guide Outdoor Billboard -->
+        <section id="guide-outdoor" class="product-outdoor product-outdoor--guide">
+            <div class="product-outdoor__inner container">
+                <div class="product-outdoor__text">
+                    <span class="eyebrow product-outdoor__eyebrow product-outdoor__eyebrow--guide" data-i18n-key="outdoor.guide.eyebrow">Plataforma Clínica</span>
+                    <h2 class="product-outdoor__title" data-i18n-key="outdoor.guide.title">Guide</h2>
+                    <p class="product-outdoor__tagline" data-i18n-key="outdoor.guide.tagline">Imagens, vídeos e prontuários de cada paciente em um lugar só — acessível de qualquer lugar.</p>
+                    <div class="product-outdoor__ctas">
+                        <a href="guide.html" class="outdoor-btn outdoor-btn--guide">
+                            <span data-i18n-key="outdoor.guide.more">Saiba Mais</span>
+                            <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="#contato" class="outdoor-btn outdoor-btn--secondary" data-i18n-key="outdoor.guide.contact">Solicitar Demo</a>
+                    </div>
+                </div>
+                <div class="product-outdoor__visual">
+                    <div class="product-outdoor__glow product-outdoor__glow--guide"></div>
+                    <img src="img/guide-produto.png" alt="Guide — plataforma clínica na nuvem" loading="lazy">
+                </div>
+            </div>
+        </section>
 
         <!-- Seção: Parceiros de Negócio -->
         <section id="parceiros" class="tech-partners-section">
@@ -328,6 +349,18 @@
                             <h4 class="bmt-timeline__label" data-i18n-key="timeline.spine.label">Orion Spine</h4>
                             <p class="bmt-timeline__desc" data-i18n-key="timeline.spine.desc">Módulo de coluna vertebral: navegação para cirurgias com implantes e parafusos pediculares.</p>
                         </div>
+                        <div class="bmt-timeline__item bmt-timeline__item--zenith">
+                            <div class="bmt-timeline__dot bmt-timeline__dot--zenith"></div>
+                            <span class="bmt-timeline__year" data-i18n-key="timeline.zenith.year">Jul. 2026</span>
+                            <h4 class="bmt-timeline__label" data-i18n-key="timeline.zenith.label">Zenith Lite e Pro</h4>
+                            <p class="bmt-timeline__desc" data-i18n-key="timeline.zenith.desc">A captura de imagem cirúrgica entra no portfólio: gravação, galeria em tela sensível ao toque e nuvem nos dois tiers — com visão 3D e modo exoscópio no Pro.</p>
+                        </div>
+                        <div class="bmt-timeline__item bmt-timeline__item--guide">
+                            <div class="bmt-timeline__dot bmt-timeline__dot--guide"></div>
+                            <span class="bmt-timeline__year" data-i18n-key="timeline.guide.year">Ago. 2026</span>
+                            <h4 class="bmt-timeline__label" data-i18n-key="timeline.guide.label">Guide</h4>
+                            <p class="bmt-timeline__desc" data-i18n-key="timeline.guide.desc">Lançamento da plataforma web: prontuário, imagens e planejamento cirúrgico de cada paciente em um lugar só.</p>
+                        </div>
                         <div class="bmt-timeline__item bmt-timeline__item--future">
                             <div class="bmt-timeline__dot bmt-timeline__dot--future"></div>
                             <span class="bmt-timeline__year" data-i18n-key="timeline.hip.year">Em breve</span>
@@ -336,6 +369,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="scroll-hint" data-i18n-key="aboutUs.scrollHint">Arraste para o lado para ver toda a história &rarr;</p>
 
                 <p class="about-roots-label" data-i18n-key="aboutUs.originLabel">Raízes Institucionais</p>
                 <div class="partner-logos">
@@ -414,7 +448,7 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p data-i18n-key="footer.copyright">&copy; 2024 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79</p>
+            <p data-i18n-key="footer.copyright">&copy; 2026 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79</p>
             <p data-i18n-key="footer.developedIn">Desenvolvido em São Carlos - SP, o polo da inovação.</p>
             <p data-i18n-key="footer.rights">Todos os direitos reservados.</p>
         </div>

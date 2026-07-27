@@ -193,35 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 { opacity: 0, y: 20 },
                 { opacity: 1, y: 0, duration: 0.5 }
             )
-            .fromTo('.zenith-title',
+            .fromTo('.zenith-section .zenith-title',
                 { opacity: 0, y: 20 },
                 { opacity: 1, y: 0, duration: 0.6 },
                 '-=0.3'
             )
-            .fromTo('.zenith-tagline',
+            .fromTo('.zenith-section .zenith-tagline',
                 { opacity: 0, y: 15 },
                 { opacity: 1, y: 0, duration: 0.5 },
                 '-=0.3'
             )
-            .fromTo('.zenith-visual',
+            .fromTo('.zenith-section .zenith-visual',
                 { opacity: 0, scale: 0.9 },
                 { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
                 '-=0.2'
             )
-            .fromTo('.zenith-description',
+            .fromTo('.zenith-section .zenith-description',
                 { opacity: 0, y: 20 },
                 { opacity: 1, y: 0, duration: 0.5 },
                 '-=0.4'
             )
-            .fromTo('.zenith-pillar',
+            .fromTo('.zenith-section .zenith-pillar',
                 { opacity: 0, x: 30 },
                 { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'power2.out' },
                 '-=0.3'
-            )
-            .fromTo('.zenith-cta',
-                { opacity: 0, y: 15 },
-                { opacity: 1, y: 0, duration: 0.5 },
-                '-=0.2'
             );
 
         gsap.to('.zenith-glow', {

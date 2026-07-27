@@ -31,6 +31,11 @@
     /* Orion Spine accent */
     --spine-accent: #e8901a;
     --spine-glow: rgba(232, 144, 26, 0.3);
+
+    /* Guide palette */
+    --guide-bg-deep: #04140f;
+    --guide-accent: #00c2a8;
+    --guide-glow: rgba(0, 194, 168, 0.3);
 }
 
 * {
@@ -60,6 +65,28 @@ body.no-scroll {
 body[data-page="zenith"],
 body[data-page="lp-zenith"] {
     background-color: var(--zenith-bg-deep);
+}
+
+body[data-page="guide"] {
+    background-color: var(--guide-bg-deep);
+}
+
+/* Identidade por página: o h2 e o .eyebrow padrão usam o azul do Orion.
+   Nas páginas Zenith e Guide isso destoa do fundo, então o título vai a
+   branco (como .zenith-title já fazia) e o eyebrow recebe o acento da página.
+   Os eyebrows dos billboards ficam de fora — cada um já traz o acento do
+   produto que anuncia. */
+body[data-page="zenith"] h2,
+body[data-page="guide"] h2 {
+    color: var(--text-light);
+}
+
+body[data-page="zenith"] .eyebrow:not(.product-outdoor__eyebrow) {
+    color: var(--zenith-accent);
+}
+
+body[data-page="guide"] .eyebrow:not(.product-outdoor__eyebrow) {
+    color: var(--guide-accent);
 }
 
 .container {
@@ -122,15 +149,74 @@ h3 {
     opacity: 0;
 }
 
-/* Zenith GSAP initial states */
+/* Zenith GSAP initial states.
+   Estes seletores DEVEM ficar dentro de .zenith-section: quem revela estes
+   elementos é a timeline do GSAP em js/animations.js (4.8), que só roda quando
+   existe uma .zenith-section na página. Fora dela, o elemento ficaria invisível. */
 .zenith-section .zenith-eyebrow,
-.zenith-title,
-.zenith-tagline,
-.zenith-visual,
-.zenith-description,
-.zenith-pillar,
-.zenith-cta {
+.zenith-section .zenith-title,
+.zenith-section .zenith-tagline,
+.zenith-section .zenith-visual,
+.zenith-section .zenith-description,
+.zenith-section .zenith-pillar {
     opacity: 0;
+}
+
+/* Só para leitores de tela — usado nas células do comparativo de tiers,
+   onde o ✓/— visual é aria-hidden. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Link dentro de um parágrafo de conteúdo */
+.inline-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 136, 241, 0.35);
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.inline-link:hover {
+    color: #1a9fff;
+    border-bottom-color: #1a9fff;
+}
+
+/* Dica de rolagem sob uma área que rola na horizontal (timeline, tabela de
+   tiers). Sem modificador aparece sempre; com --mobile-only, só no celular —
+   usado onde o conteúdo já cabe inteiro no desktop. */
+.scroll-hint {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    margin-top: 16px;
+}
+
+.scroll-hint--mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .scroll-hint--mobile-only {
+        display: block;
+    }
+}
+
+/* Subtítulo padrão abaixo do h2 de uma seção */
+.section-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto 48px;
 }
 
 /* Scroll-reveal elements */
@@ -352,6 +438,19 @@ h3 {
     color: #a855f7;
 }
 
+/* Zenith reaproveita o mesmo switcher: tiers Lite e Pro */
+.module-tab.active[data-module="lite"] {
+    background: rgba(185, 143, 214, 0.15);
+    border-color: #b98fd6;
+    color: #b98fd6;
+}
+
+.module-tab.active[data-module="pro"] {
+    background: rgba(155, 77, 202, 0.18);
+    border-color: var(--zenith-accent);
+    color: #c489ea;
+}
+
 .module-tab__badge {
     font-size: 9px;
     padding: 2px 6px;
@@ -431,8 +530,40 @@ h3 {
     background: #a855f7;
 }
 
+.module-glow--lite {
+    background: #b98fd6;
+}
+
+.module-glow--pro {
+    background: var(--zenith-accent);
+}
+
 [data-panel="hip"] .module-panel__content h3 {
     color: #a855f7;
+}
+
+[data-panel="lite"] .module-panel__content h3 {
+    color: #b98fd6;
+}
+
+[data-panel="pro"] .module-panel__content h3 {
+    color: #c489ea;
+}
+
+/* Selo "Inclui tudo do Lite" no painel Pro */
+.module-panel__inherits {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    margin-bottom: 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(185, 143, 214, 0.35);
+    background: rgba(185, 143, 214, 0.1);
+    color: #b98fd6;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 [data-panel="hip"] .module-features li::before {
@@ -665,6 +796,26 @@ h3 {
     height: 100%;
 }
 
+/* A página do Guide reaproveita a .zenith-section inteira, então os acentos
+   roxos herdados são recoloridos para o teal do Guide. */
+body[data-page="guide"] .zenith-pillar__icon {
+    color: var(--guide-accent);
+}
+
+body[data-page="guide"] .zenith-glow {
+    background: var(--guide-accent);
+}
+
+body[data-page="guide"] .zenith-lens img {
+    filter: drop-shadow(0 20px 60px rgba(0, 194, 168, 0.2));
+}
+
+body[data-page="guide"] .zenith-bg-layer {
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(0, 194, 168, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 194, 168, 0.08) 0%, transparent 50%);
+}
+
 .zenith-pillar h4 {
     color: var(--text-light);
     font-size: 1rem;
@@ -680,34 +831,27 @@ h3 {
     margin: 0;
 }
 
-.zenith-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border-radius: 50px;
-    background: var(--zenith-accent);
+/* Modificador de cor do .cta-button para as páginas Zenith.
+   Forma, espaçamento e a animação da seta vêm de .cta-button — aqui só a cor. */
+.zenith-hero-cta {
+    background-color: var(--zenith-accent);
     color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: -0.01em;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.zenith-cta:hover {
-    background: #b06fd9;
-    transform: translateY(-2px);
+.zenith-hero-cta:hover {
+    background-color: #b06fd9;
     box-shadow: 0 8px 30px var(--zenith-glow);
 }
 
-.zenith-cta .cta-arrow {
-    transition: transform 0.3s ease;
-    font-size: 1.2em;
+/* Mesmo modificador para a página do Guide */
+.guide-hero-cta {
+    background-color: var(--guide-accent);
+    color: #04140f;
 }
 
-.zenith-cta:hover .cta-arrow {
-    transform: translateX(4px);
+.guide-hero-cta:hover {
+    background-color: #2ad9c0;
+    box-shadow: 0 8px 30px var(--guide-glow);
 }
 
 /* Zenith mobile */
@@ -773,6 +917,19 @@ main.hip-active #hip-coming-soon {
 
 main.hip-active .hide-for-hip {
     display: none;
+}
+
+/* Zenith: seções exclusivas do tier Pro.
+   Mesmo mecanismo do Hip acima — o handler de abas em js/script.js aplica
+   a classe `<tier>-active` no <main>. Assim as capacidades compartilhadas
+   ficam sempre visíveis e só o conteúdo exclusivo do Pro aparece/some,
+   sem repetir os mesmos blocos em dois grupos. */
+.only-for-pro {
+    display: none;
+}
+
+main.pro-active .only-for-pro {
+    display: block;
 }
 
 /* Hip Outdoor Billboard */
@@ -2271,6 +2428,12 @@ main.hip-active .hide-for-hip {
     border-bottom: 1px solid rgba(155, 77, 202, 0.08);
 }
 
+.product-outdoor--guide {
+    background: rgba(0, 194, 168, 0.04);
+    border-top: 1px solid rgba(0, 194, 168, 0.08);
+    border-bottom: 1px solid rgba(0, 194, 168, 0.08);
+}
+
 .product-outdoor__inner {
     display: flex;
     align-items: center;
@@ -2325,6 +2488,7 @@ main.hip-active .hide-for-hip {
 
 .product-outdoor__glow--orion { background: var(--primary-blue); }
 .product-outdoor__glow--zenith { background: var(--zenith-accent); }
+.product-outdoor__glow--guide { background: var(--guide-accent); }
 
 .product-outdoor__eyebrow {
     color: var(--primary-blue);
@@ -2333,6 +2497,10 @@ main.hip-active .hide-for-hip {
 
 .product-outdoor__eyebrow--zenith {
     color: var(--zenith-accent);
+}
+
+.product-outdoor__eyebrow--guide {
+    color: var(--guide-accent);
 }
 
 .product-outdoor__title {
@@ -2406,6 +2574,17 @@ main.hip-active .hide-for-hip {
     box-shadow: 0 8px 30px var(--zenith-glow);
 }
 
+.outdoor-btn--guide {
+    background: var(--guide-accent);
+    color: #04140f;
+}
+
+.outdoor-btn--guide:hover {
+    background: #2ad9c0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--guide-glow);
+}
+
 .outdoor-btn--secondary {
     background: transparent;
     color: var(--text-light);
@@ -2432,31 +2611,22 @@ main.hip-active .hide-for-hip {
    14. Product Pages — Zenith Hero + Product CTA
    ═══════════════════════════════════════════════════════════ */
 
-/* Zenith product page hero — gradient background, no video */
-.zenith-product-hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    overflow: hidden;
-    margin-top: calc(var(--header-height) * -1);
-    padding-left: 10%;
-    background: transparent;
+/* Zenith & Guide product page heroes — video background with branded ambient overlay */
+.hero-section--zenith .hero-overlay {
+    background: radial-gradient(circle at 75% 35%, rgba(155, 77, 202, 0.28) 0%, rgba(8, 8, 8, 0.78) 70%);
 }
 
-.zenith-product-hero::before {
-    content: '';
-    position: absolute;
-    top: 15%;
-    right: 10%;
-    width: 600px;
-    height: 600px;
-    background: var(--zenith-accent);
-    border-radius: 50%;
-    filter: blur(130px);
-    opacity: 0.1;
-    pointer-events: none;
+.hero-section--guide .hero-overlay {
+    background: radial-gradient(circle at 75% 35%, rgba(0, 194, 168, 0.28) 0%, rgba(8, 8, 8, 0.78) 70%);
+}
+
+/* Dois botões lado a lado no CTA final (usado no Guide) */
+.product-cta-section__ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Product page final CTA section */
@@ -2605,8 +2775,11 @@ main.hip-active .hide-for-hip {
 /* ═══════════════════════════════════════════════════════════
    16. BMT Origin Timeline — About Us Section
    ═══════════════════════════════════════════════════════════ */
+/* Margem inferior curta de propósito: a .scroll-hint vem logo abaixo e precisa
+   ficar colada na timeline que ela descreve. O respiro até a próxima seção
+   vem do margin-top da .about-roots-label. */
 .bmt-timeline {
-    margin: 48px 0 52px;
+    margin: 48px 0 12px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
@@ -2616,7 +2789,10 @@ main.hip-active .hide-for-hip {
 .bmt-timeline__track {
     display: flex;
     position: relative;
-    min-width: 700px;
+    /* Sem isto a trilha fica presa à largura do container (os itens vazam para
+       fora dela), e o trilho ::before — que é posicionado contra a trilha —
+       para antes dos últimos marcos. */
+    min-width: max-content;
 }
 
 .bmt-timeline__track::before {
@@ -2633,12 +2809,15 @@ main.hip-active .hide-for-hip {
     );
 }
 
+/* Largura fixa, não `flex: 1`. Com `flex: 1` os itens se dividiam o container
+   e encolhiam a cada novo marco — em 8 marcos a descrição ficava com ~13
+   caracteres por linha. Fixando a largura, o texto continua legível e a
+   trilha simplesmente cresce e rola dentro de .bmt-timeline. */
 .bmt-timeline__item {
-    flex: 1;
+    flex: 0 0 220px;
     position: relative;
     padding-top: 32px;
     padding-right: 16px;
-    min-width: 0;
 }
 
 .bmt-timeline__dot {
@@ -2662,6 +2841,18 @@ main.hip-active .hide-for-hip {
     background: var(--primary-blue);
     border-color: var(--primary-blue);
     box-shadow: 0 0 10px rgba(0, 136, 241, 0.45);
+}
+
+.bmt-timeline__dot--zenith {
+    background: var(--zenith-accent);
+    border-color: var(--zenith-accent);
+    box-shadow: 0 0 10px var(--zenith-glow);
+}
+
+.bmt-timeline__dot--guide {
+    background: var(--guide-accent);
+    border-color: var(--guide-accent);
+    box-shadow: 0 0 10px var(--guide-glow);
 }
 
 .bmt-timeline__dot--future {
@@ -2694,6 +2885,15 @@ main.hip-active .hide-for-hip {
     line-height: 1.55;
 }
 
+/* O ano herda o acento do produto, para a trilha contar a história por cor */
+.bmt-timeline__item--zenith .bmt-timeline__year {
+    color: var(--zenith-accent);
+}
+
+.bmt-timeline__item--guide .bmt-timeline__year {
+    color: var(--guide-accent);
+}
+
 .bmt-timeline__item--future .bmt-timeline__year {
     color: rgba(255, 255, 255, 0.25);
 }
@@ -2710,21 +2910,152 @@ main.hip-active .hide-for-hip {
     text-transform: uppercase;
     color: var(--text-muted);
     text-align: center;
-    margin: 0 0 20px;
+    margin: 44px 0 20px;
     opacity: 0.6;
 }
 
 @media (max-width: 768px) {
     .bmt-timeline {
-        margin: 36px 0 40px;
+        margin: 36px 0 12px;
     }
-    .bmt-timeline__track {
-        min-width: 600px;
+    .bmt-timeline__item {
+        flex-basis: 200px;
     }
     .bmt-timeline__label {
         font-size: 13px;
     }
     .bmt-timeline__desc {
         font-size: 12px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   17. Tier Comparison Table — Zenith Lite vs Pro
+   ═══════════════════════════════════════════════════════════ */
+.tier-compare-section {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tier-compare-section h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.tier-compare-section .section-sub {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 48px;
+}
+
+/* Wrapper rolável — mesma abordagem da .bmt-timeline: a tabela rola
+   dentro do próprio container, a página nunca rola na horizontal. */
+.tier-compare {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155, 77, 202, 0.25) transparent;
+}
+
+.tier-compare__table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tier-compare__table th,
+.tier-compare__table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.tier-compare__table thead th {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    white-space: nowrap;
+}
+
+.tier-compare__table thead th.tier-compare__col--lite {
+    color: #b98fd6;
+}
+
+.tier-compare__table thead th.tier-compare__col--pro {
+    color: #c489ea;
+}
+
+.tier-compare__table tbody tr:last-child th,
+.tier-compare__table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tier-compare__table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.tier-compare__feature {
+    font-weight: 500;
+    font-size: 0.98rem;
+    color: var(--text-light);
+}
+
+.tier-compare__feature span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.tier-compare__cell {
+    width: 130px;
+    text-align: center;
+}
+
+/* Marcadores: ✓ incluído, — não incluído. aria-label carrega o texto real. */
+.tier-compare__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.tier-compare__mark--yes {
+    background: rgba(155, 77, 202, 0.16);
+    color: #c489ea;
+    font-weight: 700;
+}
+
+.tier-compare__mark--no {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .tier-compare-section .section-sub {
+        margin-bottom: 32px;
+    }
+    .tier-compare__table {
+        min-width: 560px;
+    }
+    .tier-compare__table th,
+    .tier-compare__table td {
+        padding: 14px 14px;
+    }
+    .tier-compare__feature {
+        font-size: 0.92rem;
+    }
+    .tier-compare__cell {
+        width: 96px;
     }
 }
