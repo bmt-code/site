@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Routing hub only: sends visitors to the blog in their language.
+         Not a content page, so keep it out of the index. The three
+         localized listings below are the indexable pages. -->
+    <meta name="robots" content="noindex, follow">
+    <title>Blog | BMT - Brazilian Medical Technologies</title>
+    <link rel="canonical" href="https://www.bmt-brazil.com/blog/pt-BR/">
+
+    <!-- hreflang cluster points at the real localized listings -->
+    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt-BR/">
+    <link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/">
+    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es-LA/">
+    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt-BR/">
+
+    <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/icons/favicon.svg" />
+    <meta name="theme-color" content="#090d14">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Redirect to the right language folder using the SAME precedence
+         as js/i18n.js: ?lang= → localStorage → navigator → pt-BR. -->
+    <script>
+    (function () {
+        var supported = ['pt-BR', 'en', 'es-LA'];
+        var urlLang = new URLSearchParams(location.search).get('lang');
+        var pref = urlLang || localStorage.getItem('lang') || navigator.language || 'pt-BR';
+        var match = supported.filter(function (l) { return pref.indexOf(l) === 0; })[0] || 'pt-BR';
+        location.replace('/blog/' + match + '/');
+    })();
+    </script>
+</head>
+<body style="background:var(--bg-main);color:var(--text-light);font-family:var(--font-primary);">
+    <!-- Fallback for crawlers and no-JS visitors -->
+    <noscript>
+        <div style="max-width:600px;margin:80px auto;text-align:center;padding:0 20px;">
+            <h1 style="font-weight:800;">BMT Blog</h1>
+            <p style="color:var(--text-muted);">Choose your language / Escolha o idioma / Elija el idioma:</p>
+            <p style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+                <a href="/blog/pt-BR/" style="color:var(--primary-blue);">Português</a>
+                <a href="/blog/en/" style="color:var(--primary-blue);">English</a>
+                <a href="/blog/es-LA/" style="color:var(--primary-blue);">Español</a>
+            </p>
+        </div>
+    </noscript>
+</body>
+</html>
