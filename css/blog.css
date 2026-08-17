@@ -185,6 +185,15 @@ body[data-page="blog"] {
 .post-back:hover { color: var(--primary-blue); }
 
 .post-header { margin-bottom: 40px; }
+
+/* Standfirst / deck — the italic lead line under the title */
+.post-deck {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 8px;
+}
 .post-header .eyebrow { margin-bottom: 16px; }
 .post-header h1 {
     text-align: left;
@@ -208,6 +217,7 @@ body[data-page="blog"] {
 .post-figure { margin: 0 0 40px; }
 .post-figure img {
     width: 100%;
+    height: auto;
     border-radius: 16px;
     display: block;
     border: 1px solid var(--glass-border);
@@ -255,7 +265,7 @@ body[data-page="blog"] {
     font-style: italic;
     line-height: 1.5;
 }
-.post-body img { max-width: 100%; border-radius: 14px; }
+.post-body img { max-width: 100%; height: auto; border-radius: 14px; }
 .post-body figure { margin: 0; }
 .post-body figcaption {
     font-size: 0.82rem;
