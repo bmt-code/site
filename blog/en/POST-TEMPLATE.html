@@ -12,7 +12,7 @@
   ║      already comes from /css/blog.css.                            ║
   ║   4. Add a card pointing to this post in this folder's index.html  ║
   ║      (the <section class="blog-grid"> block).                     ║
-  ║   5. Mirror the post in /blog/pt-BR/ and /blog/es-LA/ and fix the  ║
+  ║   5. Mirror the post in /blog/pt/ and /blog/es/ and fix the  ║
   ║      4 hreflang links (and the lang-switcher) in all three files.  ║
   ║                                                                    ║
   ║  Tokens:                                                           ║
@@ -78,10 +78,10 @@
     <link rel="canonical" href="https://www.bmt-brazil.com/blog/en/{{SLUG}}">
 
     <!-- hreflang — point at the translated versions (adjust the slugs) -->
-    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt-BR/{{SLUG_PT}}">
+    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/{{SLUG_PT}}">
     <link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/{{SLUG}}">
-    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es-LA/{{SLUG_ES}}">
-    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt-BR/{{SLUG_PT}}">
+    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/{{SLUG_ES}}">
+    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/{{SLUG_PT}}">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -171,9 +171,9 @@
                 </nav>
                 <!-- Adjust the 3 hrefs to THIS post's translated versions -->
                 <div class="lang-switcher">
-                    <a href="/blog/pt-BR/{{SLUG_PT}}.html" data-lang="pt-BR" aria-label="Mudar para Português do Brasil">BR</a>
+                    <a href="/blog/pt/{{SLUG_PT}}.html" data-lang="pt-BR" aria-label="Mudar para Português do Brasil">BR</a>
                     <a href="/blog/en/{{SLUG}}.html" class="active" data-lang="en" aria-label="English"><img src="/img/flags/us.svg" alt="US flag"></a>
-                    <a href="/blog/es-LA/{{SLUG_ES}}.html" data-lang="es-LA" aria-label="Cambiar a Español">ES</a>
+                    <a href="/blog/es/{{SLUG_ES}}.html" data-lang="es-LA" aria-label="Cambiar a Español">ES</a>
                 </div>
                 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
                     <span class="hamburger-line"></span>

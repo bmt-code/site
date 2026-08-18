@@ -4,7 +4,7 @@
   ║  PLANTILLA DE POST — BLOG BMT (es-LA)                              ║
   ║                                                                    ║
   ║  Cómo publicar un post nuevo:                                      ║
-  ║   1. Copie este archivo a ESTA carpeta (blog/es-LA/) con un        ║
+  ║   1. Copie este archivo a ESTA carpeta (blog/es/) con un        ║
   ║      nombre-slug: ej. nuevo-titulo-del-post.html                   ║
   ║   2. Reemplace todos los tokens {{ ... }} de abajo.               ║
   ║   3. Escriba el texto dentro de <div class="post-body"> usando     ║
@@ -12,7 +12,7 @@
   ║      ya vienen de /css/blog.css.                                  ║
   ║   4. Agregue un card que apunte a este post en el index.html de    ║
   ║      esta carpeta (bloque <section class="blog-grid">).          ║
-  ║   5. Traduzca el post en /blog/pt-BR/ y /blog/en/ y ajuste los 4   ║
+  ║   5. Traduzca el post en /blog/pt/ y /blog/en/ y ajuste los 4   ║
   ║      enlaces hreflang (y el lang-switcher) en los tres archivos.   ║
   ║                                                                    ║
   ║  Tokens:                                                           ║
@@ -75,18 +75,18 @@
     <link rel="dns-prefetch" href="https://unpkg.com">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://www.bmt-brazil.com/blog/es-LA/{{SLUG}}">
+    <link rel="canonical" href="https://www.bmt-brazil.com/blog/es/{{SLUG}}">
 
     <!-- hreflang — apunte a las versiones traducidas (ajuste los slugs) -->
-    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt-BR/{{SLUG_PT}}">
+    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/{{SLUG_PT}}">
     <link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/{{SLUG_EN}}">
-    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es-LA/{{SLUG}}">
-    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt-BR/{{SLUG_PT}}">
+    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/{{SLUG}}">
+    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/{{SLUG_PT}}">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="BMT - Brazilian Medical Technologies">
-    <meta property="og:url" content="https://www.bmt-brazil.com/blog/es-LA/{{SLUG}}">
+    <meta property="og:url" content="https://www.bmt-brazil.com/blog/es/{{SLUG}}">
     <meta property="og:title" content="{{TITLE}}">
     <meta property="og:description" content="{{DESCRIPTION}}">
     <meta property="og:image" content="{{OG_IMAGE}}">
@@ -109,8 +109,8 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "@id": "https://www.bmt-brazil.com/blog/es-LA/{{SLUG}}#post",
-      "mainEntityOfPage": "https://www.bmt-brazil.com/blog/es-LA/{{SLUG}}",
+      "@id": "https://www.bmt-brazil.com/blog/es/{{SLUG}}#post",
+      "mainEntityOfPage": "https://www.bmt-brazil.com/blog/es/{{SLUG}}",
       "headline": "{{TITLE}}",
       "description": "{{DESCRIPTION}}",
       "image": "{{OG_IMAGE}}",
@@ -127,8 +127,8 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bmt-brazil.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bmt-brazil.com/blog/es-LA/" },
-        { "@type": "ListItem", "position": 3, "name": "{{TITLE}}", "item": "https://www.bmt-brazil.com/blog/es-LA/{{SLUG}}" }
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bmt-brazil.com/blog/es/" },
+        { "@type": "ListItem", "position": 3, "name": "{{TITLE}}", "item": "https://www.bmt-brazil.com/blog/es/{{SLUG}}" }
       ]
     }
     </script>
@@ -164,16 +164,16 @@
                                 </a>
                             </div>
                         </li>
-                        <li><a href="/blog/es-LA/">Blog</a></li>
+                        <li><a href="/blog/es/">Blog</a></li>
                         <li><a href="/#sobre-nos">Sobre Nosotros</a></li>
                         <li><a href="/#contato">Contacto</a></li>
                     </ul>
                 </nav>
                 <!-- Ajuste los 3 hrefs a las versiones traducidas de ESTE post -->
                 <div class="lang-switcher">
-                    <a href="/blog/pt-BR/{{SLUG_PT}}.html" data-lang="pt-BR" aria-label="Mudar para Português do Brasil">BR</a>
+                    <a href="/blog/pt/{{SLUG_PT}}.html" data-lang="pt-BR" aria-label="Mudar para Português do Brasil">BR</a>
                     <a href="/blog/en/{{SLUG_EN}}.html" data-lang="en" aria-label="Switch to English">US</a>
-                    <a href="/blog/es-LA/{{SLUG}}.html" class="active" data-lang="es-LA" aria-label="Español"><img src="/img/flags/es.svg" alt="Bandera ES"></a>
+                    <a href="/blog/es/{{SLUG}}.html" class="active" data-lang="es-LA" aria-label="Español"><img src="/img/flags/es.svg" alt="Bandera ES"></a>
                 </div>
                 <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                     <span class="hamburger-line"></span>
@@ -187,7 +187,7 @@
     <main class="blog-main">
         <div class="container">
             <article class="post-article">
-                <a href="/blog/es-LA/" class="post-back"><span aria-hidden="true">&larr;</span> Volver al Blog</a>
+                <a href="/blog/es/" class="post-back"><span aria-hidden="true">&larr;</span> Volver al Blog</a>
 
                 <header class="post-header">
                     <span class="eyebrow">{{CATEGORY}}</span>
