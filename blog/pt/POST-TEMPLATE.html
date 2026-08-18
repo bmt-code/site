@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  MODELO DE POST — BLOG BMT (pt-BR)                                 ║
+  ║                                                                    ║
+  ║  Como publicar um post novo:                                       ║
+  ║   1. Copie este arquivo para esta MESMA pasta (blog/pt/) com    ║
+  ║      um nome-slug: ex. novo-titulo-do-post.html                    ║
+  ║   2. Substitua todos os tokens {{ ... }} abaixo.                   ║
+  ║   3. Escreva o texto dentro de <div class="post-body"> usando      ║
+  ║      <h2>, <h3>, <p>, <ul>, <blockquote>, <figure> — os estilos    ║
+  ║      já vêm de /css/blog.css.                                      ║
+  ║   4. Adicione um card apontando para este post no index.html       ║
+  ║      desta pasta (bloco <section class="blog-grid">).             ║
+  ║   5. Traduza o post nas pastas /blog/en/ e /blog/es/ e ajuste   ║
+  ║      os 4 links hreflang (e o lang-switcher) nos três arquivos.    ║
+  ║                                                                    ║
+  ║  Tokens:                                                           ║
+  ║   {{SLUG}}         nome do arquivo sem .html (ex: novo-post)       ║
+  ║   {{TITLE}}        título do post                                  ║
+  ║   {{DESCRIPTION}}  resumo de 1-2 frases (meta description)         ║
+  ║   {{CATEGORY}}     ex: História do Produto, Bastidores, Ciência    ║
+  ║   {{DATE_ISO}}     data em AAAA-MM-DD (ex: 2026-08-20)             ║
+  ║   {{DATE_HUMAN}}   data por extenso (ex: 20 de agosto de 2026)     ║
+  ║   {{READ_MIN}}     tempo de leitura em minutos (ex: 5)             ║
+  ║   {{OG_IMAGE}}     imagem de compartilhamento (1200x630),          ║
+  ║                    ex: https://www.bmt-brazil.com/img/og-orion.jpg ║
+  ║   {{HERO_IMAGE}}   imagem do topo, ex: /img/orion-brain-produto.png║
+  ║   {{HERO_ALT}}     texto alternativo da imagem do topo            ║
+  ║   {{SLUG_EN}} {{SLUG_ES}}  slugs das versões traduzidas           ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="pt-BR">
+<head>
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/a2ae98c4af88831115e0eb5b/script.js"></script>
+    <!-- Google Consent Mode v2 -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+    });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XKGYX3PJDJ"></script>
+    <script>
+    gtag('js', new Date());
+    gtag('config', 'G-XKGYX3PJDJ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{TITLE}} | Blog BMT</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="author" content="BMT - Brazilian Medical Technologies">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/img/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="BMT" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#080d14">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.bmt-brazil.com/blog/pt/{{SLUG}}">
+
+    <!-- hreflang — aponte para as versões traduzidas (ajuste os slugs) -->
+    <link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/{{SLUG}}">
+    <link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/{{SLUG_EN}}">
+    <link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/{{SLUG_ES}}">
+    <link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/{{SLUG}}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BMT - Brazilian Medical Technologies">
+    <meta property="og:url" content="https://www.bmt-brazil.com/blog/pt/{{SLUG}}">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="article:published_time" content="{{DATE_ISO}}">
+    <meta property="article:author" content="BMT - Brazilian Medical Technologies">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": "https://www.bmt-brazil.com/blog/pt/{{SLUG}}#post",
+      "mainEntityOfPage": "https://www.bmt-brazil.com/blog/pt/{{SLUG}}",
+      "headline": "{{TITLE}}",
+      "description": "{{DESCRIPTION}}",
+      "image": "{{OG_IMAGE}}",
+      "inLanguage": "pt-BR",
+      "datePublished": "{{DATE_ISO}}",
+      "dateModified": "{{DATE_ISO}}",
+      "author": { "@id": "https://www.bmt-brazil.com/#organization" },
+      "publisher": { "@id": "https://www.bmt-brazil.com/#organization" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bmt-brazil.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bmt-brazil.com/blog/pt/" },
+        { "@type": "ListItem", "position": 3, "name": "{{TITLE}}", "item": "https://www.bmt-brazil.com/blog/pt/{{SLUG}}" }
+      ]
+    }
+    </script>
+</head>
+<body data-page="blog">
+
+    <!-- Cabeçalho (não editar — igual em todos os posts) -->
+    <header class="main-header">
+        <div class="container">
+            <a href="/" class="logo-link">
+                <img src="/img/logo-placeholder.png" alt="BMT Logo" class="logo">
+            </a>
+            <div class="header-controls">
+                <nav class="main-nav">
+                    <ul>
+                        <li class="nav-dropdown">
+                            <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+                                <span>Produtos</span>
+                                <svg class="nav-dropdown__chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+                            </button>
+                            <div class="nav-dropdown__menu">
+                                <a href="/orion.html" class="nav-dropdown__item">
+                                    <span class="nav-dropdown__label">Orion One</span>
+                                    <span class="nav-dropdown__sub">Neuronavegação Veterinária</span>
+                                </a>
+                                <a href="/zenith.html" class="nav-dropdown__item nav-dropdown__item--zenith">
+                                    <span class="nav-dropdown__label">Zenith</span>
+                                    <span class="nav-dropdown__sub">Captura, Nuvem e Visão 3D</span>
+                                </a>
+                                <a href="/guide.html" class="nav-dropdown__item">
+                                    <span class="nav-dropdown__label">Guide</span>
+                                    <span class="nav-dropdown__sub">Plataforma Clínica na Nuvem</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li><a href="/blog/pt/">Blog</a></li>
+                        <li><a href="/#sobre-nos">Sobre Nós</a></li>
+                        <li><a href="/#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <!-- Ajuste os 3 hrefs para as versões traduzidas DESTE post -->
+                <div class="lang-switcher">
+                    <a href="/blog/pt/{{SLUG}}.html" class="active" data-lang="pt-BR" aria-label="Português do Brasil"><img src="/img/flags/br.svg" alt="Bandeira BR"></a>
+                    <a href="/blog/en/{{SLUG_EN}}.html" data-lang="en" aria-label="Switch to English">US</a>
+                    <a href="/blog/es/{{SLUG_ES}}.html" data-lang="es-LA" aria-label="Cambiar a Español">ES</a>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-main">
+        <div class="container">
+            <article class="post-article">
+                <a href="/blog/pt/" class="post-back"><span aria-hidden="true">&larr;</span> Voltar ao Blog</a>
+
+                <header class="post-header">
+                    <span class="eyebrow">{{CATEGORY}}</span>
+                    <h1>{{TITLE}}</h1>
+                    <div class="post-meta">
+                        <span>BMT</span>
+                        <span class="dot">·</span>
+                        <time datetime="{{DATE_ISO}}">{{DATE_HUMAN}}</time>
+                        <span class="dot">·</span>
+                        <span>{{READ_MIN}} min de leitura</span>
+                    </div>
+                </header>
+
+                <figure class="post-figure">
+                    <img src="{{HERO_IMAGE}}" alt="{{HERO_ALT}}">
+                    <!-- <figcaption>Legenda opcional.</figcaption> -->
+                </figure>
+
+                <!-- ░░░ CORPO DO POST — escreva aqui ░░░ -->
+                <div class="post-body">
+                    <p>Primeiro parágrafo (lide). Puxe o leitor com o essencial da história.</p>
+
+                    <h2>Subtítulo de seção</h2>
+                    <p>Parágrafo de corpo. Use <strong>negrito</strong> e <em>itálico</em> quando fizer sentido, e links internos como <a href="/orion.html">Orion One</a>.</p>
+
+                    <blockquote>Uma citação ou frase de destaque para respirar o texto.</blockquote>
+
+                    <ul>
+                        <li>Item de lista.</li>
+                        <li>Outro item.</li>
+                    </ul>
+
+                    <p>Parágrafo de fechamento com uma ideia final.</p>
+                </div>
+                <!-- ░░░ FIM DO CORPO ░░░ -->
+            </article>
+        </div>
+
+        <!-- CTA (opcional, mas recomendado) -->
+        <section class="post-cta">
+            <div class="container">
+                <h2>Quer conhecer a tecnologia da BMT?</h2>
+                <p>Agende uma demonstração com a nossa equipe.</p>
+                <a href="/#contato" class="cta-button"><span>Solicitar Demonstração</span><span class="cta-arrow" aria-hidden="true">&rarr;</span></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (não editar) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Brazilian Medical Technologies LTDA. | CNPJ: 55.226.895/0001-79</p>
+            <p>Desenvolvido em São Carlos - SP, o polo da inovação.</p>
+            <p>Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5516999941212" class="whatsapp-widget" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+        <img src="/img/whatsapp-icon.jpg" alt="Ícone do WhatsApp">
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
