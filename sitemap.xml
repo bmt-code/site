@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.bmt-brazil.com/</loc>
     <lastmod>2026-07-25</lastmod>
@@ -23,5 +24,69 @@
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Blog listings (one per language, hreflang cluster) -->
+  <url>
+    <loc>https://www.bmt-brazil.com/blog/pt/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/"/>
+  </url>
+  <url>
+    <loc>https://www.bmt-brazil.com/blog/en/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/"/>
+  </url>
+  <url>
+    <loc>https://www.bmt-brazil.com/blog/es/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/"/>
+  </url>
+
+  <!-- Blog articles: Week 1 — veterinary neuronavigation (hreflang cluster) -->
+  <url>
+    <loc>https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/veterinary-neuronavigation"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/neuronavegacion-veterinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria"/>
+  </url>
+  <url>
+    <loc>https://www.bmt-brazil.com/blog/en/veterinary-neuronavigation</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/veterinary-neuronavigation"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/neuronavegacion-veterinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria"/>
+  </url>
+  <url>
+    <loc>https://www.bmt-brazil.com/blog/es/neuronavegacion-veterinaria</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bmt-brazil.com/blog/en/veterinary-neuronavigation"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.bmt-brazil.com/blog/es/neuronavegacion-veterinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bmt-brazil.com/blog/pt/neuronavegacao-veterinaria"/>
   </url>
 </urlset>
